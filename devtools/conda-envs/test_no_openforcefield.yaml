@@ -1,0 +1,13 @@
+name: no-openforcefield
+
+channels:
+  - conda-forge
+
+dependencies:
+    # Base depends
+  - python
+  - pip
+
+    # Testing
+  - pytest
+
