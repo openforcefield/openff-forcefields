@@ -15,13 +15,13 @@ DOIs for each force field in this repository can be found in the following table
 
 | Filename | DOI | 
 | -------- | --- |
-| openff-1.0.0rc | None | 
+| openff-1.0.0-rc1 | None | 
 
 
 
 ## Installation
 ```bash
-conda install -c omnia openforcefield-forcefields
+conda install -c omnia openforcefields
 ```
 
 ## Use
@@ -30,7 +30,7 @@ Installing this package exposes an entry point that makes the `openforcefield-fo
 
 ```
 >>> from openforcefield.typing.engines.smirnoff import ForceField
->>> ff = ForceField('openforcefield-forcefields-1.0.9.offxml') 
+>>> ff = ForceField('off-1.0.0-rc1.offxml') 
 ```
 
 Otherwise, the entry point can be accessed by querying the `openforcefield.smirnoff_forcefield_directory` entry point group.
