@@ -22,7 +22,7 @@ DOIs for each force field in this repository can be found in the following table
 
 ## Installation
 ```bash
-conda install -c omnia/label/dev openforcefields
+conda install -c omnia openforcefields
 ```
 
 ## Use
