@@ -1,6 +1,6 @@
 # Open Force Fields
 
-[![Build Status](https://travis-ci.org/openforcefield/openforcefields.svg?branch=master)](https://travis-ci.org/openforcefield/openforcefields)
+[![Build Status](https://travis-ci.com/openforcefield/openforcefields.svg?branch=master)](https://travis-ci.com/openforcefield/openforcefields)
 
 This repository contains force fields released by the [Open Force Field Initiative](https://openforcefield.org)..
 These files are in SMIRKS Native Open Force Field (SMIRNOFF) format.
