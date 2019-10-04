@@ -15,6 +15,8 @@ DOIs for each force field in this repository can be found in the following table
 
 | Filename | DOI | 
 | -------- | --- |
+| openff-1.0.0-RC2.offxml | None | 
+| openff_unconstrained-1.0.0-RC2.offxml | None | 
 | openff-1.0.0-RC1.offxml | None | 
 | openff_unconstrained-1.0.0-RC1.offxml | None | 
 
