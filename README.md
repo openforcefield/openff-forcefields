@@ -15,7 +15,8 @@ DOIs for each force field in this repository can be found in the following table
 
 | Filename | DOI | 
 | -------- | --- |
-| openff-1.0.0rc | None | 
+| openff-1.0.0-RC2 | None | 
+| openff-1.0.0-RC1 | None | 
 
 
 
