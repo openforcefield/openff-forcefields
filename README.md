@@ -1,6 +1,6 @@
 # Open Force Fields
 
-[![Build Status](https://travis-ci.org/openforcefield/openforcefields.svg?branch=master)](https://travis-ci.org/openforcefield/openforcefields)
+[![Build Status](https://travis-ci.com/openforcefield/openforcefields.svg?branch=master)](https://travis-ci.com/openforcefield/openforcefields)
 
 This repository contains force fields released by the [Open Force Field Initiative](https://openforcefield.org)..
 These files are in SMIRKS Native Open Force Field (SMIRNOFF) format.
@@ -15,14 +15,16 @@ DOIs for each force field in this repository can be found in the following table
 
 | Filename | DOI | 
 | -------- | --- |
-| openff-1.0.0-RC2 | None | 
-| openff-1.0.0-RC1 | None | 
+| openff-1.0.0-RC2.offxml | None | 
+| openff_unconstrained-1.0.0-RC2.offxml | None | 
+| openff-1.0.0-RC1.offxml | None | 
+| openff_unconstrained-1.0.0-RC1.offxml | None | 
 
 
 
 ## Installation
 ```bash
-conda install -c omnia openforcefield-forcefields
+conda install -c omnia openforcefields
 ```
 
 ## Use
@@ -31,7 +33,7 @@ Installing this package exposes an entry point that makes the `openforcefield-fo
 
 ```
 >>> from openforcefield.typing.engines.smirnoff import ForceField
->>> ff = ForceField('openforcefield-forcefields-1.0.9.offxml') 
+>>> ff = ForceField('openff-1.0.0-RC1.offxml') 
 ```
 
 Otherwise, the entry point can be accessed by querying the `openforcefield.smirnoff_forcefield_directory` entry point group.
