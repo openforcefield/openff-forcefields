@@ -1,6 +1,8 @@
 # Open Force Fields
 
-[![Build Status](https://travis-ci.com/openforcefield/openforcefields.svg?branch=master)](https://travis-ci.com/openforcefield/openforcefields)
+[![Build Status](https://travis-ci.com/openforcefield/openforcefields.svg?branch=master)](https://travis-ci.com/openforcefield/openforcefields)  [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3473553.svg)](https://doi.org/10.5281/zenodo.3473553)
+
+
 
 This repository contains force fields released by the [Open Force Field Initiative](https://openforcefield.org)..
 These files are in SMIRKS Native Open Force Field (SMIRNOFF) format.
@@ -15,8 +17,8 @@ DOIs for each force field in this repository can be found in the following table
 
 | Filename | DOI | 
 | -------- | --- |
-| openff-1.0.0-RC2.offxml | None | 
-| openff_unconstrained-1.0.0-RC2.offxml | None | 
+| openff-1.0.0-RC2.offxml | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3473554.svg)](https://doi.org/10.5281/zenodo.3473554) | 
+| openff_unconstrained-1.0.0-RC2.offxml | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3473554.svg)](https://doi.org/10.5281/zenodo.3473554) | 
 | openff-1.0.0-RC1.offxml | None | 
 | openff_unconstrained-1.0.0-RC1.offxml | None | 
 
