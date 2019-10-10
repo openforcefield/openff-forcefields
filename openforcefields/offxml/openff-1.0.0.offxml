@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SMIRNOFF version="0.3" aromaticity_model="OEAroModel_MDL">
     <!-- This is the initial "Parsley" force field released by the Open Force Field Initiative. -->
-    <!-- This file contains hydrogen bond constraints, and it suitable for long-timestep simulations. -->
-    <!-- An equivalent version of this file is also available without the constraints, with the prefix -->
-    <!-- "openff_unconstrained". -->
+    <!-- The Parsley force field is available with and without bond constraints to hydrogen. -->
+    <!-- This file contains bond constraints to hydrogen, and is suitable for long-timestep simulations. -->
 	<Author>The Open Force Field Initiative</Author>
 	<Date>2019-10-10</Date>
 	<Constraints version="0.3">

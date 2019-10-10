@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SMIRNOFF version="0.3" aromaticity_model="OEAroModel_MDL">
     <!-- This is the initial "Parsley" force field released by the Open Force Field Initiative. -->
-    <!-- This file does not contain hydrogen bond constraints, and is suitable for geometry optimization and -->
-    <!-- single-point energy evaluations. -->
+    <!-- The Parsley force field is available with and without bond constraints to hydrogen. -->
+    <!-- This file does not contain bond constraints to hydrogen, and is suitable for geometry optimization and -->
+    <!-- single-point energy evaluations. "-->
     <Author>The Open Force Field Initiative</Author>
 	<Date>2019-10-10</Date>
 	<Bonds version="0.3" potential="harmonic" fractional_bondorder_method="None" fractional_bondorder_interpolation="linear">
