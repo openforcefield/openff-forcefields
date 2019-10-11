@@ -14,8 +14,8 @@ for simulations with [OpenMM](http://openmm.org/), or other simulation formats s
 Usage examples can be found in the [openforcefield repository](https://github.com/openforcefield/openforcefield/tree/master/examples).
 
 Each force field is currently available in two forms -- Both with and without bond constraints to hydrogen. 
-The default version of each force field has bond constraints to hydrogens, and is suitable for long-timestep simulations.  
-The `unconstrained` version of each force field is suitable for operations such as molecule single point energy calculations and geometry optimizations, and should be used when comparing the force field to QM data. 
+The default version of each force field contains these constraints and is suitable for typical molecular dynamics simulations with constrained bonds to hydrogen.  
+The `unconstrained` version of each force field should be used when single-point energies are a major concern (e.g. single point energy calculations and geometry optimizations) and when comparing the force field to QM data
 
 DOIs for each force field in this repository can be found in the following table:
 
