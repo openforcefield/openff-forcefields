@@ -19,14 +19,14 @@ The `unconstrained` version of each force field is suitable for operations such 
 
 DOIs for each force field in this repository can be found in the following table:
 
-| Filename | DOI | 
-| -------- | --- |
-| openff-1.0.0.offxml | None |
-| openff_unconstrained-1.0.0.offxml | None | 
-| openff-1.0.0-RC2.offxml | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3473554.svg)](https://doi.org/10.5281/zenodo.3473554) | 
-| openff_unconstrained-1.0.0-RC2.offxml | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3473554.svg)](https://doi.org/10.5281/zenodo.3473554) | 
-| openff-1.0.0-RC1.offxml | None | 
-| openff_unconstrained-1.0.0-RC1.offxml | None | 
+| Filename | DOI | FF line |
+| -------- | --- | -------- |
+| `openff-1.0.0.offxml` | Not yet assigned | Parsley |
+| `openff_unconstrained-1.0.0.offxml` | Not yet assigned | Parsley |
+| `openff-1.0.0-RC2.offxml` | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3473554.svg)](https://doi.org/10.5281/zenodo.3473554) | None |
+| `openff_unconstrained-1.0.0-RC2.offxml` | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3473554.svg)](https://doi.org/10.5281/zenodo.3473554) | None |
+| `openff-1.0.0-RC1.offxml` | None | None |
+| `openff_unconstrained-1.0.0-RC1.offxml` | None | None |
 
 
 
