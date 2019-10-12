@@ -4,7 +4,7 @@
 
 
 
-This repository contains force fields released by the [Open Force Field Initiative](https://openforcefield.org)..
+This repository contains force fields released by the [Open Force Field Initiative](https://openforcefield.org).
 These files are in SMIRKS Native Open Force Field (SMIRNOFF) format.
 Details about this new format are documented in our recent publication ([doi:10.1021/acs.jctc.8b00640](https://www.doi.org/10.1021/acs.jctc.8b00640) or [bioRxiv](https://doi.org/10.1101/286542)), and the most recent documentation of the specification can be found in the [Open Force Field Toolkit documentation](https://open-forcefield-toolkit.readthedocs.io/en/latest/smirnoff.html).
 You can parameterize small molecules with SMIRNOFF using the
@@ -13,7 +13,7 @@ for simulations with [OpenMM](http://openmm.org/), or other simulation formats s
 
 Usage examples can be found in the [openforcefield repository](https://github.com/openforcefield/openforcefield/tree/master/examples).
 
-Each force field is currently available in two forms -- Both with and without bond constraints to hydrogen. The default version of each force field contains these constraints and is suitable for typical molecular dynamics simulations with constrained bonds to hydrogen. The `unconstrained` version of each force field should be used when single-point energies are a major concern (e.g. single point energy calculations and geometry optimizations) and when comparing the force field to QM data.
+Each force field is currently available in two forms --  Both with and without bond constraints to hydrogen. The default version of each force field is suitable for typical molecular dynamics simulations with constrained bonds to hydrogen. The `unconstrained` version of each force field should be used when single-point energies are a major concern (e.g. geometry optimizations) and when comparing the force field to QM data.
 
 DOIs for each force field in this repository can be found in the following table:
 
