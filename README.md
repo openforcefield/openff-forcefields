@@ -6,10 +6,10 @@
 
 This repository contains force fields released by the [Open Force Field Initiative](https://openforcefield.org).
 These files are in SMIRKS Native Open Force Field (SMIRNOFF) format.
-Details about this new format are documented in our recent publication ([doi:10.1021/acs.jctc.8b00640](https://www.doi.org/10.1021/acs.jctc.8b00640) or [bioRxiv](https://doi.org/10.1101/286542)), and the most recent documentation of the specification can be found in the [Open Force Field Toolkit documentation](https://open-forcefield-toolkit.readthedocs.io/en/latest/smirnoff.html).
+Details about this new format are documented in our recent publication ([doi:10.1021/acs.jctc.8b00640](https://www.doi.org/10.1021/acs.jctc.8b00640) or [bioRxiv](https://doi.org/10.1101/286542)), and the most recent specification can be found in the [Open Force Field Toolkit documentation](https://open-forcefield-toolkit.readthedocs.io/en/latest/smirnoff.html).
 You can parameterize small molecules with SMIRNOFF using the
-`ForceField` class in the [openforcefield toolkit](https://github.com/openforcefield/openforcefield)
-for simulations with [OpenMM](http://openmm.org/), or other simulation formats supported by [ParmEd](http://parmed.github.io/ParmEd/html/index.html).
+`ForceField` class in the [Open Force Field toolkit](https://github.com/openforcefield/openforcefield)
+for simulations with [OpenMM](http://openmm.org/). The resulting system can also be converted to several other simulation formats using [ParmEd](http://parmed.github.io/ParmEd/html/index.html).
 
 Usage examples can be found in the [openforcefield repository](https://github.com/openforcefield/openforcefield/tree/master/examples).
 
