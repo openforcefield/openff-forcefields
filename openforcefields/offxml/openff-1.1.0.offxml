@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SMIRNOFF version="0.3" aromaticity_model="OEAroModel_MDL">
-    <!-- This is the version 1.0.1 "Parsley" force field released by the Open Force Field Initiative. -->
+    <!-- This is the version 1.1.0 "Parsley" force field released by the Open Force Field Initiative. -->
     <!-- The Parsley force field is available with and without bond constraints to hydrogen. -->
-    <!-- This file does not contain bond constraints to hydrogen, and is suitable for geometry optimization and -->
-    <!-- single-point energy evaluations. "-->
+    <!-- This file contains bond constraints to hydrogen, and is suitable for long-timestep simulations. -->
     <Author>The Open Force Field Initiative</Author>
 	<Date>2020-03-01</Date>
+	<Constraints version="0.3">
+	    <!-- constrain all bonds to hydrogen to their equilibrium bond length -->
+		<Constraint smirks="[#1:1]-[*:2]" id="c1"></Constraint>
+	</Constraints>
 	<Bonds version="0.3" potential="harmonic" fractional_bondorder_method="None" fractional_bondorder_interpolation="linear">
 		<Bond smirks="[#6X4:1]-[#6X4:2]" length="1.520564290937e+00 * angstrom" k="5.338286841218e+02 * angstrom**-2 * mole**-1 * kilocalorie" id="b1" />
 		<Bond smirks="[#6X4:1]-[#6X3:2]" length="1.503574774877e+00 * angstrom" k="6.469708128190e+02 * angstrom**-2 * mole**-1 * kilocalorie" id="b2" />
