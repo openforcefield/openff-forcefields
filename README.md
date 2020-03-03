@@ -73,6 +73,8 @@ Force fields moving forward will be called `name-X.Y.Z`
 
 ## Versions
 
+`v1.1.0 Parsley `: This minor release contains following changes. (1) Addition of new proper torsions and improper torsions for tetrazole; (2) Corrections to N-N bond rotation periodicity; (3) Removal of redundant periodicity component in `t19`; (4) Addition of three new bond and angle terms, `a22a`, `b14a` and `b36a`.
+
 ## Contributors
 
 Contributors to the relevant .offxml files include:
