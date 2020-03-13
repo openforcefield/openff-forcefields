@@ -17,14 +17,18 @@ Each force field is currently available in two forms --  Both with and without b
 
 DOIs for each force field in this repository can be found in the following table:
 
-| Filename | DOI | FF line |
-| -------- | --- | -------- |
-| `openff-1.0.0.offxml` | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3483227.svg)](https://doi.org/10.5281/zenodo.3483227) | Parsley |
-| `openff_unconstrained-1.0.0.offxml` | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3483227.svg)](https://doi.org/10.5281/zenodo.3483227) | Parsley |
-| `openff-1.0.0-RC2.offxml` | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3473554.svg)](https://doi.org/10.5281/zenodo.3473554) | None |
-| `openff_unconstrained-1.0.0-RC2.offxml` | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3473554.svg)](https://doi.org/10.5281/zenodo.3473554) | None |
-| `openff-1.0.0-RC1.offxml` | None | None |
-| `openff_unconstrained-1.0.0-RC1.offxml` | None | None |
+| Filename | DOI | FF line | Release Date | Change in functional form? |
+| -------- | --- | -------- | --- | --- |
+| `openff-2.0.0.offxml` |  | Sage | May 2020 (Anticipated) | No |
+| `openff_unconstrained-2.0.0.offxml` |  | Sage | May 2020 (Anticipated) | No |
+| `openff-1.1.0.offxml` | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3695094.svg)](https://doi.org/10.5281/zenodo.3695094) | Parsley | Mar 3, 2020 | No |
+| `openff_unconstrained-1.1.0.offxml` | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3695094.svg)](https://doi.org/10.5281/zenodo.3695094) | Parsley | Mar 3, 2020 | No |
+| `openff-1.0.0.offxml` | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3483227.svg)](https://doi.org/10.5281/zenodo.3483227) | Parsley | Oct 12, 2019 | No |
+| `openff_unconstrained-1.0.0.offxml` | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3483227.svg)](https://doi.org/10.5281/zenodo.3483227) | Parsley | Oct 12, 2019 | No |
+| `openff-1.0.0-RC2.offxml` | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3473554.svg)](https://doi.org/10.5281/zenodo.3473554) | None | Oct 4, 2019 | No |
+| `openff_unconstrained-1.0.0-RC2.offxml` | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3473554.svg)](https://doi.org/10.5281/zenodo.3473554) | None | Oct 4, 2019 | No |
+| `openff-1.0.0-RC1.offxml` | None | None | Oct 4, 2019 | N/A |
+| `openff_unconstrained-1.0.0-RC1.offxml` | None | None | Oct 4, 2019 | N/A |
 
 
 
@@ -65,7 +69,7 @@ _Applicable in general to SMIRNOFF-format FFs produced by the Open Force Field C
 
 Force fields moving forward will be called `name-X.Y.Z`
 
-* `X` denotes some major change in functional form.
+* `X` denotes some major change in functional form or fitting strategy.
 * `Y` is the parameterization epoch / generation, or a minor change that can affect energy.
 * `Z` is a bugfix version -- e.g. something we've caught and corrected.  
 
