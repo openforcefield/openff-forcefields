@@ -19,10 +19,16 @@ DOIs for each force field in this repository can be found in the following table
 
 | Filename | DOI | FF line | Release Date | Change in functional form? |
 | -------- | --- | -------- | --- | --- |
-| `openff-2.0.0.offxml` |  | Sage | May 2020 (Anticipated) | No |
-| `openff_unconstrained-2.0.0.offxml` |  | Sage | May 2020 (Anticipated) | No |
+| `openff-2.0.0.offxml` |  | Sage | Late 2020 or Early 2021 (Anticipated) | Yes |
+| `openff_unconstrained-2.0.0.offxml` |  | Sage | Late 2020 or Early 2021 (Anticipated) | Yes |
+| `openff-1.2.0.offxml` |  | Parsley | May 2020 (Anticipated) | No |
+| `openff_unconstrained-1.2.0.offxml` |  | Parsley | May 2020  (Anticipated) | No |
+| `openff-1.1.1.offxml` | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3751818.svg)](https://doi.org/10.5281/zenodo.3751818) | Parsley | Apr 14, 2020 | No |
+| `openff_unconstrained-1.1.1.offxml` | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3751818.svg)](https://doi.org/10.5281/zenodo.3751818) | Parsley | Apr 14, 2020 | No |
 | `openff-1.1.0.offxml` | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3695094.svg)](https://doi.org/10.5281/zenodo.3695094) | Parsley | Mar 3, 2020 | No |
 | `openff_unconstrained-1.1.0.offxml` | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3695094.svg)](https://doi.org/10.5281/zenodo.3695094) | Parsley | Mar 3, 2020 | No |
+| `openff-1.0.1.offxml` | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3751812.svg)](https://doi.org/10.5281/zenodo.3751812) | Parsley | Apr 14, 2020 | No |
+| `openff_unconstrained-1.0.1.offxml` | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3751812.svg)](https://doi.org/10.5281/zenodo.3751812) | Parsley | Apr 14, 2020 | No |
 | `openff-1.0.0.offxml` | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3483227.svg)](https://doi.org/10.5281/zenodo.3483227) | Parsley | Oct 12, 2019 | No |
 | `openff_unconstrained-1.0.0.offxml` | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3483227.svg)](https://doi.org/10.5281/zenodo.3483227) | Parsley | Oct 12, 2019 | No |
 | `openff-1.0.0-RC2.offxml` | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3473554.svg)](https://doi.org/10.5281/zenodo.3473554) | None | Oct 4, 2019 | No |
