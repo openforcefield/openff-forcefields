@@ -19,8 +19,8 @@ DOIs for each force field in this repository can be found in the following table
 
 | Filename | DOI | FF line | Release Date | Change in functional form? |
 | -------- | --- | -------- | --- | --- |
-| `openff-2.0.0.offxml` |  | Sage | Late 2020 or Early 2021 (Anticipated) | Yes |
-| `openff_unconstrained-2.0.0.offxml` |  | Sage | Late 2020 or Early 2021 (Anticipated) | Yes |
+| `openff-2.0.0.offxml` |  | Sage | Late 2020 or Early 2021 (Anticipated) | Likely |
+| `openff_unconstrained-2.0.0.offxml` |  | Sage | Late 2020 or Early 2021 (Anticipated) | Likely |
 | `openff-1.2.0.offxml` |  | Parsley | May 2020 (Anticipated) | No |
 | `openff_unconstrained-1.2.0.offxml` |  | Parsley | May 2020  (Anticipated) | No |
 | `openff-1.1.1.offxml` | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3751818.svg)](https://doi.org/10.5281/zenodo.3751818) | Parsley | Apr 14, 2020 | No |
