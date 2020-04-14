@@ -70,10 +70,10 @@ Force fields moving forward will be called `name-X.Y.Z`
 * `Z` is a bugfix version -- e.g. something we've caught and corrected.  
 
 
-
 ## Versions
-
 - `v1.0.0 Parsley` : First major forcefield release.
+
+    - `v1.0.1 Parsley `: This bugfix release contains following changes: (1) Addition of monatomic ion `LibraryCharges`.
 
 - `v1.1.0 Parsley `: This minor release contains following changes: (1) Addition of new proper torsions and improper torsions for tetrazole; (2) Corrections to N-N bond rotation periodicity; (3) Removal of redundant periodicity component in `t19`; (4) Addition of three new bond and angle terms, `a22a`, `b14a` and `b36a`.
 
