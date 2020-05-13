@@ -1,6 +1,6 @@
 # Open Force Fields
 
-[![Build Status](https://travis-ci.com/openforcefield/openforcefields.svg?branch=master)](https://travis-ci.com/openforcefield/openforcefields)  [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3473553.svg)](https://doi.org/10.5281/zenodo.3473553)
+[![Build Status](https://github.com/openforcefield/openforcefields/workflows/CI/badge.svg)](https://github.com/openforcefield/openforcefields/actions?query=branch%3Amaster+workflow%3ACI)  [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3473553.svg)](https://doi.org/10.5281/zenodo.3473553)
 
 
 
