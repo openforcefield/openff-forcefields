@@ -68,6 +68,7 @@ jobs:
       run: |
         . devtools/gh-actions/initialize_conda.sh
         conda activate test
+        conda remove --force openforcefields
         python -m pip install -e .
     - name: Test the package
       shell: bash
