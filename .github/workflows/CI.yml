@@ -29,50 +29,37 @@ jobs:
           - os: ubuntu-latest
           - os: macOS-latest
 
-    env:
-      CI_OS: ${{ matrix.cfg.os }}
-      PYVER: ${{ matrix.python-version }}
-
     steps:
-    - uses: actions/checkout@v2
-    - name: Additional info about the build
-      shell: bash
-      run: |
-        uname -a
-        df -h
-        ulimit -a
-    - name: Fix conda permissions in MacOS
-      shell: bash
-      if: startsWith(matrix.cfg.os, 'macOS')
-      run: |
-        sudo chown -R $(id -u):$(id -g) ${CONDA}
-    - name: Configure conda
-      shell: bash
-      run: |
-        . devtools/gh-actions/initialize_conda.sh
-        conda activate
-        conda config --set always_yes yes
-        conda config --add channels omnia --add channels conda-forge
-        conda install --quiet conda conda-build jinja2 anaconda-client
-        conda update --quiet --all
-        conda info --all
-        conda list
-    - name: Prepare test environment
-      shell: bash
-      run: |
-        . devtools/gh-actions/initialize_conda.sh
-        conda activate
-        python devtools/scripts/create_conda_env.py -n=test -p=$PYVER devtools/conda-envs/test_env.yaml
-    - name: Install package
-      shell: bash
-      run: |
-        . devtools/gh-actions/initialize_conda.sh
-        conda activate test
-        conda remove --force openforcefields
-        python -m pip install -e .
-    - name: Test the package
-      shell: bash
-      run: |
-        . devtools/gh-actions/initialize_conda.sh
-        conda activate test
-        pytest -v
+      - uses: actions/checkout@v2
+
+      - name: Additional info about the build
+        shell: bash
+        run: |
+          uname -a
+          df -h
+          ulimit -a
+
+      - name: Setup conda
+        uses: goanpeca/setup-miniconda@v1
+        with:
+          # More info on options: https://github.com/goanpeca/setup-miniconda
+          python-version: ${{ matrix.python-version }}
+          environment-file: devtools/conda-envs/test_env.yaml
+          channels: conda-forge,defaults,omnia
+          activate-environment: test
+          auto-update-conda: true
+          auto-activate-base: false
+          show-channel-urls: true
+
+      - name: Install package
+        shell: bash -l {0}
+        run: |
+          conda remove --force openforcefields
+          python -m pip install -e .
+          conda list
+          conda info --all
+
+      - name: Test the package
+        shell: bash -l {0}
+        run: |
+          pytest -v
