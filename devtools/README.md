@@ -8,8 +8,8 @@ conda installation, and other development tools not directly related to the codi
 
 ### Continuous Integration
 
-* `travis-ci`: Linux and OSX based testing through [Travis-CI](https://about.travis-ci.com/) 
-  * `before_install.sh`: Pip/Miniconda pre-package installation script for Travis
+* `gh-actions`: Linux and OSX based testing through [GitHub Actions](https://github.com/features/actions)
+  * `before_install.sh`: Pip/Miniconda pre-package installation script for GitHub Actions
 
 ### Conda Environment:
 
