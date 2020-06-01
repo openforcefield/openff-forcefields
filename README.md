@@ -21,8 +21,8 @@ DOIs for each force field in this repository can be found in the following table
 | -------- | --- | -------- | --- | --- |
 | `openff-2.0.0.offxml` |  | Sage | Late 2020 or Early 2021 (Anticipated) | Likely |
 | `openff_unconstrained-2.0.0.offxml` |  | Sage | Late 2020 or Early 2021 (Anticipated) | Likely |
-| `openff-1.2.0.offxml` |  | Parsley | May 29, 2020 | No |
-| `openff_unconstrained-1.2.0.offxml` |  | Parsley | May 29, 2020 | No |
+| `openff-1.2.0.offxml` | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3872244.svg)](https://doi.org/10.5281/zenodo.3872244) | Parsley | May 29, 2020 | No |
+| `openff_unconstrained-1.2.0.offxml` | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3872244.svg)](https://doi.org/10.5281/zenodo.3872244) | Parsley | May 29, 2020 | No |
 | `openff-1.1.1.offxml` | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3751818.svg)](https://doi.org/10.5281/zenodo.3751818) | Parsley | Apr 14, 2020 | No |
 | `openff_unconstrained-1.1.1.offxml` | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3751818.svg)](https://doi.org/10.5281/zenodo.3751818) | Parsley | Apr 14, 2020 | No |
 | `openff-1.1.0.offxml` | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3695094.svg)](https://doi.org/10.5281/zenodo.3695094) | Parsley | Mar 3, 2020 | No |
