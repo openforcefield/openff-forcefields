@@ -21,8 +21,8 @@ DOIs for each force field in this repository can be found in the following table
 | -------- | --- | -------- | --- | --- |
 | `openff-2.0.0.offxml` |  | Sage | Late 2020 or Early 2021 (Anticipated) | Likely |
 | `openff_unconstrained-2.0.0.offxml` |  | Sage | Late 2020 or Early 2021 (Anticipated) | Likely |
-| `openff-1.2.0.offxml` |  | Parsley | May 2020 (Anticipated) | No |
-| `openff_unconstrained-1.2.0.offxml` |  | Parsley | May 2020  (Anticipated) | No |
+| `openff-1.2.0.offxml` |  | Parsley | May 29, 2020 | No |
+| `openff_unconstrained-1.2.0.offxml` |  | Parsley | May 29, 2020 | No |
 | `openff-1.1.1.offxml` | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3751818.svg)](https://doi.org/10.5281/zenodo.3751818) | Parsley | Apr 14, 2020 | No |
 | `openff_unconstrained-1.1.1.offxml` | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3751818.svg)](https://doi.org/10.5281/zenodo.3751818) | Parsley | Apr 14, 2020 | No |
 | `openff-1.1.0.offxml` | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3695094.svg)](https://doi.org/10.5281/zenodo.3695094) | Parsley | Mar 3, 2020 | No |
@@ -88,6 +88,8 @@ Force fields moving forward will be called `name-X.Y.Z`
 - `v1.1.0 Parsley `: This minor release contains following changes: (1) Addition of new proper torsions and improper torsions for tetrazole; (2) Corrections to N-N bond rotation periodicity; (3) Removal of redundant periodicity component in `t19`; (4) Addition of three new bond and angle terms, `a22a`, `b14a` and `b36a`.
 
     - `v1.1.1 Parsley `: This bugfix release contains following changes: (1) Addition of monatomic ion `LibraryCharges`.
+
+- `v1.2.0 Parsley `: This minor release contains following changes: (1) New, carefully designed quantum chemical dataset was utilized in training valence parameters in the force field and (2) Removal of redundancy in `t108` SMIRKS pattern
 
 
 ## Contributors
