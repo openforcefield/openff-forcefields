@@ -350,5 +350,16 @@
         <Atom smirks="[#53X0-1:1]" epsilon="0.0536816 * mole**-1 * kilocalorie" id="n35" rmin_half="2.86 * angstrom"/>
     </vdW>
     <Electrostatics version="0.3" method="PME" scale12="0.0" scale13="0.0" scale14="0.833333" scale15="1.0" switch_width="0.0 * angstrom" cutoff="9.0 * angstrom"/>
+    <LibraryCharges version="0.3">
+        <LibraryCharge name="Li+" smirks="[#3+1:1]" charge1="1.0*elementary_charge"/>
+        <LibraryCharge name="Na+" smirks="[#11+1:1]" charge1="1.0*elementary_charge"/>
+        <LibraryCharge name="K+" smirks="[#19+1:1]" charge1="1.0*elementary_charge"/>
+        <LibraryCharge name="Rb+" smirks="[#37+1:1]" charge1="1.0*elementary_charge"/>
+        <LibraryCharge name="Cs+" smirks="[#55+1:1]" charge1="1.0*elementary_charge"/>
+        <LibraryCharge name="F-" smirks="[#9X0-1:1]" charge1="-1.0*elementary_charge"/>
+        <LibraryCharge name="Cl-" smirks="[#17X0-1:1]" charge1="-1.0*elementary_charge"/>
+        <LibraryCharge name="Br-" smirks="[#35X0-1:1]" charge1="-1.0*elementary_charge"/>
+        <LibraryCharge name="I-" smirks="[#53X0-1:1]" charge1="-1.0*elementary_charge"/>
+    </LibraryCharges>
     <ToolkitAM1BCC version="0.3"/>
 </SMIRNOFF>
