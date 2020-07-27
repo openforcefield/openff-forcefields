@@ -49,6 +49,6 @@ def test_forcefield_data_is_not_loadable():
     """Test that the openforcefield toolkit does raise an Exception if
     a nonexistent FF isn't found."""
     from openforcefield.typing.engines.smirnoff import ForceField
-    with pytest.raises(TypeError) as excinfo:
+    with pytest.raises(OSError) as excinfo:
         ForceField('openff-9.9.9.offxml')
 
