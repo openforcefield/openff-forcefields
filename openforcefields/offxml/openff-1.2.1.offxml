@@ -6,6 +6,7 @@
     <Author>The Open Force Field Initiative</Author>
     <Date>2020-09-09</Date>
     <Constraints version="0.3">
+        <!-- constrain all bonds to hydrogen to their equilibrium bond length -->
         <Constraint smirks="[#1:1]-[*:2]" id="c1"></Constraint>
     </Constraints>
     <Bonds version="0.3" potential="harmonic" fractional_bondorder_method="None" fractional_bondorder_interpolation="linear">
