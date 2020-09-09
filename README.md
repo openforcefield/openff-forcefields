@@ -21,6 +21,8 @@ DOIs for each force field in this repository can be found in the following table
 | -------- | --- | -------- | --- | --- |
 | `openff-2.0.0.offxml` |  | Sage | Late 2020 or Early 2021 (Anticipated) | [WBO torsions](https://open-forcefield-toolkit.readthedocs.io/en/0.7.0/smirnoff.html#fractional-torsion-bond-orders) likely; [Refit BCCs](https://open-forcefield-toolkit.readthedocs.io/en/0.7.0/smirnoff.html#chargeincrementmodel-small-molecule-and-fragment-charges) possible |
 | `openff_unconstrained-2.0.0.offxml` |  | Sage | Late 2020 or Early 2021 (Anticipated) | Same as above |
+| `openff-1.2.1.offxml` |  | Parsley | Sep 9, 2020 | No |
+| `openff_unconstrained-1.2.1.offxml` |  | Parsley | Sep 9, 2020 | No |
 | `openff-1.2.0.offxml` | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3872244.svg)](https://doi.org/10.5281/zenodo.3872244) | Parsley | May 29, 2020 | No |
 | `openff_unconstrained-1.2.0.offxml` | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3872244.svg)](https://doi.org/10.5281/zenodo.3872244) | Parsley | May 29, 2020 | No |
 | `openff-1.1.1.offxml` | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3751818.svg)](https://doi.org/10.5281/zenodo.3751818) | Parsley | Apr 14, 2020 | No |
@@ -91,6 +93,7 @@ Force fields moving forward will be called `name-X.Y.Z`
 
 - `v1.2.0 Parsley `: This minor release contains following changes: (1) New, carefully designed quantum chemical dataset was utilized in training valence parameters in the force field and (2) Removal of redundancy in `t108` SMIRKS pattern
 
+- `v1.2.1 Parsley `: This bugfix release manually changes two bond force constants to resolve an issue seen in propyne substituents when using hydrogen mass repartitioning with a 4fs timestep. Full details are available at https://github.com/openforcefield/openforcefields/issues/19 . 
 
 ## Contributors
 
