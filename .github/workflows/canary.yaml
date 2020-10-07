@@ -24,6 +24,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
 
       - name: Find if any OFFXML files were added
         shell: bash -l {0}
