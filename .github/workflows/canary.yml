@@ -1,0 +1,73 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - "master"
+  pull_request:
+    branches:
+      - "master"
+
+jobs:
+  test:
+    name: Canary tests on ${{ matrix.cfg.os }}, Python ${{ matrix.python-version }}
+    runs-on: ${{ matrix.cfg.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version:
+          - 3.6
+          - 3.7
+        cfg:
+          - os: ubuntu-latest
+          - os: macOS-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Find if any OFFXML files were added
+        shell: bash -l {0}
+        run: |
+          if [[ $(git diff origin/master  HEAD | grep "\.offxml") ]]; then
+            echo "new_off_xml=true" >> $GITHUB_ENV
+          fi
+
+      - name: Setup conda
+        if: ${{ env.new_off_xml == 'true' }}
+        uses: conda-incubator/setup-miniconda@v1
+        with:
+          python-version: ${{ matrix.python-version }}
+          environment-file: devtools/conda-envs/canary_env.yaml
+          channels: conda-forge,defaults,omnia
+          activate-environment: test
+          auto-update-conda: true
+          auto-activate-base: false
+          show-channel-urls: true
+
+      - name: Environment Information
+        if: ${{ env.new_off_xml == 'true' }}
+        shell: bash -l {0}
+        run: |
+          conda info
+          conda list
+
+      - name: Additional info about the build
+        if: ${{ env.new_off_xml == 'true' }}
+        shell: bash
+        run: |
+          uname -a
+          df -h
+          ulimit -a
+
+      - name: Install package
+        if: ${{ env.new_off_xml == 'true' }}
+        shell: bash -l {0}
+        run: |
+          conda remove --force openforcefields
+          python -m pip install -e .
+
+      - name: Run HMR canary tests
+        if: ${{ env.new_off_xml == 'true' }}
+        shell: bash -l {0}
+        run: |
+          git diff upstream/master --name-only | grep "\.offxml" | python canary/scripts/test_hmr.py
