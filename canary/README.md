@@ -4,10 +4,15 @@ These tests are designed to be quick checks for basic behavior to safeguard
 against releasing bad force fields. These are **not** rigorous benchmarks or
 thorough tests of correct behavior across general uses.
 
-This is stored in a directory separate from `openforcefields/tests` because
-these are **not** unit tests
-
 For implementation, see .github/workflows/canary.yaml
+
+This is stored in a directory separate from `openforcefields/tests` because
+these are **not** unit tests. If you intended to run the test suite for the
+`openforcefields` package, point `pytest` to the unit test directory:
+
+```python3
+pytest -v openforcefields/tests/
+```
 
 ### Data sources
 
