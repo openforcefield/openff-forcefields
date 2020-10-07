@@ -72,4 +72,4 @@ jobs:
         if: ${{ env.new_off_xml == 'true' }}
         shell: bash -l {0}
         run: |
-          git diff upstream/master --name-only | grep "\.offxml" | python canary/scripts/test_hmr.py
+          git diff origin/master --name-only | grep "\.offxml" | python canary/scripts/test_hmr.py
