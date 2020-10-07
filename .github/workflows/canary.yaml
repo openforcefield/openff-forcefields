@@ -1,4 +1,4 @@
-name: CI
+name: Canary tests
 
 on:
   push:
