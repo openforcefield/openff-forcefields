@@ -62,4 +62,4 @@ jobs:
       - name: Test the package
         shell: bash -l {0}
         run: |
-          pytest -v
+          pytest -v openforcefields/tests/
