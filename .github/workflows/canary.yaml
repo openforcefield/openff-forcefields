@@ -30,9 +30,10 @@ jobs:
       - name: Find if any OFFXML files were added
         shell: bash -l {0}
         run: |
-          if [[ $(git diff origin/master  HEAD | grep "\.offxml") ]]; then
+          if [[ $(git diff origin/master HEAD --name-only | grep "\.offxml") ]]; then
             echo "new_off_xml=true" >> $GITHUB_ENV
           fi
+          echo $GITHUB_ENV
 
       - name: Setup conda
         if: ${{ env.new_off_xml == 'true' }}
