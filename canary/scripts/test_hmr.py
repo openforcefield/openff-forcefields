@@ -71,6 +71,7 @@ if __name__ == "__main__":
     """This function expects to be called with a list of OFFXML files passed to it,
     i.e. piped from git diff upstream/master  --name-only"""
     # Read force field filenames from stdin
+    failed_runs = []
     for line in sys.stdin:
         if "_unconstrained" in line:
             continue
@@ -81,7 +82,6 @@ if __name__ == "__main__":
         )
         # TODO: Add coverage set, with known failures stripped out
         # hmr_mols = Molecule.from_file(str(coverage_mols), file_format='smi', allow_undefined_stereo=True)
-        failed_runs = []
         for mol in hmr_mols:
             try:
                 hmr_driver(mol, ff_name)
@@ -93,5 +93,5 @@ if __name__ == "__main__":
                 # hit other errors than NaN positions
                 failed_runs.append([mol, ff_name, "NaN position(s)"])
 
-        if len(failed_runs) > 0:
-            raise HMRCanaryError(failed_runs)
+    if len(failed_runs) > 0:
+        raise HMRCanaryError(failed_runs)
