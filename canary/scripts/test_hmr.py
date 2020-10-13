@@ -58,7 +58,7 @@ def hmr_driver(mol, ff_name):
     context.setPositions(mol.conformers[0])
 
     # Run for 10 ps
-    integrator.step(500)
+    integrator.step(2500)
 
     state = context.getState(getEnergy=True)
     pot = state.getPotentialEnergy()
@@ -86,7 +86,12 @@ if __name__ == "__main__":
             try:
                 hmr_driver(mol, ff_name)
             except NANEnergyError:
-                failed_runs.append([mol, ff_name])
+                failed_runs.append([mol, ff_name, "NaN energy"])
+            except Exception:
+                # OpenMM's OpenMMException cannot be caught as it does not
+                # inherit from BaseException; therefore this clause may
+                # hit other errors than NaN positions
+                failed_runs.append([mol, ff_name, "NaN position(s)"])
 
         if len(failed_runs) > 0:
             raise HMRCanaryError(failed_runs)
