@@ -96,8 +96,6 @@ if __name__ == "__main__":
             file_format="smi",
             allow_undefined_stereo=True,
         )
-        # TODO: Add coverage set, with known failures stripped out
-        # hmr_mols = Molecule.from_file(str(coverage_mols), file_format='smi', allow_undefined_stereo=True)
         for mol in hmr_mols:
             try:
                 hmr_driver(mol, ff_name)

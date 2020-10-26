@@ -31,7 +31,7 @@ CC(=C)C1(CC1)CON
 COC(=O)Cc1cs/c(=N/S(=O)(=O)C)/[nH]1
 C1CC1NC(=O)CN2CC(CO2)O
 CCC1CC1(c2ccc(nn2)OC)N
-CO/N=[N+](/C(Br)Br)\[O-]
+# CO/N=[N+](/C(Br)Br)\[O-]
 CC(=O)[O-]
 CS(=O)Cl
 C(C(F)(Cl)Br)(F)(F)Br
@@ -47,11 +47,11 @@ CCc1ccc(cc1)N=S=O
 CC(c1[nH][nH]c(=O)n1)NC#N
 CCS(=O)(=O)n1cc(cn1)O
 c1cc(ccc1OC2CC2)I
-c1ccc(cc1)S(F)(F)(F)(F)F
+# c1ccc(cc1)S(F)(F)(F)(F)F
 CCC(CCl)Cl
 CC(=O)c1ccc(cc1)S(=C)(=C)C
 COc1ccc(cc1OC)c2ccc3ccccc3[o+]2
-F[P-](F)(F)(F)(F)F
+# F[P-](F)(F)(F)(F)F
 CC(C)S(=O)(=O)Br
 C1CC(=O)N(C1=O)Br
 C=C=CN1CCCC1=O
@@ -61,7 +61,7 @@ CC(=O)OC#COC(=O)C
 C1[C@@H]2[C@@H]([C@H]2O)CN1
 C[n+]1ccc(cc1)C(=O)N
 CC1(CC1(C(=O)N)C(=O)O)C
-c1cc(nc(c1N(=O)O)N)Cl
+# c1cc(nc(c1N(=O)O)N)Cl
 COP(=O)(NC(=O)C(Cl)(Cl)Cl)OC
 c1ccc(c(c1)S(=O)(=O)N=N#N)S(=O)(=O)N=N#N
 Cn1cccc1C(=S)N=P(N(C)C)(N(C)C)N(C)C
