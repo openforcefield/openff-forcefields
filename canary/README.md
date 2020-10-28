@@ -16,7 +16,7 @@ pytest -v openforcefields/tests/
 
 ### Data sources
 
-* `data/coverage.smi`: Seeded from [here](https://raw.githubusercontent.com/openforcefield/open-forcefield-data/master/Utilize-All-Parameters/selected/chosen.smi). Molecules that do not type and/or fail with `openff-1.3.0` were commented out (10/26/20).
+* `data/coverage.smi`: Seeded from [here](https://raw.githubusercontent.com/openforcefield/open-forcefield-data/master/Utilize-All-Parameters/selected/chosen.smi). Molecules that do not type and/or fail with `openff-1.3.0` were commented out (10/26/20 and 10/27/20, see PR #27).
 * `data/propynes.smi`: Curated from [reported HMR failure](https://github.com/openforcefield/openforcefields/issues/19)
 
 ### Scripts

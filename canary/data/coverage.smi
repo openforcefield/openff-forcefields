@@ -63,9 +63,9 @@ C[n+]1ccc(cc1)C(=O)N
 CC1(CC1(C(=O)N)C(=O)O)C
 # c1cc(nc(c1N(=O)O)N)Cl
 COP(=O)(NC(=O)C(Cl)(Cl)Cl)OC
-c1ccc(c(c1)S(=O)(=O)N=N#N)S(=O)(=O)N=N#N
+# c1ccc(c(c1)S(=O)(=O)N=N#N)S(=O)(=O)N=N#N
 Cn1cccc1C(=S)N=P(N(C)C)(N(C)C)N(C)C
 c1ccc(cc1)S(=O)(=O)N(F)S(=O)(=O)c2ccccc2
-c1ccc(cc1)P(c2ccccc2)(c3ccccc3)(I)I
-c1ccc(cc1)CP(Cc2cccc(c2)F)(c3ccccc3)(c4ccccc4)Br
+# c1ccc(cc1)P(c2ccccc2)(c3ccccc3)(I)I
+# c1ccc(cc1)CP(Cc2cccc(c2)F)(c3ccccc3)(c4ccccc4)Br
 c1cc(ccc1c2ccc(cc2)OSOc3ccc(cc3)Cl)OSOc4ccc(cc4)Cl
