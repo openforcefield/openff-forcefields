@@ -21,6 +21,14 @@ class NANEnergyError(Exception):
 class CanaryError(Exception):
     """Base exception for canary"""
 
+    def __init__(self, message, runs):
+        super(CanaryError, self).__init__(message)
+        self.message = message
+        self.runs = runs
+
+    def __str__(self):
+        return self.message + "\n" + "\n".join(["\t".join(run) for run in self.runs])
+
 
 class HMRCanaryError(CanaryError):
     """Exception for an HMR canary test failing"""
@@ -78,20 +86,26 @@ if __name__ == "__main__":
         ff_name = line.split("/")[-1][:-8]
         # Molecule.from_file fails on pathlib.Path ojects, despite being str-like
         hmr_mols = Molecule.from_file(
-            str(propyne_mols), file_format="smi", allow_undefined_stereo=True
+            str(propyne_mols),
+            file_format="smi",
+            allow_undefined_stereo=True,
         )
-        # TODO: Add coverage set, with known failures stripped out
-        # hmr_mols = Molecule.from_file(str(coverage_mols), file_format='smi', allow_undefined_stereo=True)
+        # Append coverage set, with known failures stripped out
+        hmr_mols += Molecule.from_file(
+            str(coverage_mols),
+            file_format="smi",
+            allow_undefined_stereo=True,
+        )
         for mol in hmr_mols:
             try:
                 hmr_driver(mol, ff_name)
             except NANEnergyError:
-                failed_runs.append([mol, ff_name, "NaN energy"])
+                failed_runs.append([mol.to_smiles(), ff_name, "NaN energy"])
             except Exception:
                 # OpenMM's OpenMMException cannot be caught as it does not
                 # inherit from BaseException; therefore this clause may
                 # hit other errors than NaN positions
-                failed_runs.append([mol, ff_name, "NaN position(s)"])
+                failed_runs.append([mol.to_smiles(), ff_name, "NaN position(s)"])
 
     if len(failed_runs) > 0:
-        raise HMRCanaryError(failed_runs)
+        raise HMRCanaryError("HMR tests failed:", failed_runs)
