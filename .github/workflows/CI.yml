@@ -40,7 +40,7 @@ jobs:
           ulimit -a
 
       - name: Setup conda
-        uses: conda-incubator/setup-miniconda@v1
+        uses: conda-incubator/setup-miniconda@v2
         with:
           # More info on options: https://github.com/conda-incubator/setup-miniconda
           python-version: ${{ matrix.python-version }}
