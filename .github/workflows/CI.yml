@@ -40,9 +40,9 @@ jobs:
           ulimit -a
 
       - name: Setup conda
-        uses: goanpeca/setup-miniconda@v1
+        uses: conda-incubator/setup-miniconda@v1
         with:
-          # More info on options: https://github.com/goanpeca/setup-miniconda
+          # More info on options: https://github.com/conda-incubator/setup-miniconda
           python-version: ${{ matrix.python-version }}
           environment-file: devtools/conda-envs/test_env.yaml
           channels: conda-forge,defaults,omnia
