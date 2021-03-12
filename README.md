@@ -1,6 +1,6 @@
 # Open Force Fields
 
-[![Build Status](https://github.com/openforcefield/openforcefields/workflows/CI/badge.svg)](https://github.com/openforcefield/openforcefields/actions?query=branch%3Amaster+workflow%3ACI)  [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3473553.svg)](https://doi.org/10.5281/zenodo.3473553)
+[![Build Status](https://github.com/openforcefield/openff-forcefields/workflows/CI/badge.svg)](https://github.com/openforcefield/openff-forcefields/actions?query=branch%3Amaster+workflow%3ACI)  [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3473553.svg)](https://doi.org/10.5281/zenodo.3473553)
 
 
 
@@ -8,10 +8,10 @@ This repository contains force fields released by the [Open Force Field Initiati
 These files are in SMIRKS Native Open Force Field (SMIRNOFF) format.
 Details about this new format are documented in our recent publication ([doi:10.1021/acs.jctc.8b00640](https://www.doi.org/10.1021/acs.jctc.8b00640) or [bioRxiv](https://doi.org/10.1101/286542)), and the most recent specification can be found in the [Open Force Field Toolkit documentation](https://open-forcefield-toolkit.readthedocs.io/en/latest/smirnoff.html).
 You can parameterize small molecules with SMIRNOFF using the
-`ForceField` class in the [Open Force Field toolkit](https://github.com/openforcefield/openforcefield)
+`ForceField` class in the [Open Force Field toolkit](https://github.com/openforcefield/openff-toolkit)
 for simulations with [OpenMM](http://openmm.org/). The resulting system can also be converted to several other simulation formats using [ParmEd](http://parmed.github.io/ParmEd/html/index.html).
 
-Usage examples can be found in the [openforcefield repository](https://github.com/openforcefield/openforcefield/tree/master/examples).
+Usage examples can be found in the [openff-toolkit repository](https://github.com/openforcefield/openff-toolkit/tree/master/examples).
 
 Each force field is currently available in two forms --  Both with and without bond constraints to hydrogen. The default version of each force field is suitable for typical molecular dynamics simulations with constrained bonds to hydrogen. The `unconstrained` version of each force field should be used when single-point energies are a major concern (e.g. geometry optimizations) and when comparing the force field to QM data.
 
@@ -44,15 +44,15 @@ DOIs for each force field in this repository can be found in the following table
 
 ## Installation
 ```bash
-conda install -c omnia openforcefields
+conda install -c conda-forge openff-forcefields
 ```
 
 ## Use
 
-Installing this package exposes an entry point that makes the `openforcefield-forcefields/offxml` directory easily accessible by other packages in the same python installation. If the [Open Force Field toolkit](https://github.com/openforcefield/openforcefield) is installed, it will automatically detect and use this entry point:
+Installing this package exposes an entry point that makes the `openforcefield-forcefields/offxml` directory easily accessible by other packages in the same python installation. If the [Open Force Field toolkit](https://github.com/openforcefield/openff-toolkit) is installed, it will automatically detect and use this entry point:
 
 ```
->>> from openforcefield.typing.engines.smirnoff import ForceField
+>>> from openff.toolkit.typing.engines.smirnoff import ForceField
 >>> ff = ForceField('openff-1.0.0-RC1.offxml') 
 ```
 
@@ -66,7 +66,7 @@ Otherwise, the entry point can be accessed by querying the `openforcefield.smirn
 
 ## What it is
 
-The provided OFFXML (force field) files are successive versions of a general-purpose small molecule force field, written in [the SMIRNOFF format](https://github.com/openforcefield/openforcefield/blob/master/The-SMIRNOFF-force-field-format.md); this force field should cover all or almost all of drug-like chemical space, and illustrate some of the major functionality of the SMIRNOFF format as well as how it simplifies the specification of force field parameters in a compact and chemically sensible way.
+The provided OFFXML (force field) files are successive versions of a general-purpose small molecule force field, written in [the SMIRNOFF format](https://github.com/openforcefield/openff-toolkit/blob/master/The-SMIRNOFF-force-field-format.md); this force field should cover all or almost all of drug-like chemical space, and illustrate some of the major functionality of the SMIRNOFF format as well as how it simplifies the specification of force field parameters in a compact and chemically sensible way.
 
 ## History
 
@@ -106,7 +106,7 @@ Contributors to the relevant .offxml files include:
 
 Special thanks go to John D. Chodera (MSKCC) for his initial implementation of `openforcefield` toolkits and the SMIRNOFF format.
 
-Andrea Rizzi (MSKCC) and Jeff Wagner (OFF/UC Irvine) contributed to the Python and Conda infrastructure of this package.
+Andrea Rizzi (MSKCC), Matt Thompson (OFF/CU Boulder), and Jeff Wagner (OFF/UC Irvine) contributed to the Python and Conda infrastructure of this package.
 
 #### Acknowledgements
 
