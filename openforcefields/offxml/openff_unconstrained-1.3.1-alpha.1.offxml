@@ -129,6 +129,7 @@
         <Angle smirks="[*:1]-[#8:2]-[*:3]" angle="1.102898389197e+02 * degree" k="1.345019777341e+02 * mole**-1 * radian**-2 * kilocalorie" id="a27"/>
         <Angle smirks="[#6X3,#7:1]~;@[#8;r:2]~;@[#6X3,#7:3]" angle="1.126029623351e+02 * degree" k="1.778811336382e+02 * mole**-1 * radian**-2 * kilocalorie" id="a28"/>
         <Angle smirks="[*:1]-[#8X2+1:2]=[*:3]" angle="1.150964372837e+02 * degree" k="7.126884793850e+01 * mole**-1 * radian**-2 * kilocalorie" id="a29"/>
+        <!-- The a30 and a31 parameters have been manually reverted to the values from smirnoff99Frosst 1.1.0. More information is available at https://github.com/openforcefield/openff-forcefields/pull/37 -->
         <Angle smirks="[*:1]~[#16X4:2]~[*:3]" angle="109.5 * degree" k="140.0 * mole**-1 * radian**-2 * kilocalorie" id="a30"/>
         <Angle smirks="[*:1]-[#16X4,#16X3+0:2]-[*:3]" angle="109.5 * degree" k="120.0 * mole**-1 * radian**-2 * kilocalorie" id="a31"/>
         <Angle smirks="[*:1]~[#16X3$(*~[#8X1,#7X2]):2]~[*:3]" angle="1.025027509128e+02 * degree" k="1.873606141824e+02 * mole**-1 * radian**-2 * kilocalorie" id="a32"/>
