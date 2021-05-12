@@ -39,7 +39,7 @@ jobs:
 
       - name: Setup conda
         if: ${{ env.new_off_xml == 'true' }}
-        uses: conda-incubator/setup-miniconda@v2
+        uses: conda-incubator/setup-miniconda@v2.1.1
         with:
           python-version: ${{ matrix.python-version }}
           environment-file: devtools/conda-envs/canary_env.yaml
