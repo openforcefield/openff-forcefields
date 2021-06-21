@@ -19,8 +19,12 @@ DOIs for each force field in this repository can be found in the following table
 
 | Filename | DOI | FF line | Release Date | Major format changes? |
 | -------- | --- | -------- | --- | --- |
+| `openff-2.0.0.offxml` |  | Sage | Mid-2021 (Anticipated) | No |
+| `openff_unconstrained-2.0.0.offxml` |  | Sage | Mid-2021 (Anticipated) | No |
 | `openff-2.0.0-rc.1.offxml` |  | Sage | June 21, 2021 | No |
 | `openff_unconstrained-2.0.0-rc.1.offxml` |  | Sage | June 21, 2021 | No |
+| `openff-1.3.1.offxml` | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.5009058.svg)](https://doi.org/10.5281/zenodo.5009058) | Parsley | June 21, 2021 | No |
+| `openff_unconstrained-1.3.1.offxml` | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.5009058.svg)](https://doi.org/10.5281/zenodo.5009058) | Parsley | June 21, 2021 | No |
 | `openff-1.3.1-alpha.1.offxml` | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.4697390.svg)](https://doi.org/10.5281/zenodo.4697390) | Parsley | Apr 15, 2021 | No |
 | `openff_unconstrained-1.3.1-alpha.1.offxml` | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.4697390.svg)](https://doi.org/10.5281/zenodo.4697390) | Parsley | Apr 15, 2021 | No |
 | `openff-1.3.0.offxml` | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.4118484.svg)](https://doi.org/10.5281/zenodo.4118484) | Parsley | Oct 21, 2020 | No |
@@ -103,7 +107,10 @@ Force fields moving forward will be called `name-X.Y.Z`
 
 - `v1.3.1-alpha.1 Parsley`: The new force field files in this release are adapted from the openff-1.3.0 release, except that two angle parameters have been reverted to their original values from smirnoff99Frosst 1.1.0, in an attempt to fix sulphonamide geometries.
 
+- `v1.3.1 Parsley`: This release is identical to `v1.3.1-alpha.1 Parsley`.
+
 - `v2.0.0-rc.1 Sage`: This major release candidate contains both refit valence and vdW terms. Full details are available at https://github.com/openforcefield/openff-sage/releases/tag/2.0.0-rc.1
+
 
 ## Contributors
 
