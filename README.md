@@ -20,8 +20,8 @@ DOIs for each force field in this repository can be found in the following table
 | Filename | DOI | FF line | Release Date | Major format changes? |
 | -------- | --- | -------- | --- | --- |
 | `openff-2.0.0.offxml` |  | Sage | Late 2020 or Early 2021 (Anticipated) | [WBO torsions](https://open-forcefield-toolkit.readthedocs.io/en/0.7.0/smirnoff.html#fractional-torsion-bond-orders) likely; [Refit BCCs](https://open-forcefield-toolkit.readthedocs.io/en/0.7.0/smirnoff.html#chargeincrementmodel-small-molecule-and-fragment-charges) possible |
-| `openff_unconstrained-2.0.0.offxml` |  | Sage | Late 2020 or Early 2021 (Anticipated) | Same as above |
-| `openff-1.3.1.offxml` |  | Parsley | June 21, 2021 | No |
+| `openff_unconstrained-2.0.0.offxml` | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.5009058.svg)](https://doi.org/10.5281/zenodo.5009058) | Sage | Late 2020 or Early 2021 (Anticipated) | Same as above |
+| `openff-1.3.1.offxml` | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.5009058.svg)](https://doi.org/10.5281/zenodo.5009058) | Parsley | June 21, 2021 | No |
 | `openff_unconstrained-1.3.1.offxml` |  | Parsley | June 21, 2021 | No |
 | `openff-1.3.1-alpha.1.offxml` | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.4697390.svg)](https://doi.org/10.5281/zenodo.4697390) | Parsley | Apr 15, 2021 | No |
 | `openff_unconstrained-1.3.1-alpha.1.offxml` | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.4697390.svg)](https://doi.org/10.5281/zenodo.4697390) | Parsley | Apr 15, 2021 | No |
