@@ -20,9 +20,9 @@ DOIs for each force field in this repository can be found in the following table
 | Filename | DOI | FF line | Release Date | Major format changes? |
 | -------- | --- | -------- | --- | --- |
 | `openff-2.0.0.offxml` |  | Sage | Late 2020 or Early 2021 (Anticipated) | [WBO torsions](https://open-forcefield-toolkit.readthedocs.io/en/0.7.0/smirnoff.html#fractional-torsion-bond-orders) likely; [Refit BCCs](https://open-forcefield-toolkit.readthedocs.io/en/0.7.0/smirnoff.html#chargeincrementmodel-small-molecule-and-fragment-charges) possible |
-| `openff_unconstrained-2.0.0.offxml` | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.5009058.svg)](https://doi.org/10.5281/zenodo.5009058) | Sage | Late 2020 or Early 2021 (Anticipated) | Same as above |
+| `openff_unconstrained-2.0.0.offxml` |  | Sage | Late 2020 or Early 2021 (Anticipated) | Same as above |
 | `openff-1.3.1.offxml` | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.5009058.svg)](https://doi.org/10.5281/zenodo.5009058) | Parsley | June 21, 2021 | No |
-| `openff_unconstrained-1.3.1.offxml` |  | Parsley | June 21, 2021 | No |
+| `openff_unconstrained-1.3.1.offxml` | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.5009058.svg)](https://doi.org/10.5281/zenodo.5009058) | Parsley | June 21, 2021 | No |
 | `openff-1.3.1-alpha.1.offxml` | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.4697390.svg)](https://doi.org/10.5281/zenodo.4697390) | Parsley | Apr 15, 2021 | No |
 | `openff_unconstrained-1.3.1-alpha.1.offxml` | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.4697390.svg)](https://doi.org/10.5281/zenodo.4697390) | Parsley | Apr 15, 2021 | No |
 | `openff-1.3.0.offxml` | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.4118484.svg)](https://doi.org/10.5281/zenodo.4118484) | Parsley | Oct 21, 2020 | No |
@@ -104,6 +104,9 @@ Force fields moving forward will be called `name-X.Y.Z`
 - `v1.3.0 Parsley `: This minor release contains a fix of amide-related issues; (1) a poor performance of v1.2 in reproducing amide torsional energy profiles and (2) absence of appropriate torsion parameters for dialkyl amides.
 
 - `v1.3.1-alpha.1 Parsley`: The new force field files in this release are adapted from the openff-1.3.0 release, except that two angle parameters have been reverted to their original values from smirnoff99Frosst 1.1.0, in an attempt to fix sulphonamide geometries.
+
+- `v1.3.1 Parsley`: This release is identical to `v1.3.1-alpha.1 Parsley`.
+
 
 ## Contributors
 
