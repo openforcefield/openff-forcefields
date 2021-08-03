@@ -21,6 +21,8 @@ DOIs for each force field in this repository can be found in the following table
 | -------- | --- | -------- | --- | --- |
 | `openff-2.0.0.offxml` |  | Sage | Mid-2021 (Anticipated) | No |
 | `openff_unconstrained-2.0.0.offxml` |  | Sage | Mid-2021 (Anticipated) | No |
+| `openff-2.0.0-rc.2.offxml` | | Sage | Aug 3, 2021 | No |
+| `openff_unconstrained-2.0.0-rc.2.offxml` |  | Sage | Aug 3, 2021 | No |
 | `openff-2.0.0-rc.1.offxml` | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.5009196.svg)](https://doi.org/10.5281/zenodo.5009196) | Sage | June 21, 2021 | No |
 | `openff_unconstrained-2.0.0-rc.1.offxml` | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.5009196.svg)](https://doi.org/10.5281/zenodo.5009196) | Sage | June 21, 2021 | No |
 | `openff-1.3.1.offxml` | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.5009058.svg)](https://doi.org/10.5281/zenodo.5009058) | Parsley | June 21, 2021 | No |
@@ -110,6 +112,9 @@ Force fields moving forward will be called `name-X.Y.Z`
 - `v1.3.1 Parsley`: This release is identical to `v1.3.1-alpha.1 Parsley`.
 
 - `v2.0.0-rc.1 Sage`: This major release candidate contains both refit valence and vdW terms. Full details are available at https://github.com/openforcefield/openff-sage/releases/tag/2.0.0-rc.1
+
+- `v2.0.0-rc.1 Sage`: This major release candidate is identical to `v2.0.0-rc.1 Sage` except that the `angle` value for `a16` has been changed to `180.0 * degree`, as the previous value of `183... * degree` causes geometry optimizers to fail to converge. 
+
 
 
 ## Contributors
