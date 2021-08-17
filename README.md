@@ -19,8 +19,8 @@ DOIs for each force field in this repository can be found in the following table
 
 | Filename | DOI | FF line | Release Date | Major format changes? |
 | -------- | --- | -------- | --- | --- |
-| `openff-2.0.0.offxml` |  | Sage | Mid-2021 (Anticipated) | No |
-| `openff_unconstrained-2.0.0.offxml` |  | Sage | Mid-2021 (Anticipated) | No |
+| `openff-2.0.0.offxml` |  | Sage | Aug 10, 2021 | No |
+| `openff_unconstrained-2.0.0.offxml` |  | Sage | Aug 10, 2021 | No |
 | `openff-2.0.0-rc.2.offxml` | | Sage | Aug 3, 2021 | No |
 | `openff_unconstrained-2.0.0-rc.2.offxml` |  | Sage | Aug 3, 2021 | No |
 | `openff-2.0.0-rc.1.offxml` | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.5009196.svg)](https://doi.org/10.5281/zenodo.5009196) | Sage | June 21, 2021 | No |
@@ -115,16 +115,8 @@ Force fields moving forward will be called `name-X.Y.Z`
 
 - `v2.0.0-rc.2 Sage`: This major release candidate is identical to `v2.0.0-rc.1 Sage` except that the `angle` value for `a16` has been changed to `180.0 * degree`, as the previous value of `183... * degree` causes geometry optimizers to fail to converge. 
 
+- `v2.0.0 Sage`: This major release is identical to `v2.0.0-rc.2 Sage`.
 
-
-## Contributors
-
-Contributors to the relevant .offxml files include:
-(Basically everyone in the consortium)
-
-Special thanks go to John D. Chodera (MSKCC) for his initial implementation of `openforcefield` toolkits and the SMIRNOFF format.
-
-Andrea Rizzi (MSKCC), Matt Thompson (OFF/CU Boulder), and Jeff Wagner (OFF/UC Irvine) contributed to the Python and Conda infrastructure of this package.
 
 #### Acknowledgements
 
