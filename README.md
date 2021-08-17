@@ -115,7 +115,7 @@ Force fields moving forward will be called `name-X.Y.Z`
 
 - `v2.0.0-rc.2 Sage`: This major release candidate is identical to `v2.0.0-rc.1 Sage` except that the `angle` value for `a16` has been changed to `180.0 * degree`, as the previous value of `183... * degree` causes geometry optimizers to fail to converge. 
 
-- `v2.0.0 Sage`: This major release contains the same phycial parameters as `v2.0.0-rc.2 Sage`, but has the parameter ids changed. For more information see the [openff-sage repository](https://github.com/openforcefield/openff-sage).
+- `v2.0.0 Sage`: This major release contains the same physical parameters as `v2.0.0-rc.2 Sage`, but has the parameter ids changed. For more information see the [openff-sage repository](https://github.com/openforcefield/openff-sage).
 
 
 #### Acknowledgements
