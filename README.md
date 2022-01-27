@@ -1,6 +1,6 @@
 # Open Force Fields
 
-[![Build Status](https://github.com/openforcefield/openff-forcefields/workflows/CI/badge.svg)](https://github.com/openforcefield/openff-forcefields/actions?query=branch%3Amaster+workflow%3ACI)  [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3473553.svg)](https://doi.org/10.5281/zenodo.3473553)
+[![Build Status](https://github.com/openforcefield/openff-forcefields/workflows/CI/badge.svg)](https://github.com/openforcefield/openff-forcefields/actions?query=branch%3Amaster+workflow%3ACI)  [![Paper DOI](https://img.shields.io/badge/Paper%20DOI-10.1021%2Facs.jctc.1c00571-blue)](https://doi.org/10.1021/acs.jctc.1c00571)
 
 
 
