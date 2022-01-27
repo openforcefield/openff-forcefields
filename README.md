@@ -15,7 +15,9 @@ Usage examples can be found in the [openff-toolkit repository](https://github.co
 
 Each force field is currently available in two forms --  Both with and without bond constraints to hydrogen. The default version of each force field is suitable for typical molecular dynamics simulations with constrained bonds to hydrogen. The `unconstrained` version of each force field should be used when single-point energies are a major concern (e.g. geometry optimizations) and when comparing the force field to QM data.
 
-DOIs for each force field in this repository can be found in the following table:
+To cite the Parsley line of force fields (`openff-1.X.Y`) please use [this citation](https://doi.org/10.1021/acs.jctc.1c00571). Optionally, consider also citing the version-specific Zenodo DOI for the particular force field from the table below.
+
+Details for each force field in this repository can be found in the following table:
 
 | Filename | DOI | FF line | Release Date | Major format changes? |
 | -------- | --- | -------- | --- | --- |
