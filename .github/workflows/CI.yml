@@ -15,8 +15,8 @@ on:
 
 jobs:
   test:
-    name: Test on ${{ matrix.cfg.os }}, Python ${{ matrix.python-version }}
-    runs-on: ${{ matrix.cfg.os }}
+    name: Test on ${{ matrix.os }}, Python ${{ matrix.python-version }}, Toolkit ${{ matrix.toolkit }}
+    runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: false
       matrix:
@@ -25,9 +25,12 @@ jobs:
           - "3.8"
           - "3.9"
           - "3.10"
-        cfg:
-          - os: ubuntu-latest
-          - os: macOS-latest
+        os:
+          - ubuntu-latest
+          - macos-latest
+        toolkit:
+          - true
+          - false
 
     steps:
       - uses: actions/checkout@v2.3.4
@@ -39,22 +42,30 @@ jobs:
           df -h
           ulimit -a
 
-      - name: Setup conda
+      - name: Install dependencies
+        if: ${{ matrix.toolkit == true }}
         uses: conda-incubator/setup-miniconda@v2.1.1
         with:
-          # More info on options: https://github.com/conda-incubator/setup-miniconda
           python-version: ${{ matrix.python-version }}
           environment-file: devtools/conda-envs/test_env.yaml
-          channels: conda-forge,defaults,omnia
-          activate-environment: test
+          activate-environment: openff-forcefields-test
           auto-update-conda: true
           auto-activate-base: false
-          show-channel-urls: true
+
+      - name: Install dependencies
+        if: ${{ matrix.toolkit == false }}
+        uses: conda-incubator/setup-miniconda@v2.1.1
+        with:
+          python-version: ${{ matrix.python-version }}
+          environment-file: devtools/conda-envs/test_no_toolkit.yaml
+          activate-environment: test-no-toolkit
+          auto-update-conda: true
+          auto-activate-base: false
 
       - name: Install package
         shell: bash -l {0}
         run: |
-          conda remove --force openforcefields
+          conda remove --force openff-forcefields
           python -m pip install -e .
           conda list
           conda info --all

@@ -1,16 +1,8 @@
-name: test
-
+name: openff-forcefields-test
 channels:
   - conda-forge
-  - omnia
-
 dependencies:
-    # Base depends
   - python
   - pip
-
-    # Testing
+  - openff-toolkit
   - pytest
-
-    # Standard dependencies
-  - openforcefield

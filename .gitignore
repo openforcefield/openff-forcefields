@@ -100,3 +100,9 @@ ENV/
 
 # mypy
 .mypy_cache/
+
+# PyCharm
+*.idea/
+
+# OS X extra files
+*.DS_Store
