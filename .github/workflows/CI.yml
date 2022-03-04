@@ -72,4 +72,10 @@ jobs:
       - name: Test the package
         shell: bash -l {0}
         run: |
-          pytest -v openforcefields/tests/
+          pytest -v openforcefields/tests/ --cov=openforcefields/ --cov-config=setup.cfg --cov-append --cov-report=xml
+
+      - name: Codecov
+        uses: codecov/codecov-action@v2.1.0
+        with:
+          file: ./coverage.xml
+          fail_ci_if_error: true
