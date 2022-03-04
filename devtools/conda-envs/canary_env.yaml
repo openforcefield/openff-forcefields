@@ -1,18 +1,9 @@
-name: test
-
+name: canary-env
 channels:
   - conda-forge
-  - omnia
-
 dependencies:
-    # Base depends
   - python
   - pip
-
-    # Testing
   - pytest
-  - openmm
+  - openff-toolkit
   - openmmforcefields
-
-    # Standard dependencies
-  - openforcefield

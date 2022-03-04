@@ -10,7 +10,7 @@ import pytest
 from openforcefields import get_forcefield_dirs_paths
 
 try:
-    import openforcefield
+    import openff.toolkit
     has_off_toolkit = True
 except:
     has_off_toolkit = False
@@ -27,7 +27,7 @@ def find_all_offxml_files():
 
 @pytest.mark.parametrize('offxml_file_name', find_all_offxml_files())
 def test_openforcefields_entrypoint(offxml_file_name):
-    """Test that the openforcefield toolkit can find and parse the files."""
+    """Test that the OpenFF Toolkit can find and parse the files."""
     import os
     ff_found = False
     for dir_path in get_forcefield_dirs_paths():
@@ -40,15 +40,15 @@ def test_openforcefields_entrypoint(offxml_file_name):
 @pytest.mark.skipif(not(has_off_toolkit), reason="Test requires OFF toolkit")
 @pytest.mark.parametrize('offxml_file_name', find_all_offxml_files())
 def test_forcefield_data_is_loadable(offxml_file_name):
-    """Test that the openforcefield toolkit can find and parse the files."""
-    from openforcefield.typing.engines.smirnoff import ForceField
+    """Test that the OpenFF Toolkit can find and parse the files."""
+    from openff.toolkit.typing.engines.smirnoff import ForceField
     ForceField(offxml_file_name)
 
 @pytest.mark.skipif(not(has_off_toolkit), reason="Test requires OFF toolkit")
 def test_forcefield_data_is_not_loadable():
-    """Test that the openforcefield toolkit does raise an Exception if
+    """Test that the OpenFF Toolkit does raise an Exception if
     a nonexistent FF isn't found."""
-    from openforcefield.typing.engines.smirnoff import ForceField
+    from openff.toolkit.typing.engines.smirnoff import ForceField
     with pytest.raises(OSError) as excinfo:
         ForceField('openff-9.9.9.offxml')
 

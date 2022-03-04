@@ -1,0 +1,10 @@
+name: test-no-toolkit
+channels:
+  - conda-forge
+dependencies:
+  - python
+  - pip
+  - pytest
+  - pytest-cov
+  # Pull in for consistency with main testing env, will be uninstalled
+  - openff-forcefields

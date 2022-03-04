@@ -2,7 +2,7 @@ import sys
 from pathlib import Path
 
 import numpy as np
-from openforcefield.topology import Molecule
+from openff.toolkit.topology import Molecule
 from openmmforcefields.generators import SystemGenerator
 from pkg_resources import resource_filename
 from simtk import openmm, unit
