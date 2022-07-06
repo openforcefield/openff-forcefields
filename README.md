@@ -6,7 +6,7 @@
 This repository contains force fields released by the [Open Force Field Initiative](https://openforcefield.org).
 These force fields use the SMIRKS Native Open Force Field (SMIRNOFF) format.
 By convention these files use the `.offxml` file extension.
-The SMIRNOFF format has a [specification](https://openforcefield.github.io/standards/standards/smirnoff/) and is discussed in a JCTC publication ([doi:10.1021/acs.jctc.8b00640](https://www.doi.org/10.1021/acs.jctc.8b00640) and associated pre-print ([bioRxiv](https://doi.org/10.1101/286542)).
+The SMIRNOFF format has a [specification](https://openforcefield.github.io/standards/standards/smirnoff/) and is discussed in a [JCTC publication](https://www.doi.org/10.1021/acs.jctc.8b00640)) and associated [pre-print](https://doi.org/10.1101/286542)).
 
 The [OpenFF Toolkit](https://github.com/openforcefield/openff-toolkit) provides a reference implementation of the SMIRNOFF format. In particular, the [`ForceField`](https://docs.openforcefield.org/projects/toolkit/en/stable/api/generated/openff.toolkit.typing.engines.smirnoff.forcefield.ForceField.html#openff.toolkit.typing.engines.smirnoff.forcefield.ForceField) class is used to load SMIRNOFF-format force fields and the [`create_openmm_system`](https://docs.openforcefield.org/projects/toolkit/en/stable/api/generated/openff.toolkit.typing.engines.smirnoff.forcefield.ForceField.html#openff.toolkit.typing.engines.smirnoff.forcefield.ForceField.create_openmm_system) method enables the parametrization of small molecules into OpenMM objects.
 
@@ -63,19 +63,27 @@ conda install -c conda-forge openff-forcefields
 
 ## Use
 
-Installing this package exposes an entry point that makes the `openforcefield-forcefields/offxml` directory easily accessible by other packages in the same python installation. If the [Open Force Field toolkit](https://github.com/openforcefield/openff-toolkit) is installed, it will automatically detect and use this entry point:
+Installing this package exposes an entry point that makes the `openfforcefields/offxml/` directory easily accessible by other packages in the same python installation. If the [OpenFF toolkit](https://github.com/openforcefield/openff-toolkit) is installed, it will automatically detect and use this entry point:
 
-```
+```python3
 >>> from openff.toolkit.typing.engines.smirnoff import ForceField
 >>> ff = ForceField('openff-2.0.0.offxml')
 ```
 
 Otherwise, the entry point can be accessed by querying the `openforcefield.smirnoff_forcefield_directory` entry point group.
 
-```
+```python3
 >>> from pkg_resources import iter_entry_points
 >>> for entry_point in iter_entry_points(group='openforcefield.smirnoff_forcefield_directory'):
 ...     print(entry_point.load()())
+```
+
+For convenience, the OpenFF Toolkit also has a standalone function [`get_available_force_fields`](https://docs.openforcefield.org/projects/toolkit/en/stable/api/generated/openff.toolkit.typing.engines.smirnoff.forcefield.get_available_force_fields.html#openff.toolkit.typing.engines.smirnoff.forcefield.get_available_force_fields) that lists the force fields discered by this entry point group:
+
+```python3
+>>> from openff.toolkit.typing.engines.smirnoff.forcefield import get_available_force_fields
+>>> get_available_force_fields()
+['smirnoff99Frosst-1.0.2.offxml', 'smirnoff99Frosst-1.0.0.offxml', 'smirnoff99Frosst-1.1.0.offxml', 'smirnoff99Frosst-1.0.4.offxml', 'smirnoff99Frosst-1.0.8.offxml', 'smirnoff99Frosst-1.0.6.offxml', 'smirnoff99Frosst-1.0.3.offxml', 'smirnoff99Frosst-1.0.1.offxml', 'smirnoff99Frosst-1.0.5.offxml', 'smirnoff99Frosst-1.0.9.offxml', 'smirnoff99Frosst-1.0.7.offxml', 'ff14sb_off_impropers_0.0.2.offxml', 'ff14sb_0.0.1.offxml', 'ff14sb_0.0.3.offxml', 'ff14sb_off_impropers_0.0.1.offxml', 'ff14sb_off_impropers_0.0.3.offxml', 'ff14sb_0.0.2.offxml', 'openff-1.0.1.offxml', 'openff-1.1.1.offxml', 'openff-1.0.0-RC1.offxml', 'openff-1.2.0.offxml', 'openff-1.3.0.offxml', 'openff_unconstrained-2.0.0-rc.1.offxml', 'openff_unconstrained-1.3.1.offxml', 'openff_unconstrained-1.2.1.offxml', 'openff-2.0.0-rc.2.offxml', 'openff_unconstrained-1.0.0-RC2.offxml', 'openff_unconstrained-1.1.0.offxml', 'openff_unconstrained-1.0.0.offxml', 'openff-2.0.0.offxml', 'openff_unconstrained-2.0.0.offxml', 'openff_unconstrained-2.0.0-rc.2.offxml', 'openff-1.1.0.offxml', 'openff-1.0.0.offxml', 'openff-1.0.0-RC2.offxml', 'openff-1.3.1.offxml', 'openff-1.2.1.offxml', 'openff-1.3.1-alpha.1.offxml', 'openff_unconstrained-1.0.0-RC1.offxml', 'openff_unconstrained-1.2.0.offxml', 'openff_unconstrained-1.3.0.offxml', 'openff-2.0.0-rc.1.offxml', 'openff_unconstrained-1.0.1.offxml', 'openff_unconstrained-1.1.1.offxml', 'openff_unconstrained-1.3.1-alpha.1.offxml']
 ```
 
 ## History
