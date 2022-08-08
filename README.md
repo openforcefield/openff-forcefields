@@ -6,13 +6,13 @@
 This repository contains force fields released by the [Open Force Field Initiative](https://openforcefield.org).
 These force fields use the SMIRKS Native Open Force Field (SMIRNOFF) format.
 By convention these files use the `.offxml` file extension.
-The SMIRNOFF format has a [specification](https://openforcefield.github.io/standards/standards/smirnoff/) and is discussed in a [JCTC publication](https://www.doi.org/10.1021/acs.jctc.8b00640) and associated [pre-print](https://doi.org/10.1101/286542)).
+The SMIRNOFF format has a [specification](https://openforcefield.github.io/standards/standards/smirnoff/) and is discussed in a [JCTC publication](https://www.doi.org/10.1021/acs.jctc.8b00640) and associated [pre-print](https://doi.org/10.1101/286542).
 
 The [OpenFF Toolkit](https://github.com/openforcefield/openff-toolkit) provides a reference implementation of the SMIRNOFF format. In particular, the [`ForceField`](https://docs.openforcefield.org/projects/toolkit/en/stable/api/generated/openff.toolkit.typing.engines.smirnoff.forcefield.ForceField.html#openff.toolkit.typing.engines.smirnoff.forcefield.ForceField) class is used to load SMIRNOFF-format force fields and the [`create_openmm_system`](https://docs.openforcefield.org/projects/toolkit/en/stable/api/generated/openff.toolkit.typing.engines.smirnoff.forcefield.ForceField.html#openff.toolkit.typing.engines.smirnoff.forcefield.ForceField.create_openmm_system) method enables the parametrization of small molecules into OpenMM objects.
 
 Detailed usage examples can be found in the [OpenFF Toolkit repository](https://github.com/openforcefield/openff-toolkit/tree/main/examples).
 
-Each force field is currently available in two forms -- both with and without bond constraints to hydrogen. The default version of each force field (i.e. `openff-2.0.0.offxml') is suitable for typical molecular dynamics simulations with constrained bonds to hydrogen. The "unconstrained" version of each force field (i.e. `openff_unconstrained-2.0.0.offxml`) should be used when single-point energies are a major concern (e.g. geometry optimizations) and when comparing the force field to QM data.
+Each force field is currently available in two forms -- both with and without bond constraints to hydrogen. The default version of each force field (i.e. `openff-2.0.0.offxml`) is suitable for typical molecular dynamics simulations with constrained bonds to hydrogen. The "unconstrained" version of each force field (i.e. `openff_unconstrained-2.0.0.offxml`) should be used when single-point energies are a major concern (e.g. geometry optimizations) and when comparing the force field to QM data.
 
 ## How to cite
 
