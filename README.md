@@ -88,7 +88,7 @@ For convenience, the OpenFF Toolkit also has a standalone function [`get_availab
 
 ## History
 
-Force fields in the Parsley and Ssage lines are descended from the [SMIRNOFF99Frosst line of force fields](https://github.com/openforcefield/smirnoff99Frosst/).
+Force fields in the Parsley and Sage lines are descended from the [SMIRNOFF99Frosst line of force fields](https://github.com/openforcefield/smirnoff99Frosst/).
 The first official release (`openff-1.0.0.offxml`, code name "Parsley") was made in September 2019 as a result of the Open Force Field Initiative's refitting efforts.
 
 ## General versioning guidelines
