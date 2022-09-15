@@ -7,11 +7,12 @@ will be used by the openforcefield toolkit to find the installed forcefield
 files.
 
 """
+from typing import List
 
 from pkg_resources import resource_filename
 
 
-def get_forcefield_dirs_paths():
+def get_forcefield_dirs_paths() -> List[str]:
     """
     Return the paths to the directories including the forcefield files.
 
@@ -25,4 +26,7 @@ def get_forcefield_dirs_paths():
         The list of directory paths containing the SMIRNOFF files.
 
     """
-    return [resource_filename('openforcefields', 'offxml')]
+    return [
+        resource_filename('openforcefields', 'offxml'),
+        resource_filename('openforcefields', 'offxml/water'),
+    ]
