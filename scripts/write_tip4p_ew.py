@@ -38,6 +38,15 @@ tip4p_vdw.add_parameter(
 )
 
 tip4p_library = LibraryChargeHandler(version=0.3)
+tip4p_library.add_parameter(
+    {
+        "smirks": "[#1:1]-[#8X2H2+0:2]-[#1:3]",
+        "name": "TIP5P",
+        "charge1": unit.Quantity(0.0, unit.elementary_charge),
+        "charge2": unit.Quantity(0.0, unit.elementary_charge),
+        "charge3": unit.Quantity(0.0, unit.elementary_charge),
+    }
+)
 
 for _, row in dataframe.iterrows():
     smirks = f"[{row['element']}1:1]"

@@ -23,8 +23,8 @@ tip5p_vdw = vdWHandler(version=0.3)
 tip5p_vdw.add_parameter(
     {
         "smirks": "[#1]-[#8X2H2+0:1]-[#1]",
-        "epsilon": unit.Quantity(6.4852, unit.kilocalorie_per_mole),
-        "sigma": unit.Quantity(0.31536, unit.nanometer),
+        "epsilon": unit.Quantity(0.66944, unit.kilocalorie_per_mole),
+        "sigma": unit.Quantity(0.312, unit.nanometer),
         "id": "n-tip5p-O",
     }
 )
