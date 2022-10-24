@@ -30,6 +30,8 @@ jobs:
         toolkit:
           - true
           - false
+    env:
+      PYTEST_ARGS: -v --cov=openforcefields -cov-config=setup.cfg --cov-append --cov-report=xml
 
     steps:
       - uses: actions/checkout@v3
@@ -64,9 +66,14 @@ jobs:
           conda list
           conda info --all
 
-      - name: Test the package
+      - name: Run water model tests
+        if: ${{ matrix.toolkit == true }}
         run: |
-          pytest -v openforcefields/tests/ --cov=openforcefields/ --cov-config=setup.cfg --cov-append --cov-report=xml
+          pytest $PYTEST_ARGS openforcefields/tests/test_water_models.py
+
+      - name: Run unit tests
+        run: |
+          pytest $PYTEST_ARGS openforcefields/tests/test_openforcefields.py
 
       - name: Codecov
         uses: codecov/codecov-action@v3
