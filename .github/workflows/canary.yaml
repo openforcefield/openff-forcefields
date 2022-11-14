@@ -16,8 +16,6 @@ jobs:
       fail-fast: false
       matrix:
         python-version:
-          - 3.6
-          - 3.7
           - 3.8
           - 3.9
         cfg:
@@ -37,17 +35,13 @@ jobs:
           fi
           echo $GITHUB_ENV
 
-      - name: Setup conda
+      - name: Install conda environment
         if: ${{ env.new_off_xml == 'true' }}
-        uses: conda-incubator/setup-miniconda@v2.1.1
+        uses: mamba-org/provision-with-micromamba@main
         with:
-          python-version: ${{ matrix.python-version }}
           environment-file: devtools/conda-envs/canary_env.yaml
-          channels: conda-forge,defaults,omnia
-          activate-environment: test
-          auto-update-conda: true
-          auto-activate-base: false
-          show-channel-urls: true
+          extra-specs: |
+            python=${{ matrix.python-version }}
 
       - name: Environment Information
         if: ${{ env.new_off_xml == 'true' }}
