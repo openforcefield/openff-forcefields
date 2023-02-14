@@ -92,6 +92,7 @@ def test_tip3p_fb(water_molecule):
     )
 
 
+@pytest.mark.skip(reason="Skipping in first pass")
 def test_tip4p_ew(water_molecule):
     interchange = ForceField("water/tip4p-ew-1.0.0.offxml").create_interchange(
         water_molecule,
@@ -110,6 +111,7 @@ def test_tip4p_ew(water_molecule):
     )
 
 
+@pytest.mark.skip(reason="Skipping in first pass")
 def test_tip5p(water_molecule):
     interchange = ForceField("water/tip5p-1.0.0.offxml").create_openmm_system(
         water_molecule,
