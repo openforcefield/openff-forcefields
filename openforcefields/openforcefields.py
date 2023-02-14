@@ -28,5 +28,4 @@ def get_forcefield_dirs_paths() -> List[str]:
     """
     return [
         resource_filename('openforcefields', 'offxml'),
-        resource_filename('openforcefields', 'offxml/water'),
     ]
