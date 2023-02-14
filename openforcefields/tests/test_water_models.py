@@ -126,3 +126,41 @@ def test_tip5p(water_molecule):
     compare_water_systems(
         reference, interchange.to_openmm(combine_nonbonded_forces=True)
     )
+
+
+@pytest.mark.parametrize(
+    "water_model,pattern",
+    [("tip3p", "^tip3p(?!.*fb)"), ("tip3p-fb", "^tip3p-fb")],
+)
+def test_most_recent_version_match(water_model, pattern):
+    import re
+
+    from openff.toolkit.typing.engines.smirnoff.forcefield import (
+        get_available_force_fields,
+    )
+    from packaging import version
+
+    maximum_version = version.Version("0.0.0")
+
+    matched_files = list(
+        filter(lambda x: re.match(pattern, x) is not None, get_available_force_fields())
+    )
+
+    assert len(matched_files) > 0, f"Failed to match any files for pattern {pattern}!"
+
+    for file in matched_files:
+        split = re.split(pattern + "_", file.strip(".offxml"))
+
+        if len(split) == 2:
+            found_verison = version.Version(split[1])
+            if found_verison > maximum_version:
+                maximum_version = found_verison
+
+    assert maximum_version > version.Version(
+        "0.0.0"
+    ), f"failed to update version of {water_model}"
+
+    maximum_version_file = f"{water_model}_{maximum_version}.offxml"
+    shorthand_file = f"{water_model}.offxml"
+
+    assert hash(ForceField(maximum_version_file)) == hash(ForceField(shorthand_file))
