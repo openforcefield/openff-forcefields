@@ -55,7 +55,7 @@ def test_tip3p(water_molecule):
         rigidWater=True,
     )
 
-    system = ForceField("water/tip3p_1.0.0.offxml").create_openmm_system(
+    system = ForceField("tip3p_1.0.0.offxml").create_openmm_system(
         water_molecule,
     )
 
@@ -77,7 +77,7 @@ def test_tip3p_fb(water_molecule):
         rigidWater=True,
     )
 
-    system = ForceField("water/tip3p-fb_1.0.0.offxml").create_openmm_system(
+    system = ForceField("tip3p-fb_1.0.0.offxml").create_openmm_system(
         water_molecule,
     )
 
@@ -94,7 +94,7 @@ def test_tip3p_fb(water_molecule):
 
 @pytest.mark.skip(reason="Skipping in first pass")
 def test_tip4p_ew(water_molecule):
-    interchange = ForceField("water/tip4p-ew_1.0.0.offxml").create_interchange(
+    interchange = ForceField("tip4p-ew_1.0.0.offxml").create_interchange(
         water_molecule,
     )
 
@@ -113,7 +113,7 @@ def test_tip4p_ew(water_molecule):
 
 @pytest.mark.skip(reason="Skipping in first pass")
 def test_tip5p(water_molecule):
-    interchange = ForceField("water/tip5p_1.0.0.offxml").create_openmm_system(
+    interchange = ForceField("tip5p_1.0.0.offxml").create_openmm_system(
         water_molecule,
     )
 
