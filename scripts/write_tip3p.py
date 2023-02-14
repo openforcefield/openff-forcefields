@@ -1,3 +1,4 @@
+from packaging import version
 import pandas
 from openff.toolkit.typing.engines.smirnoff.forcefield import ForceField
 from openff.toolkit.typing.engines.smirnoff.parameters import (
@@ -7,6 +8,8 @@ from openff.toolkit.typing.engines.smirnoff.parameters import (
     vdWHandler,
 )
 from openff.units import unit
+
+VERSION = version.Version("1.0.0")
 
 dataframe = pandas.read_csv("openforcefields/data/jc.csv")
 
@@ -29,7 +32,7 @@ tip3p_vdw.add_parameter(
     {
         "smirks": "[#1:1]-[#8X2H2+0]-[#1]",
         "epsilon": unit.Quantity(0.0, unit.kilocalorie_per_mole),
-        "sigma": unit.Quantity(1.0, unit.angstrom),
+        "sigma": unit.Quantity(1.0, unit.nanometer),
         "id": "n-tip3p-H",
     }
 )
@@ -93,3 +96,4 @@ for handler in [tip3p_vdw, tip3p_library, tip3p_electrostatics, tip3p_constraint
     tip3p.register_parameter_handler(handler)
 
 tip3p.to_file("tip3p.offxml")
+tip3p.to_file(f"tip3p_{VERSION}.offxml")
