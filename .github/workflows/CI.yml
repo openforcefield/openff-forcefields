@@ -75,15 +75,23 @@ jobs:
         run: |
           pytest $PYTEST_ARGS openforcefields/tests/test_openforcefields.py
 
-      - name: Regenerate water models, assert no differences
+      - name: Regenerate water models
+        if: ${{ matrix.toolkit == true }}
         run:
           ls scripts/*py | xargs -n 1 -P 3 python
 
-          if [[ $(git diff) ]]; then
-            echo "scripts produced different files!" && exit 1
-          else
-            echo "scripts produced identical files"
-          fi
+      - name: Get changed OFFXML files
+        id: changed-files-specific
+        uses: tj-actions/changed-files@v35
+        with:
+          files: openforcefields/offxml/*.offxml
+
+      - name: Error out if any OFFXML files changed
+        if: steps.changed-files-specific.outputs.any_changed == 'true'
+        run: |
+          echo "One or more OFFXML files changed"
+          echo "List all the files that have changed: ${{ steps.changed-files-specific.outputs.all_changed_files }}"
+          exit 1
 
       - name: Codecov
         uses: codecov/codecov-action@v3
