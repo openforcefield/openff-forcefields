@@ -14,7 +14,7 @@ from openforcefields.tests.compare import _compare
 
 @pytest.fixture
 def water_molecule() -> Topology:
-    molecule = Molecule.from_smiles("[H:2][O:1][H:3]")
+    molecule = Molecule.from_mapped_smiles("[H:2][O:1][H:3]")
     molecule.generate_conformers(n_conformers=1)
     return molecule.to_topology()
 
