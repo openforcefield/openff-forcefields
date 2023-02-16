@@ -2,7 +2,6 @@
 Write TIP3P-FB parameters into a SMIRNOFF force field. Based on
 https://github.com/pandegroup/tip3p-tip4p-fb/blob/master/OpenMM/tip3p-fb/tip3p-fb.xml
 """
-from packaging import version
 from openff.toolkit.typing.engines.smirnoff.forcefield import ForceField
 from openff.toolkit.typing.engines.smirnoff.parameters import (
     ConstraintHandler,
@@ -11,8 +10,10 @@ from openff.toolkit.typing.engines.smirnoff.parameters import (
     vdWHandler,
 )
 from openff.units import unit
+from packaging import version
 
 VERSION = version.Version("1.0.0")
+OFFXML_PATH = "openforcefields/offxml/"
 
 tip3p_fb = ForceField()
 
@@ -77,5 +78,5 @@ for handler in [
 ]:
     tip3p_fb.register_parameter_handler(handler)
 
-tip3p_fb.to_file("tip3p-fb.offxml")
-tip3p_fb.to_file(f"tip3p-fb_{VERSION}.offxml")
+tip3p_fb.to_file(f"{OFFXML_PATH}tip3p-fb.offxml")
+tip3p_fb.to_file(f"{OFFXML_PATH}tip3p-fb_{VERSION}.offxml")

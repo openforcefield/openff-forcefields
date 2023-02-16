@@ -1,5 +1,5 @@
 from typing import Dict
-from packaging import version
+
 import pandas
 from openff.toolkit.typing.engines.smirnoff.forcefield import ForceField
 from openff.toolkit.typing.engines.smirnoff.parameters import (
@@ -9,8 +9,10 @@ from openff.toolkit.typing.engines.smirnoff.parameters import (
     vdWHandler,
 )
 from openff.units import unit
+from packaging import version
 
 VERSION = version.Version("1.0.0")
+OFFXML_PATH = "openforcefields/offxml/"
 
 dataframe = pandas.read_csv("openforcefields/data/jc.csv")
 
@@ -68,7 +70,7 @@ element_to_atomic_number: Dict[str, int] = {
 
 for _, row in dataframe.iterrows():
     # Add 'X0' into pattern, i.e. 'Li+'/'Cl-' to 'LiX0+1'/'ClX0-1'
-    element_with_charge = row['element']
+    element_with_charge = row["element"]
     element = element_with_charge[:-1]
     atomic_number = element_to_atomic_number[element]
     charge = element_with_charge[-1]
@@ -115,5 +117,5 @@ tip3p_constraints.add_parameter(
 for handler in [tip3p_vdw, tip3p_library, tip3p_electrostatics, tip3p_constraints]:
     tip3p.register_parameter_handler(handler)
 
-tip3p.to_file("tip3p.offxml")
-tip3p.to_file(f"tip3p_{VERSION}.offxml")
+tip3p.to_file(f"{OFFXML_PATH}tip3p.offxml")
+tip3p.to_file(f"{OFFXML_PATH}tip3p_{VERSION}.offxml")
