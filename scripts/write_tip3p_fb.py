@@ -25,7 +25,7 @@ tip3p_fb_constraints = ConstraintHandler(version=0.3)
 tip3p_fb_vdw.add_parameter(
     {
         "smirks": "[#1]-[#8X2H2+0:1]-[#1]",
-        "epsilon": unit.Quantity(0.652143528104, unit.kilojoule_per_mole),
+        "epsilon": unit.Quantity(100.652143528104, unit.kilojoule_per_mole),
         "sigma": unit.Quantity(0.317796456355, unit.nanometer),
         "id": "n-tip3p-fb-O",
     }
