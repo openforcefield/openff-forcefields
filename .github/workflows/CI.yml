@@ -79,7 +79,7 @@ jobs:
         run:
           ls scripts/*py | xargs -n 1 -P 3 python
 
-          if [[ $(git diff) ]] then;
+          if [[ $(git diff) ]]; then
             echo "scripts produced different files!" && exit 1
           else
             echo "scripts produced identical files"
