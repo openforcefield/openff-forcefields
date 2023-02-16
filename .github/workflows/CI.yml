@@ -80,18 +80,15 @@ jobs:
         run:
           ls scripts/*py | xargs -n 1 -P 3 python
 
-      - name: Get changed OFFXML files
-        id: changed-files-specific
-        uses: tj-actions/changed-files@v35
-        with:
-          files: openforcefields/offxml/*.offxml
-
       - name: Error out if any OFFXML files changed
-        if: steps.changed-files-specific.outputs.any_changed == 'true'
+        if: ${{ matrix.toolkit == true }}
         run: |
-          echo "One or more OFFXML files changed"
-          echo "List all the files that have changed: ${{ steps.changed-files-specific.outputs.all_changed_files }}"
-          exit 1
+          if test "$( git diff openforcefields/offxml/ | wc | awk '{print $1}' )" -gt 0
+          then
+            exit 1
+          else
+            echo 'no files differ'
+          fi
 
       - name: Codecov
         uses: codecov/codecov-action@v3
