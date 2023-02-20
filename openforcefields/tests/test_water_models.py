@@ -166,3 +166,78 @@ def test_most_recent_version_match(water_model, pattern):
     shorthand_file = f"{water_model}.offxml"
 
     assert hash(ForceField(maximum_version_file)) == hash(ForceField(shorthand_file))
+
+
+def test_ion_parameter_assignment(water_molecule):
+    """Make sure that the ion parameters are assigned properly"""
+    ff = ForceField("tip3p.offxml")
+
+    ion_vdw_params_used = {}
+    for parameter in ff["vdW"]:
+        # assume that all parameters with "X0" in their smirks should be tested here
+        if "X0" in parameter.smirks:
+            ion_vdw_params_used[parameter.smirks] = False
+
+    ion_librarycharge_params_used = {}
+    for parameter in ff["LibraryCharges"]:
+        if "X0" in parameter.smirks:
+            ion_librarycharge_params_used[parameter.smirks] = False
+
+    off_top = Topology.from_molecules(
+        [
+            Molecule.from_smiles("[Li+]"),
+            Molecule.from_smiles("[Na+]"),
+            Molecule.from_smiles("[K+]"),
+            Molecule.from_smiles("[Rb+]"),
+            Molecule.from_smiles("[Cs+]"),
+            Molecule.from_smiles("[F-]"),
+            Molecule.from_smiles("[Cl-]"),
+            Molecule.from_smiles("[Br-]"),
+            Molecule.from_smiles("[I-]"),
+        ]
+    )
+    system = ff.create_openmm_system(off_top)
+
+    nbf = [
+        force for force in system.getForces() if type(force) is openmm.NonbondedForce
+    ][0]
+
+    sigma_tol = 1e-10 * openmm.unit.nanometer
+    eps_tol = 1e-10 * openmm.unit.kilojoule_per_mole
+    charge_tol = 1e-10 * openmm.unit.elementary_charge
+
+    # Loop over each atom and ensure that the appropriate parameters were assigned
+    # to it by directly matching to the atomic number in the parameter smirks.
+    for atom in off_top.atoms:
+        topology_atom_index = off_top.atom_index(atom)
+        for vdw_parameter in ff["vdW"].parameters:
+            if f"#{atom.atomic_number}X0" in vdw_parameter.smirks:
+
+                (
+                    assigned_charge,
+                    assigned_sigma,
+                    assigned_epsilon,
+                ) = nbf.getParticleParameters(topology_atom_index)
+
+                expected_epsilon = vdw_parameter.epsilon.to_openmm()
+                assert abs(expected_epsilon - assigned_epsilon) < eps_tol
+
+                expected_sigma = vdw_parameter.sigma.to_openmm()
+                assert abs(expected_sigma - assigned_sigma) < sigma_tol
+                ion_vdw_params_used[vdw_parameter.smirks] = True
+
+                lc_parameter = ff["LibraryCharges"][vdw_parameter.smirks]
+                expected_charge = lc_parameter.charge[0].to_openmm()
+                assert abs(expected_charge - assigned_charge) < charge_tol
+                ion_librarycharge_params_used[vdw_parameter.smirks] = True
+
+    # Ensure that this test covered all the ion parameters
+    for key, parameter_was_used in ion_vdw_params_used.items():
+        assert (
+            parameter_was_used
+        ), f"The ion vdW parameter with smirks {key} was not assigned"
+
+    for key, parameter_was_used in ion_librarycharge_params_used.items():
+        assert (
+            parameter_was_used
+        ), f"The ion LibraryCharge parameter with smirks {key} was not assigned"
