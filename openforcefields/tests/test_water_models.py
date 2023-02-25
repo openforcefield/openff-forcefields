@@ -241,3 +241,10 @@ def test_ion_parameter_assignment(water_molecule):
         assert (
             parameter_was_used
         ), f"The ion LibraryCharge parameter with smirks {key} was not assigned"
+
+def test_water_model_is_compatible_with_mainline():
+    """Ensure that the latest water model FF is compatible with the latest main-line FF"""
+    # Since we don't have a way to get the most recent mainline FF, be sure
+    # to occasionally update the first FF listed here
+    ForceField('openff-2.0.0.offxml', 'tip3p.offxml')
+    ForceField('openff-2.0.0.offxml', 'tip3p_fb.offxml')

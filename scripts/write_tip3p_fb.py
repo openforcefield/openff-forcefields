@@ -17,7 +17,7 @@ OFFXML_PATH = "openforcefields/offxml/"
 
 tip3p_fb = ForceField()
 
-tip3p_fb_electrostatics = ElectrostaticsHandler(version=0.4)
+tip3p_fb_electrostatics = ElectrostaticsHandler(version=0.4, scale14=0.8333333333)
 tip3p_fb_library = LibraryChargeHandler(version=0.3)
 tip3p_fb_vdw = vdWHandler(version=0.3)
 tip3p_fb_constraints = ConstraintHandler(version=0.3)
@@ -78,5 +78,5 @@ for handler in [
 ]:
     tip3p_fb.register_parameter_handler(handler)
 
-tip3p_fb.to_file(f"{OFFXML_PATH}tip3p-fb.offxml")
-tip3p_fb.to_file(f"{OFFXML_PATH}tip3p-fb_{VERSION}.offxml")
+tip3p_fb.to_file(f"{OFFXML_PATH}tip3p_fb.offxml")
+tip3p_fb.to_file(f"{OFFXML_PATH}tip3p_fb-{VERSION}.offxml")
