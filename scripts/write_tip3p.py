@@ -18,7 +18,7 @@ dataframe = pandas.read_csv("openforcefields/data/jc.csv")
 
 tip3p = ForceField()
 
-tip3p_electrostatics = ElectrostaticsHandler(version=0.4)
+tip3p_electrostatics = ElectrostaticsHandler(version=0.4, scale14=0.8333333333)
 tip3p_library = LibraryChargeHandler(version=0.3)
 tip3p_vdw = vdWHandler(version=0.3)
 tip3p_constraints = ConstraintHandler(version=0.3)
@@ -118,4 +118,4 @@ for handler in [tip3p_vdw, tip3p_library, tip3p_electrostatics, tip3p_constraint
     tip3p.register_parameter_handler(handler)
 
 tip3p.to_file(f"{OFFXML_PATH}tip3p.offxml")
-tip3p.to_file(f"{OFFXML_PATH}tip3p_{VERSION}.offxml")
+tip3p.to_file(f"{OFFXML_PATH}tip3p-{VERSION}.offxml")
