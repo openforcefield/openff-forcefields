@@ -16,9 +16,9 @@ Each force field is currently available in two forms -- both with and without bo
 
 ## How to cite
 
-To cite the Parsley line of force fields (`openff-1.X.Y`) please use [this citation](https://doi.org/10.1021/acs.jctc.1c00571). Optionally, consider also citing the version-specific Zenodo DOI for the particular force field from the table below.
+To cite the Parsley line of force fields (`openff-1.Y.Z`) please use [this citation](https://doi.org/10.1021/acs.jctc.1c00571). Optionally, consider also citing the version-specific Zenodo DOI for the particular force field from the table below.
 
-A publication associated with the Sage line of force fields (`openff-2.X.Y`) is in progress but not yet released.
+A publication associated with the Sage line of force fields (`openff-2.Y.Z`) is in progress but not yet released.
 
 Details for each force field in this repository can be found in the following table:
 
@@ -127,6 +127,7 @@ Force fields moving forward will be called `name-X.Y.Z`
 
 - `v2.0.0 Sage`: This major release contains the same physical parameters as `v2.0.0-rc.2 Sage`, but has the parameter ids changed. For more information see the [openff-sage repository](https://github.com/openforcefield/openff-sage).
 
+- `2022.02.1`: This release switches to a calendar-versioning system and adds `tip3p-1.0.0.offxml` and `tip3p-fb-1.0.0.offxml`, as well as `tip3p.offxml` and `tip3p-fb.offxml`, which will always point to the latest files in their respective lines. 
 
 #### Acknowledgements
 
