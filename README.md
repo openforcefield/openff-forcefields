@@ -12,7 +12,9 @@ The [OpenFF Toolkit](https://github.com/openforcefield/openff-toolkit) provides 
 
 Detailed usage examples can be found in the [OpenFF Toolkit repository](https://github.com/openforcefield/openff-toolkit/tree/main/examples).
 
-Each force field is currently available in two forms -- both with and without bond constraints to hydrogen. The default version of each force field (i.e. `openff-2.0.0.offxml`) is suitable for typical molecular dynamics simulations with constrained bonds to hydrogen. The "unconstrained" version of each force field (i.e. `openff_unconstrained-2.0.0.offxml`) should be used when single-point energies are a major concern (e.g. geometry optimizations) and when comparing the force field to QM data.
+Each mainline force field is currently available in two forms -- both with and without bond constraints to hydrogen. The default version of each force field (i.e. `openff-2.0.0.offxml`) is suitable for typical molecular dynamics simulations with constrained bonds to hydrogen. The "unconstrained" version of each force field (i.e. `openff_unconstrained-2.0.0.offxml`) should be used when single-point energies are a major concern (e.g. geometry optimizations) and when comparing the force field to QM data.
+
+This repository may also contain other useful force fields, data, or utilities, separate from mainline OpenFF force fields. More information on those can be found in the `docs/` directory in this repository.
 
 ## How to cite
 
@@ -22,36 +24,38 @@ A publication associated with the Sage line of force fields (`openff-2.Y.Z`) is 
 
 Details for each force field in this repository can be found in the following table:
 
-| Filename | DOI | FF line | Release Date | Major format changes? |
-| -------- | --- | -------- | --- | --- |
-| `openff-2.0.0.offxml` | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.5214478.svg)](https://doi.org/10.5281/zenodo.5214478) | Sage | Aug 16, 2021 | No |
-| `openff_unconstrained-2.0.0.offxml` | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.5214478.svg)](https://doi.org/10.5281/zenodo.5214478) | Sage | Aug 16, 2021 | No |
-| `openff-2.0.0-rc.2.offxml` | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.5156698.svg)](https://doi.org/10.5281/zenodo.5156698) | Sage | Aug 3, 2021 | No |
-| `openff_unconstrained-2.0.0-rc.2.offxml` | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.5156698.svg)](https://doi.org/10.5281/zenodo.5156698) | Sage | Aug 3, 2021 | No |
-| `openff-2.0.0-rc.1.offxml` | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.5009196.svg)](https://doi.org/10.5281/zenodo.5009196) | Sage | June 21, 2021 | No |
-| `openff_unconstrained-2.0.0-rc.1.offxml` | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.5009196.svg)](https://doi.org/10.5281/zenodo.5009196) | Sage | June 21, 2021 | No |
-| `openff-1.3.1.offxml` | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.5009058.svg)](https://doi.org/10.5281/zenodo.5009058) | Parsley | June 21, 2021 | No |
-| `openff_unconstrained-1.3.1.offxml` | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.5009058.svg)](https://doi.org/10.5281/zenodo.5009058) | Parsley | June 21, 2021 | No |
-| `openff-1.3.1-alpha.1.offxml` | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.4697390.svg)](https://doi.org/10.5281/zenodo.4697390) | Parsley | Apr 15, 2021 | No |
-| `openff_unconstrained-1.3.1-alpha.1.offxml` | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.4697390.svg)](https://doi.org/10.5281/zenodo.4697390) | Parsley | Apr 15, 2021 | No |
-| `openff-1.3.0.offxml` | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.4118484.svg)](https://doi.org/10.5281/zenodo.4118484) | Parsley | Oct 21, 2020 | No |
-| `openff_unconstrained-1.3.0.offxml` | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.4118484.svg)](https://doi.org/10.5281/zenodo.4118484) | Parsley | Oct 21, 2020 | No |
-| `openff-1.2.1.offxml` | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.4021623.svg)](https://doi.org/10.5281/zenodo.4021623) | Parsley | Sep 9, 2020 | No |
-| `openff_unconstrained-1.2.1.offxml` | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.4021623.svg)](https://doi.org/10.5281/zenodo.4021623) | Parsley | Sep 9, 2020 | No |
-| `openff-1.2.0.offxml` | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3872244.svg)](https://doi.org/10.5281/zenodo.3872244) | Parsley | May 29, 2020 | No |
-| `openff_unconstrained-1.2.0.offxml` | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3872244.svg)](https://doi.org/10.5281/zenodo.3872244) | Parsley | May 29, 2020 | No |
-| `openff-1.1.1.offxml` | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3751818.svg)](https://doi.org/10.5281/zenodo.3751818) | Parsley | Apr 14, 2020 | No |
-| `openff_unconstrained-1.1.1.offxml` | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3751818.svg)](https://doi.org/10.5281/zenodo.3751818) | Parsley | Apr 14, 2020 | No |
-| `openff-1.1.0.offxml` | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3695094.svg)](https://doi.org/10.5281/zenodo.3695094) | Parsley | Mar 3, 2020 | No |
-| `openff_unconstrained-1.1.0.offxml` | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3695094.svg)](https://doi.org/10.5281/zenodo.3695094) | Parsley | Mar 3, 2020 | No |
-| `openff-1.0.1.offxml` | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3751812.svg)](https://doi.org/10.5281/zenodo.3751812) | Parsley | Apr 14, 2020 | No |
-| `openff_unconstrained-1.0.1.offxml` | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3751812.svg)](https://doi.org/10.5281/zenodo.3751812) | Parsley | Apr 14, 2020 | No |
-| `openff-1.0.0.offxml` | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3483227.svg)](https://doi.org/10.5281/zenodo.3483227) | Parsley | Oct 12, 2019 | No |
-| `openff_unconstrained-1.0.0.offxml` | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3483227.svg)](https://doi.org/10.5281/zenodo.3483227) | Parsley | Oct 12, 2019 | No |
-| `openff-1.0.0-RC2.offxml` | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3473554.svg)](https://doi.org/10.5281/zenodo.3473554) | None | Oct 4, 2019 | No |
-| `openff_unconstrained-1.0.0-RC2.offxml` | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3473554.svg)](https://doi.org/10.5281/zenodo.3473554) | None | Oct 4, 2019 | No |
-| `openff-1.0.0-RC1.offxml` | None | None | Oct 4, 2019 | N/A |
-| `openff_unconstrained-1.0.0-RC1.offxml` | None | None | Oct 4, 2019 | N/A |
+| Filename                                    | DOI                                                                                                       | FF line | Release Date  | Major format changes? |
+|---------------------------------------------|-----------------------------------------------------------------------------------------------------------|---------|---------------|-----------------------|
+| `tip3p_fb-X.Y.Z.offxml`                     | see `docs/water-models.md`                                                                                | Ports   | Feb 27, 2023  | No                    |
+| `tip3p-X.Y.Z.offxml`                        | see `docs/water-models.md`                                                                                | Ports   | Feb 27, 2023  | No                    |
+| `openff-2.0.0.offxml`                       | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.5214478.svg)](https://doi.org/10.5281/zenodo.5214478) | Sage    | Aug 16, 2021  | No                    |
+| `openff_unconstrained-2.0.0.offxml`         | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.5214478.svg)](https://doi.org/10.5281/zenodo.5214478) | Sage    | Aug 16, 2021  | No                    |
+| `openff-2.0.0-rc.2.offxml`                  | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.5156698.svg)](https://doi.org/10.5281/zenodo.5156698) | Sage    | Aug 3, 2021   | No                    |
+| `openff_unconstrained-2.0.0-rc.2.offxml`    | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.5156698.svg)](https://doi.org/10.5281/zenodo.5156698) | Sage    | Aug 3, 2021   | No                    |
+| `openff-2.0.0-rc.1.offxml`                  | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.5009196.svg)](https://doi.org/10.5281/zenodo.5009196) | Sage    | June 21, 2021 | No                    |
+| `openff_unconstrained-2.0.0-rc.1.offxml`    | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.5009196.svg)](https://doi.org/10.5281/zenodo.5009196) | Sage    | June 21, 2021 | No                    |
+| `openff-1.3.1.offxml`                       | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.5009058.svg)](https://doi.org/10.5281/zenodo.5009058) | Parsley | June 21, 2021 | No                    |
+| `openff_unconstrained-1.3.1.offxml`         | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.5009058.svg)](https://doi.org/10.5281/zenodo.5009058) | Parsley | June 21, 2021 | No                    |
+| `openff-1.3.1-alpha.1.offxml`               | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.4697390.svg)](https://doi.org/10.5281/zenodo.4697390) | Parsley | Apr 15, 2021  | No                    |
+| `openff_unconstrained-1.3.1-alpha.1.offxml` | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.4697390.svg)](https://doi.org/10.5281/zenodo.4697390) | Parsley | Apr 15, 2021  | No                    |
+| `openff-1.3.0.offxml`                       | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.4118484.svg)](https://doi.org/10.5281/zenodo.4118484) | Parsley | Oct 21, 2020  | No                    |
+| `openff_unconstrained-1.3.0.offxml`         | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.4118484.svg)](https://doi.org/10.5281/zenodo.4118484) | Parsley | Oct 21, 2020  | No                    |
+| `openff-1.2.1.offxml`                       | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.4021623.svg)](https://doi.org/10.5281/zenodo.4021623) | Parsley | Sep 9, 2020   | No                    |
+| `openff_unconstrained-1.2.1.offxml`         | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.4021623.svg)](https://doi.org/10.5281/zenodo.4021623) | Parsley | Sep 9, 2020   | No                    |
+| `openff-1.2.0.offxml`                       | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3872244.svg)](https://doi.org/10.5281/zenodo.3872244) | Parsley | May 29, 2020  | No                    |
+| `openff_unconstrained-1.2.0.offxml`         | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3872244.svg)](https://doi.org/10.5281/zenodo.3872244) | Parsley | May 29, 2020  | No                    |
+| `openff-1.1.1.offxml`                       | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3751818.svg)](https://doi.org/10.5281/zenodo.3751818) | Parsley | Apr 14, 2020  | No                    |
+| `openff_unconstrained-1.1.1.offxml`         | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3751818.svg)](https://doi.org/10.5281/zenodo.3751818) | Parsley | Apr 14, 2020  | No                    |
+| `openff-1.1.0.offxml`                       | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3695094.svg)](https://doi.org/10.5281/zenodo.3695094) | Parsley | Mar 3, 2020   | No                    |
+| `openff_unconstrained-1.1.0.offxml`         | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3695094.svg)](https://doi.org/10.5281/zenodo.3695094) | Parsley | Mar 3, 2020   | No                    |
+| `openff-1.0.1.offxml`                       | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3751812.svg)](https://doi.org/10.5281/zenodo.3751812) | Parsley | Apr 14, 2020  | No                    |
+| `openff_unconstrained-1.0.1.offxml`         | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3751812.svg)](https://doi.org/10.5281/zenodo.3751812) | Parsley | Apr 14, 2020  | No                    |
+| `openff-1.0.0.offxml`                       | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3483227.svg)](https://doi.org/10.5281/zenodo.3483227) | Parsley | Oct 12, 2019  | No                    |
+| `openff_unconstrained-1.0.0.offxml`         | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3483227.svg)](https://doi.org/10.5281/zenodo.3483227) | Parsley | Oct 12, 2019  | No                    |
+| `openff-1.0.0-RC2.offxml`                   | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3473554.svg)](https://doi.org/10.5281/zenodo.3473554) | None    | Oct 4, 2019   | No                    |
+| `openff_unconstrained-1.0.0-RC2.offxml`     | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3473554.svg)](https://doi.org/10.5281/zenodo.3473554) | None    | Oct 4, 2019   | No                    |
+| `openff-1.0.0-RC1.offxml`                   | None                                                                                                      | None    | Oct 4, 2019   | N/A                   |
+| `openff_unconstrained-1.0.0-RC1.offxml`     | None                                                                                                      | None    | Oct 4, 2019   | N/A                   |
 
 
 
@@ -105,11 +109,11 @@ Force fields moving forward will be called `name-X.Y.Z`
 ## Versions
 - `v1.0.0 Parsley` : First major forcefield release.
 
-    - `v1.0.1 Parsley `: This bugfix release contains following changes: (1) Addition of monatomic ion `LibraryCharges`.
+- `v1.0.1 Parsley `: This bugfix release contains following changes: (1) Addition of monatomic ion `LibraryCharges`.
 
 - `v1.1.0 Parsley `: This minor release contains following changes: (1) Addition of new proper torsions and improper torsions for tetrazole; (2) Corrections to N-N bond rotation periodicity; (3) Removal of redundant periodicity component in `t19`; (4) Addition of three new bond and angle terms, `a22a`, `b14a` and `b36a`.
 
-    - `v1.1.1 Parsley `: This bugfix release contains following changes: (1) Addition of monatomic ion `LibraryCharges`.
+- `v1.1.1 Parsley `: This bugfix release contains following changes: (1) Addition of monatomic ion `LibraryCharges`.
 
 - `v1.2.0 Parsley `: This minor release contains following changes: (1) New, carefully designed quantum chemical dataset was utilized in training valence parameters in the force field and (2) Removal of redundancy in `t108` SMIRKS pattern
 
@@ -127,7 +131,7 @@ Force fields moving forward will be called `name-X.Y.Z`
 
 - `v2.0.0 Sage`: This major release contains the same physical parameters as `v2.0.0-rc.2 Sage`, but has the parameter ids changed. For more information see the [openff-sage repository](https://github.com/openforcefield/openff-sage).
 
-- `2022.02.1`: This release switches to a calendar-versioning system and adds `tip3p-1.0.0.offxml` and `tip3p-fb-1.0.0.offxml`, as well as `tip3p.offxml` and `tip3p-fb.offxml`, which will always point to the latest files in their respective lines. 
+- `2023.02.1`: This release switches to a calendar-versioning system and adds `tip3p-1.0.0.offxml` and `tip3p-fb-1.0.0.offxml`, as well as `tip3p.offxml` and `tip3p-fb.offxml`, which will always point to the latest files in their respective lines. 
 
 #### Acknowledgements
 

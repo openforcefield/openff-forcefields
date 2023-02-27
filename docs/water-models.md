@@ -10,7 +10,7 @@ The TIP3P file includes monovalent ion parameters from [Juong and Cheatham](http
 These files are not original force fields made by Open Force Field.
 Instead they are ports of existing force fields into the [SMIRNOFF](https://openforcefield.github.io/standards/standards/smirnoff/) force field format.
 
-**Note**: Current main-line SMIRNOFF force fields already contain a water model and ion parameters. If you intend to use a main-line force field for most molecules in a topology while using an alternate force field specifically for water and ions, ensure that the alternate force field is loaded _last_, so that its water and ion parameters take precedence over those from the main-line force field.  
+**Note**: Current mainline SMIRNOFF force fields already contain a water model and ion parameters. If you intend to use a mainline OpenFF force field for most molecules in a topology while using an alternate force field specifically for water and ions, ensure that the water-and-ions force field is loaded _last_, so that its parameters take precedence over those from the main-line force field.  
 
 ## Versioning
 
