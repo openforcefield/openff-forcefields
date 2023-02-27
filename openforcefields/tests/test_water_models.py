@@ -55,7 +55,7 @@ def test_tip3p(water_molecule):
         rigidWater=True,
     )
 
-    system = ForceField("tip3p_1.0.0.offxml").create_openmm_system(
+    system = ForceField("tip3p-1.0.0.offxml").create_openmm_system(
         water_molecule,
     )
 
@@ -77,7 +77,7 @@ def test_tip3p_fb(water_molecule):
         rigidWater=True,
     )
 
-    system = ForceField("tip3p-fb_1.0.0.offxml").create_openmm_system(
+    system = ForceField("tip3p_fb-1.0.0.offxml").create_openmm_system(
         water_molecule,
     )
 
@@ -132,7 +132,7 @@ def test_tip5p(water_molecule):
 
 @pytest.mark.parametrize(
     "water_model,pattern",
-    [("tip3p", "^tip3p(?!.*fb)"), ("tip3p-fb", "^tip3p-fb")],
+    [("tip3p", "^tip3p(?!.*fb)"), ("tip3p_fb", "^tip3p_fb")],
 )
 def test_most_recent_version_match(water_model, pattern):
     import re
@@ -151,7 +151,7 @@ def test_most_recent_version_match(water_model, pattern):
     assert len(matched_files) > 0, f"Failed to match any files for pattern {pattern}!"
 
     for file in matched_files:
-        split = re.split(pattern + "_", file.strip(".offxml"))
+        split = re.split(pattern + "-", file.strip(".offxml"))
 
         if len(split) == 2:
             found_verison = version.Version(split[1])
@@ -162,7 +162,7 @@ def test_most_recent_version_match(water_model, pattern):
         "0.0.0"
     ), f"failed to update version of {water_model}"
 
-    maximum_version_file = f"{water_model}_{maximum_version}.offxml"
+    maximum_version_file = f"{water_model}-{maximum_version}.offxml"
     shorthand_file = f"{water_model}.offxml"
 
     assert hash(ForceField(maximum_version_file)) == hash(ForceField(shorthand_file))
