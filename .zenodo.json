@@ -1,0 +1,80 @@
+{
+    "creators": [
+      {
+        "orcid": "0000-0001-6583-2148",
+        "affiliation": "Pharmaceutical Sciences, University of California Irvine, Irvine, CA, USA",
+        "name": "Behara, Pavan Kumar"
+      },
+      {
+        "orcid": "0000-0001-7856-1156",
+        "affiliation": "Department of Chemistry, University of California Irvine, Irvine, CA, USA",
+        "name": "Gokey, Trevor"
+      },
+      {
+        "orcid": "0000-0002-5899-7953",
+        "affiliation": "Skaggs School of Pharmacy and Pharmaceutical Sciences, University of California San Diego, La Jolla, CA, USA",
+        "name": "Cavender, Chapin"
+      },
+      {
+        "orcid": "0000-0001-8694-7200",
+        "affiliation": "School of Natural and Environmental Sciences,  Newcastle University, Newcastle upon Tyne NE1, 7RU, United Kingdom",
+        "name": "Horton, Joshua"
+      },
+      {
+        "orcid": "0000-0002-6095-6704",
+        "affiliation": "Open Force Field Consortium, Open Molecular Software Foundation, Davis,  CA, USA",
+        "name": "Wang, Lily"
+      },
+      {
+        "orcid": "0000-0002-1697-2918",
+        "affiliation": "Department of Chemistry, University of California Davis, Davis, CA, USA",
+        "name": "Jang, Hyesu"
+      },
+      {
+        "orcid": "0000-0001-6448-0873",
+        "affiliation": "Open Force Field Consortium, Open Molecular Software Foundation, Davis,  CA, USA",
+        "name": "Wagner, Jeffrey"
+      },
+      {
+        "orcid": "0000-0003-2933-0719",
+        "affiliation": "School of Natural and Environmental Sciences,  Newcastle University, Newcastle upon Tyne NE1, 7RU, United Kingdom",
+        "name": "Cole, Daniel"
+      },
+      {
+        "orcid": "0000-0001-9145-6457",
+        "affiliation": "OpenEye Scientific Software, Santa Fe, NM, USA",
+        "name": "Bayly, Christopher"
+      },
+      {
+        "orcid": "0000-0002-1083-5533",
+        "affiliation": "Pharmaceutical Sciences, University of California Irvine, Irvine, CA, USA",
+        "name": "Mobley, David"
+      }
+    ],
+    "access_right": "open",
+    "resource_type": {
+      "type": "software",
+      "title": "Software"
+    },
+    "related_identifiers": [
+      {
+        "scheme": "doi",
+        "identifier": "10.5281/zenodo.5214478",
+        "relation": "isVersionOf"
+      }
+    ],
+
+    "license": "CC-BY-4.0",
+    "title": "openforcefield/openff-forcefields",
+
+    "communities": [
+      {
+        "id": "openforcefield"
+      }
+    ],
+    "keywords": [
+      "force field",
+      "molecular dynamics",
+      "openforcefield"
+    ]
+}
