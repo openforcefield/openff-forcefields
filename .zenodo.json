@@ -52,26 +52,8 @@
       }
     ],
     "access_right": "open",
-    "resource_type": {
-      "type": "software",
-      "title": "Software"
-    },
-    "related_identifiers": [
-      {
-        "scheme": "doi",
-        "identifier": "10.5281/zenodo.5214478",
-        "relation": "isVersionOf"
-      }
-    ],
-
     "license": "CC-BY-4.0",
     "title": "openforcefield/openff-forcefields",
-
-    "communities": [
-      {
-        "id": "openforcefield"
-      }
-    ],
     "keywords": [
       "force field",
       "molecular dynamics",
