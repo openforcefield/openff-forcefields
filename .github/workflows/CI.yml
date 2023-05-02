@@ -78,7 +78,8 @@ jobs:
       - name: Regenerate water models
         if: ${{ matrix.toolkit == true }}
         run:
-          ls scripts/*py | xargs -n 1 -P 3 python
+          python scripts/get_ion_nb_params_from_ambertools_frcmod.py $AMBERHOME/dat/leap/parm/frcmod.ionslm_126_opc
+          ls scripts/write_*.py | xargs -n 1 -P 3 python
 
       - name: Error out if any OFFXML files changed
         if: ${{ matrix.toolkit == true }}
