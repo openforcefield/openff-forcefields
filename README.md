@@ -26,6 +26,7 @@ Details for each force field in this repository can be found in the following ta
 
 | Filename                                    | DOI                                                                                                       | FF line | Release Date  | Major format changes? |
 |---------------------------------------------|-----------------------------------------------------------------------------------------------------------|---------|---------------|-----------------------|
+| `opc-1.0.0.offxml`                     | see `docs/water-models.md`                                                                                | Ports   | May 1, 2023  | No                    |
 | `openff-2.1.0-rc.1.offxml`                  |                                                                                                           | Sage    | Apr 10, 2023  | No                    |
 | `openff_unconstrained-2.1.0-rc.1.offxml`    |                                                                                                           | Sage    | Apr 10, 2023  | No                    |
 | `tip3p_fb-1.0.0.offxml`                     | see `docs/water-models.md`                                                                                | Ports   | Feb 27, 2023  | No                    |
