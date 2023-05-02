@@ -16,8 +16,8 @@ jobs:
       fail-fast: false
       matrix:
         python-version:
-          - 3.8
-          - 3.9
+          - "3.9"
+          - "3.10"
         cfg:
           - os: ubuntu-latest
           - os: macOS-latest
