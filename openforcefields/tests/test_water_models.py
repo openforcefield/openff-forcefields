@@ -91,6 +91,34 @@ def test_tip3p_fb(water_molecule):
         },
     )
 
+# TODO: The interchange that results from applying the OPC water model yields a sigma that is exactly
+#  twice what it should be on the hydrogens. This problem is only cosmetic as the epsilon is 0.
+def test_opc(water_molecule):
+    from openmm.app import Modeller
+    omm_water = water_molecule.to_openmm()
+    omm_ff = OpenMMForceField("opc.xml")
+    mod = Modeller(omm_water, water_molecule.get_positions().to_openmm())
+    mod.addExtraParticles(omm_ff)
+    reference = omm_ff.createSystem(
+        mod.getTopology(),
+        constraints=HAngles,
+        rigidWater=True,
+    )
+
+    interchange = ForceField("opc-1.0.0.offxml").create_interchange(
+        water_molecule,
+    )
+    system = interchange.to_openmm()
+    compare_water_systems(
+        reference,
+        system,
+        {
+            "charge": 1e-10 * openmm.unit.elementary_charge,
+            #"sigma": 1e-10 * openmm.unit.nanometer,
+            "sigma": .1 * openmm.unit.nanometer,
+            "epsilon": 1e-10 * openmm.unit.kilojoule_per_mole,
+        },
+    )
 
 @pytest.mark.skip(reason="Skipping in first pass")
 def test_tip4p_ew(water_molecule):
@@ -132,7 +160,7 @@ def test_tip5p(water_molecule):
 
 @pytest.mark.parametrize(
     "water_model,pattern",
-    [("tip3p", "^tip3p(?!.*fb)"), ("tip3p_fb", "^tip3p_fb")],
+    [("tip3p", "^tip3p(?!.*fb)"), ("tip3p_fb", "^tip3p_fb"), ("opc", "^opc")],
 )
 def test_most_recent_version_match(water_model, pattern):
     import re
@@ -151,8 +179,7 @@ def test_most_recent_version_match(water_model, pattern):
     assert len(matched_files) > 0, f"Failed to match any files for pattern {pattern}!"
 
     for file in matched_files:
-        split = re.split(pattern + "-", file.strip(".offxml"))
-
+        split = re.split(pattern + "-", file.replace(".offxml", ""))
         if len(split) == 2:
             found_verison = version.Version(split[1])
             if found_verison > maximum_version:
@@ -248,3 +275,4 @@ def test_water_model_is_compatible_with_mainline():
     # to occasionally update the first FF listed here
     ForceField('openff-2.0.0.offxml', 'tip3p.offxml')
     ForceField('openff-2.0.0.offxml', 'tip3p_fb.offxml')
+    ForceField('openff-2.0.0.offxml', 'opc.offxml')

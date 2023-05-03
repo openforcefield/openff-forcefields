@@ -7,3 +7,5 @@ dependencies:
   - openff-toolkit
   - pytest
   - pytest-cov
+  - pandas
+  - click
