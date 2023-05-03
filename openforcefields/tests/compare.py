@@ -53,7 +53,7 @@ def _compare_nonbonded_forces(
 
         # Water models commonly have zero epsilon and meaningless/inconsistent values
         # of sigma. In this case, do not compare sigma values.
-        if epsilon1._value * epsilon1._value != 0.0:
+        if epsilon1._value * epsilon2._value != 0.0:
             assert (
                 abs(sigma1 - sigma2) < tolerances["sigma"]
             ), f"{sigma1} != {sigma2}, {sigma1 - sigma2}"
