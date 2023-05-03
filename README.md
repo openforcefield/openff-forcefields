@@ -26,8 +26,8 @@ Details for each force field in this repository can be found in the following ta
 
 | Filename                                    | DOI                                                                                                       | FF line | Release Date  | Major format changes? |
 |---------------------------------------------|-----------------------------------------------------------------------------------------------------------|---------|---------------|-----------------------|
-| `openff-2.1.0.offxml`                       |                                                                                                           | Sage    | May 2, 2023   | No                    |
-| `openff_unconstrained-2.1.0.offxml`         |                                                                                                           | Sage    | May 2, 2023   | No                    |
+| `openff-2.1.0.offxml`                       | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.7889050.svg)](https://doi.org/10.5281/zenodo.7889050)                                   | Sage    | May 2, 2023   | No                    |
+| `openff_unconstrained-2.1.0.offxml`         | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.7889050.svg)](https://doi.org/10.5281/zenodo.7889050)                                   | Sage    | May 2, 2023   | No                    |
 | `opc-1.0.0.offxml`                          | see `docs/water-models.md`                                                                                | Ports   | May 1, 2023   | No                    |
 | `openff-2.1.0-rc.1.offxml`                  |                                                                                                           | Sage    | Apr 10, 2023  | No                    |
 | `openff_unconstrained-2.1.0-rc.1.offxml`    |                                                                                                           | Sage    | Apr 10, 2023  | No                    |
