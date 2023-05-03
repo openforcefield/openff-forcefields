@@ -50,9 +50,14 @@ def _compare_nonbonded_forces(
         assert (
             abs(charge1 - charge2) < tolerances["charge"]
         ), f"{charge1} != {charge2}, {charge1 - charge2}"
-        assert (
-            abs(sigma1 - sigma2) < tolerances["sigma"]
-        ), f"{sigma1} != {sigma2}, {sigma1 - sigma2}"
+
+        # Water models commonly have zero epsilon and meaningless/inconsistent values
+        # of sigma. In this case, do not compare sigma values.
+        if epsilon1._value * epsilon1._value != 0.0:
+            assert (
+                abs(sigma1 - sigma2) < tolerances["sigma"]
+            ), f"{sigma1} != {sigma2}, {sigma1 - sigma2}"
+
         assert (
             abs(epsilon1 - epsilon2) < tolerances["epsilon"]
         ), f"{epsilon1} != {epsilon2}, {epsilon1 - epsilon2}"

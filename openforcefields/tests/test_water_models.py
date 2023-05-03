@@ -7,7 +7,6 @@ from openff.interchange.interop.openmm import to_openmm_topology
 from openff.toolkit import ForceField, Molecule, Topology
 from openmm.app import ForceField as OpenMMForceField
 from openmm.app import HAngles
-from openmm.app import Topology as OpenMMTopology
 
 from openforcefields.tests.compare import _compare
 
@@ -91,8 +90,6 @@ def test_tip3p_fb(water_molecule):
         },
     )
 
-# TODO: The interchange that results from applying the OPC water model yields a sigma that is exactly
-#  twice what it should be on the hydrogens. This problem is only cosmetic as the epsilon is 0.
 def test_opc(water_molecule):
     from openmm.app import Modeller
     omm_water = water_molecule.to_openmm()
@@ -109,16 +106,19 @@ def test_opc(water_molecule):
         water_molecule,
     )
     system = interchange.to_openmm()
+
+    # OpenMM's `opc.xml` has inaccurate values of sigma for H and M. Since both
+    # have zero epsilon, logic in this comparison function skips them.
     compare_water_systems(
         reference,
         system,
         {
             "charge": 1e-10 * openmm.unit.elementary_charge,
-            #"sigma": 1e-10 * openmm.unit.nanometer,
-            "sigma": .1 * openmm.unit.nanometer,
+            "sigma": 1e-10 * openmm.unit.nanometer,
             "epsilon": 1e-10 * openmm.unit.kilojoule_per_mole,
         },
     )
+
 
 @pytest.mark.skip(reason="Skipping in first pass")
 def test_tip4p_ew(water_molecule):
