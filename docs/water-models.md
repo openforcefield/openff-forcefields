@@ -4,11 +4,11 @@ The following water models are distributed with this package:
 
 * [TIP3P](https://doi.org/10.1063/1.445869)
 * [TIP3P-FB](https://doi.org/10.1021/jz500737m)
-* [OPC] (https://doi.org/10.1021/jz501780a)
+* [OPC](https://doi.org/10.1021/jz501780a)
 
 The TIP3P file includes monovalent ion parameters from [Juong and Cheatham](https://dx.doi.org/10.1021/jp8001614).
 
-The OPC file includes the 12-6 hydration free energy (HFE) monovalent ion parameters from [Sengupta et al. 2021] (https://doi.org/10.1021/acs.jcim.0c01390), the 12-6 compromise (CM) divalent ion parameters from [Li et al. 2020] (https://doi.org/10.1021/acs.jctc.0c00194), and the 12-6 ion-oxygen distance (IOD) trivalent and tetravalent ion parameters from [Li et al. 2021] (https://doi.org/10.1021/acs.jctc.0c01320).
+The OPC file includes the 12-6 hydration free energy (HFE) monovalent ion parameters from [Sengupta et al. 2021](https://doi.org/10.1021/acs.jcim.0c01390), the 12-6 compromise (CM) divalent ion parameters from [Li et al. 2020](https://doi.org/10.1021/acs.jctc.0c00194), and the 12-6 ion-oxygen distance (IOD) trivalent and tetravalent ion parameters from [Li et al. 2021](https://doi.org/10.1021/acs.jctc.0c01320).
 
 These files are not original force fields made by Open Force Field.
 Instead they are ports of existing force fields into the [SMIRNOFF](https://openforcefield.github.io/standards/standards/smirnoff/) force field format.
