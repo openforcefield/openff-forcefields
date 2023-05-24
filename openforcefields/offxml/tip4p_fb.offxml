@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SMIRNOFF version="0.3" aromaticity_model="OEAroModel_MDL">
+    <vdW version="0.3" potential="Lennard-Jones-12-6" combining_rules="Lorentz-Berthelot" scale12="0.0" scale13="0.0" scale14="0.5" scale15="1.0" cutoff="9.0 * angstrom ** 1" switch_width="1.0 * angstrom ** 1" method="cutoff">
+        <Atom smirks="[#1]-[#8X2H2+0:1]-[#1]" epsilon="0.7492790213533 * kilojoule_per_mole ** 1" id="n-tip4p-fb-O" sigma="0.3165552430462 * nanometer ** 1"></Atom>
+        <Atom smirks="[#1:1]-[#8X2H2+0]-[#1]" epsilon="0.0 * kilocalorie_per_mole ** 1" id="n-tip4p-fb-H" sigma="1.0 * nanometer ** 1"></Atom>
+        <Atom smirks="[#3X0+1:1]" epsilon="0.00209587 * kilocalorie_per_mole ** 1" id="n-ionslm-126-tip4p-fb-Li+" rmin_half="1.24 * angstrom ** 1"></Atom>
+        <Atom smirks="[#11X0+1:1]" epsilon="0.02499549 * kilocalorie_per_mole ** 1" id="n-ionslm-126-tip4p-fb-Na+" rmin_half="1.448 * angstrom ** 1"></Atom>
+        <Atom smirks="[#19X0+1:1]" epsilon="0.1282327 * kilocalorie_per_mole ** 1" id="n-ionslm-126-tip4p-fb-K+" rmin_half="1.685 * angstrom ** 1"></Atom>
+        <Atom smirks="[#37X0+1:1]" epsilon="0.20907204 * kilocalorie_per_mole ** 1" id="n-ionslm-126-tip4p-fb-Rb+" rmin_half="1.795 * angstrom ** 1"></Atom>
+        <Atom smirks="[#55X0+1:1]" epsilon="0.34401021 * kilocalorie_per_mole ** 1" id="n-ionslm-126-tip4p-fb-Cs+" rmin_half="1.95 * angstrom ** 1"></Atom>
+        <Atom smirks="[#81X0+1:1]" epsilon="0.11617738 * kilocalorie_per_mole ** 1" id="n-ionslm-126-tip4p-fb-Tl+" rmin_half="1.666 * angstrom ** 1"></Atom>
+        <Atom smirks="[#29X0+1:1]" epsilon="0.00067804 * kilocalorie_per_mole ** 1" id="n-ionslm-126-tip4p-fb-Cu+" rmin_half="1.172 * angstrom ** 1"></Atom>
+        <Atom smirks="[#47X0+1:1]" epsilon="0.0058006 * kilocalorie_per_mole ** 1" id="n-ionslm-126-tip4p-fb-Ag+" rmin_half="1.313 * angstrom ** 1"></Atom>
+        <Atom smirks="[#9X0-1:1]" epsilon="0.25078 * kilocalorie_per_mole ** 1" id="n-ionslm-126-tip4p-fb-F-" rmin_half="1.845 * angstrom ** 1"></Atom>
+        <Atom smirks="[#17X0-1:1]" epsilon="0.64716164 * kilocalorie_per_mole ** 1" id="n-ionslm-126-tip4p-fb-Cl-" rmin_half="2.313 * angstrom ** 1"></Atom>
+        <Atom smirks="[#35X0-1:1]" epsilon="0.73554824 * kilocalorie_per_mole ** 1" id="n-ionslm-126-tip4p-fb-Br-" rmin_half="2.454 * angstrom ** 1"></Atom>
+        <Atom smirks="[#53X0-1:1]" epsilon="0.87867445 * kilocalorie_per_mole ** 1" id="n-ionslm-126-tip4p-fb-I-" rmin_half="2.804 * angstrom ** 1"></Atom>
+        <Atom smirks="[#4X0+2:1]" epsilon="1.42e-06 * kilocalorie_per_mole ** 1" id="n-ionslm-126-tip4p-fb-Be2+" rmin_half="0.924 * angstrom ** 1"></Atom>
+        <Atom smirks="[#29X0+2:1]" epsilon="0.00089969 * kilocalorie_per_mole ** 1" id="n-ionslm-126-tip4p-fb-Cu2+" rmin_half="1.181 * angstrom ** 1"></Atom>
+        <Atom smirks="[#28X0+2:1]" epsilon="0.00136949 * kilocalorie_per_mole ** 1" id="n-ionslm-126-tip4p-fb-Ni2+" rmin_half="1.213 * angstrom ** 1"></Atom>
+        <Atom smirks="[#78X0+2:1]" epsilon="0.00176831 * kilocalorie_per_mole ** 1" id="n-ionslm-126-tip4p-fb-Pt2+" rmin_half="1.229 * angstrom ** 1"></Atom>
+        <Atom smirks="[#30X0+2:1]" epsilon="0.00191142 * kilocalorie_per_mole ** 1" id="n-ionslm-126-tip4p-fb-Zn2+" rmin_half="1.234 * angstrom ** 1"></Atom>
+        <Atom smirks="[#27X0+2:1]" epsilon="0.00359255 * kilocalorie_per_mole ** 1" id="n-ionslm-126-tip4p-fb-Co2+" rmin_half="1.277 * angstrom ** 1"></Atom>
+        <Atom smirks="[#46X0+2:1]" epsilon="0.00384964 * kilocalorie_per_mole ** 1" id="n-ionslm-126-tip4p-fb-Pd2+" rmin_half="1.282 * angstrom ** 1"></Atom>
+        <Atom smirks="[#47X0+2:1]" epsilon="0.00602547 * kilocalorie_per_mole ** 1" id="n-ionslm-126-tip4p-fb-Ag2+" rmin_half="1.316 * angstrom ** 1"></Atom>
+        <Atom smirks="[#24X0+2:1]" epsilon="0.00691068 * kilocalorie_per_mole ** 1" id="n-ionslm-126-tip4p-fb-Cr2+" rmin_half="1.327 * angstrom ** 1"></Atom>
+        <Atom smirks="[#26X0+2:1]" epsilon="0.00752608 * kilocalorie_per_mole ** 1" id="n-ionslm-126-tip4p-fb-Fe2+" rmin_half="1.334 * angstrom ** 1"></Atom>
+        <Atom smirks="[#12X0+2:1]" epsilon="0.00828195 * kilocalorie_per_mole ** 1" id="n-ionslm-126-tip4p-fb-Mg2+" rmin_half="1.342 * angstrom ** 1"></Atom>
+        <Atom smirks="[#23X0+2:1]" epsilon="0.00858042 * kilocalorie_per_mole ** 1" id="n-ionslm-126-tip4p-fb-V2+" rmin_half="1.345 * angstrom ** 1"></Atom>
+        <Atom smirks="[#25X0+2:1]" epsilon="0.01476261 * kilocalorie_per_mole ** 1" id="n-ionslm-126-tip4p-fb-Mn2+" rmin_half="1.394 * angstrom ** 1"></Atom>
+        <Atom smirks="[#80X0+2:1]" epsilon="0.01476261 * kilocalorie_per_mole ** 1" id="n-ionslm-126-tip4p-fb-Hg2+" rmin_half="1.394 * angstrom ** 1"></Atom>
+        <Atom smirks="[#48X0+2:1]" epsilon="0.01538757 * kilocalorie_per_mole ** 1" id="n-ionslm-126-tip4p-fb-Cd2+" rmin_half="1.398 * angstrom ** 1"></Atom>
+        <Atom smirks="[#70X0+2:1]" epsilon="0.09019198 * kilocalorie_per_mole ** 1" id="n-ionslm-126-tip4p-fb-Yb2+" rmin_half="1.621 * angstrom ** 1"></Atom>
+        <Atom smirks="[#20X0+2:1]" epsilon="0.09344247 * kilocalorie_per_mole ** 1" id="n-ionslm-126-tip4p-fb-Ca2+" rmin_half="1.627 * angstrom ** 1"></Atom>
+        <Atom smirks="[#50X0+2:1]" epsilon="0.10359269 * kilocalorie_per_mole ** 1" id="n-ionslm-126-tip4p-fb-Sn2+" rmin_half="1.645 * angstrom ** 1"></Atom>
+        <Atom smirks="[#82X0+2:1]" epsilon="0.15773029 * kilocalorie_per_mole ** 1" id="n-ionslm-126-tip4p-fb-Pb2+" rmin_half="1.728 * angstrom ** 1"></Atom>
+        <Atom smirks="[#63X0+2:1]" epsilon="0.19865859 * kilocalorie_per_mole ** 1" id="n-ionslm-126-tip4p-fb-Eu2+" rmin_half="1.782 * angstrom ** 1"></Atom>
+        <Atom smirks="[#38X0+2:1]" epsilon="0.20424131 * kilocalorie_per_mole ** 1" id="n-ionslm-126-tip4p-fb-Sr2+" rmin_half="1.789 * angstrom ** 1"></Atom>
+        <Atom smirks="[#62X0+2:1]" epsilon="0.20988115 * kilocalorie_per_mole ** 1" id="n-ionslm-126-tip4p-fb-Sm2+" rmin_half="1.796 * angstrom ** 1"></Atom>
+        <Atom smirks="[#56X0+2:1]" epsilon="0.38216886 * kilocalorie_per_mole ** 1" id="n-ionslm-126-tip4p-fb-Ba2+" rmin_half="1.992 * angstrom ** 1"></Atom>
+        <Atom smirks="[#88X0+2:1]" epsilon="0.38216886 * kilocalorie_per_mole ** 1" id="n-ionslm-126-tip4p-fb-Ra2+" rmin_half="1.992 * angstrom ** 1"></Atom>
+        <Atom smirks="[#13X0+3:1]" epsilon="0.00312065 * kilocalorie_per_mole ** 1" id="n-ionslm-126-tip4p-fb-Al3+" rmin_half="1.267 * angstrom ** 1"></Atom>
+        <Atom smirks="[#26X0+3:1]" epsilon="0.01636246 * kilocalorie_per_mole ** 1" id="n-ionslm-126-tip4p-fb-Fe3+" rmin_half="1.404 * angstrom ** 1"></Atom>
+        <Atom smirks="[#24X0+3:1]" epsilon="0.00858042 * kilocalorie_per_mole ** 1" id="n-ionslm-126-tip4p-fb-Cr3+" rmin_half="1.345 * angstrom ** 1"></Atom>
+        <Atom smirks="[#49X0+3:1]" epsilon="0.02387506 * kilocalorie_per_mole ** 1" id="n-ionslm-126-tip4p-fb-In3+" rmin_half="1.443 * angstrom ** 1"></Atom>
+        <Atom smirks="[#81X0+3:1]" epsilon="0.03537062 * kilocalorie_per_mole ** 1" id="n-ionslm-126-tip4p-fb-Tl3+" rmin_half="1.488 * angstrom ** 1"></Atom>
+        <Atom smirks="[#39X0+3:1]" epsilon="0.07117158 * kilocalorie_per_mole ** 1" id="n-ionslm-126-tip4p-fb-Y3+" rmin_half="1.583 * angstrom ** 1"></Atom>
+        <Atom smirks="[#57X0+3:1]" epsilon="0.1485017 * kilocalorie_per_mole ** 1" id="n-ionslm-126-tip4p-fb-La3+" rmin_half="1.715 * angstrom ** 1"></Atom>
+        <Atom smirks="[#58X0+3:1]" epsilon="0.16500296 * kilocalorie_per_mole ** 1" id="n-ionslm-126-tip4p-fb-Ce3+" rmin_half="1.738 * angstrom ** 1"></Atom>
+        <Atom smirks="[#59X0+3:1]" epsilon="0.1598965 * kilocalorie_per_mole ** 1" id="n-ionslm-126-tip4p-fb-Pr3+" rmin_half="1.731 * angstrom ** 1"></Atom>
+        <Atom smirks="[#60X0+3:1]" epsilon="0.12180998 * kilocalorie_per_mole ** 1" id="n-ionslm-126-tip4p-fb-Nd3+" rmin_half="1.675 * angstrom ** 1"></Atom>
+        <Atom smirks="[#62X0+3:1]" epsilon="0.10651723 * kilocalorie_per_mole ** 1" id="n-ionslm-126-tip4p-fb-Sm3+" rmin_half="1.65 * angstrom ** 1"></Atom>
+        <Atom smirks="[#63X0+3:1]" epsilon="0.11129023 * kilocalorie_per_mole ** 1" id="n-ionslm-126-tip4p-fb-Eu3+" rmin_half="1.658 * angstrom ** 1"></Atom>
+        <Atom smirks="[#64X0+3:1]" epsilon="0.08337961 * kilocalorie_per_mole ** 1" id="n-ionslm-126-tip4p-fb-Gd3+" rmin_half="1.608 * angstrom ** 1"></Atom>
+        <Atom smirks="[#65X0+3:1]" epsilon="0.08806221 * kilocalorie_per_mole ** 1" id="n-ionslm-126-tip4p-fb-Tb3+" rmin_half="1.617 * angstrom ** 1"></Atom>
+        <Atom smirks="[#66X0+3:1]" epsilon="0.07543075 * kilocalorie_per_mole ** 1" id="n-ionslm-126-tip4p-fb-Dy3+" rmin_half="1.592 * angstrom ** 1"></Atom>
+        <Atom smirks="[#68X0+3:1]" epsilon="0.07117158 * kilocalorie_per_mole ** 1" id="n-ionslm-126-tip4p-fb-Er3+" rmin_half="1.583 * angstrom ** 1"></Atom>
+        <Atom smirks="[#69X0+3:1]" epsilon="0.07117158 * kilocalorie_per_mole ** 1" id="n-ionslm-126-tip4p-fb-Tm3+" rmin_half="1.583 * angstrom ** 1"></Atom>
+        <Atom smirks="[#71X0+3:1]" epsilon="0.06397679 * kilocalorie_per_mole ** 1" id="n-ionslm-126-tip4p-fb-Lu3+" rmin_half="1.567 * angstrom ** 1"></Atom>
+        <Atom smirks="[#72X0+4:1]" epsilon="0.02960343 * kilocalorie_per_mole ** 1" id="n-ionslm-126-tip4p-fb-Hf4+" rmin_half="1.467 * angstrom ** 1"></Atom>
+        <Atom smirks="[#40X0+4:1]" epsilon="0.03745682 * kilocalorie_per_mole ** 1" id="n-ionslm-126-tip4p-fb-Zr4+" rmin_half="1.495 * angstrom ** 1"></Atom>
+        <Atom smirks="[#58X0+4:1]" epsilon="0.13282966 * kilocalorie_per_mole ** 1" id="n-ionslm-126-tip4p-fb-Ce4+" rmin_half="1.692 * angstrom ** 1"></Atom>
+        <Atom smirks="[#92X0+4:1]" epsilon="0.13282966 * kilocalorie_per_mole ** 1" id="n-ionslm-126-tip4p-fb-U4+" rmin_half="1.692 * angstrom ** 1"></Atom>
+        <Atom smirks="[#94X0+4:1]" epsilon="0.11679623 * kilocalorie_per_mole ** 1" id="n-ionslm-126-tip4p-fb-Pu4+" rmin_half="1.667 * angstrom ** 1"></Atom>
+        <Atom smirks="[#90X0+4:1]" epsilon="0.14433113 * kilocalorie_per_mole ** 1" id="n-ionslm-126-tip4p-fb-Th4+" rmin_half="1.709 * angstrom ** 1"></Atom>
+    </vdW>
+    <LibraryCharges version="0.3">
+        <LibraryCharge smirks="[#1]-[#8X2H2+0:1]-[#1]" charge1="0.0 * elementary_charge ** 1" id="q-tip4p-fb-O"></LibraryCharge>
+        <LibraryCharge smirks="[#1:1]-[#8X2H2+0]-[#1]" charge1="0.0 * elementary_charge ** 1" id="q-tip4p-fb-H"></LibraryCharge>
+        <LibraryCharge smirks="[#3X0+1:1]" charge1="1 * elementary_charge ** 1" id="q-ionslm-126-tip4p-fb-Li+"></LibraryCharge>
+        <LibraryCharge smirks="[#11X0+1:1]" charge1="1 * elementary_charge ** 1" id="q-ionslm-126-tip4p-fb-Na+"></LibraryCharge>
+        <LibraryCharge smirks="[#19X0+1:1]" charge1="1 * elementary_charge ** 1" id="q-ionslm-126-tip4p-fb-K+"></LibraryCharge>
+        <LibraryCharge smirks="[#37X0+1:1]" charge1="1 * elementary_charge ** 1" id="q-ionslm-126-tip4p-fb-Rb+"></LibraryCharge>
+        <LibraryCharge smirks="[#55X0+1:1]" charge1="1 * elementary_charge ** 1" id="q-ionslm-126-tip4p-fb-Cs+"></LibraryCharge>
+        <LibraryCharge smirks="[#81X0+1:1]" charge1="1 * elementary_charge ** 1" id="q-ionslm-126-tip4p-fb-Tl+"></LibraryCharge>
+        <LibraryCharge smirks="[#29X0+1:1]" charge1="1 * elementary_charge ** 1" id="q-ionslm-126-tip4p-fb-Cu+"></LibraryCharge>
+        <LibraryCharge smirks="[#47X0+1:1]" charge1="1 * elementary_charge ** 1" id="q-ionslm-126-tip4p-fb-Ag+"></LibraryCharge>
+        <LibraryCharge smirks="[#9X0-1:1]" charge1="-1 * elementary_charge ** 1" id="q-ionslm-126-tip4p-fb-F-"></LibraryCharge>
+        <LibraryCharge smirks="[#17X0-1:1]" charge1="-1 * elementary_charge ** 1" id="q-ionslm-126-tip4p-fb-Cl-"></LibraryCharge>
+        <LibraryCharge smirks="[#35X0-1:1]" charge1="-1 * elementary_charge ** 1" id="q-ionslm-126-tip4p-fb-Br-"></LibraryCharge>
+        <LibraryCharge smirks="[#53X0-1:1]" charge1="-1 * elementary_charge ** 1" id="q-ionslm-126-tip4p-fb-I-"></LibraryCharge>
+        <LibraryCharge smirks="[#4X0+2:1]" charge1="2 * elementary_charge ** 1" id="q-ionslm-126-tip4p-fb-Be2+"></LibraryCharge>
+        <LibraryCharge smirks="[#29X0+2:1]" charge1="2 * elementary_charge ** 1" id="q-ionslm-126-tip4p-fb-Cu2+"></LibraryCharge>
+        <LibraryCharge smirks="[#28X0+2:1]" charge1="2 * elementary_charge ** 1" id="q-ionslm-126-tip4p-fb-Ni2+"></LibraryCharge>
+        <LibraryCharge smirks="[#78X0+2:1]" charge1="2 * elementary_charge ** 1" id="q-ionslm-126-tip4p-fb-Pt2+"></LibraryCharge>
+        <LibraryCharge smirks="[#30X0+2:1]" charge1="2 * elementary_charge ** 1" id="q-ionslm-126-tip4p-fb-Zn2+"></LibraryCharge>
+        <LibraryCharge smirks="[#27X0+2:1]" charge1="2 * elementary_charge ** 1" id="q-ionslm-126-tip4p-fb-Co2+"></LibraryCharge>
+        <LibraryCharge smirks="[#46X0+2:1]" charge1="2 * elementary_charge ** 1" id="q-ionslm-126-tip4p-fb-Pd2+"></LibraryCharge>
+        <LibraryCharge smirks="[#47X0+2:1]" charge1="2 * elementary_charge ** 1" id="q-ionslm-126-tip4p-fb-Ag2+"></LibraryCharge>
+        <LibraryCharge smirks="[#24X0+2:1]" charge1="2 * elementary_charge ** 1" id="q-ionslm-126-tip4p-fb-Cr2+"></LibraryCharge>
+        <LibraryCharge smirks="[#26X0+2:1]" charge1="2 * elementary_charge ** 1" id="q-ionslm-126-tip4p-fb-Fe2+"></LibraryCharge>
+        <LibraryCharge smirks="[#12X0+2:1]" charge1="2 * elementary_charge ** 1" id="q-ionslm-126-tip4p-fb-Mg2+"></LibraryCharge>
+        <LibraryCharge smirks="[#23X0+2:1]" charge1="2 * elementary_charge ** 1" id="q-ionslm-126-tip4p-fb-V2+"></LibraryCharge>
+        <LibraryCharge smirks="[#25X0+2:1]" charge1="2 * elementary_charge ** 1" id="q-ionslm-126-tip4p-fb-Mn2+"></LibraryCharge>
+        <LibraryCharge smirks="[#80X0+2:1]" charge1="2 * elementary_charge ** 1" id="q-ionslm-126-tip4p-fb-Hg2+"></LibraryCharge>
+        <LibraryCharge smirks="[#48X0+2:1]" charge1="2 * elementary_charge ** 1" id="q-ionslm-126-tip4p-fb-Cd2+"></LibraryCharge>
+        <LibraryCharge smirks="[#70X0+2:1]" charge1="2 * elementary_charge ** 1" id="q-ionslm-126-tip4p-fb-Yb2+"></LibraryCharge>
+        <LibraryCharge smirks="[#20X0+2:1]" charge1="2 * elementary_charge ** 1" id="q-ionslm-126-tip4p-fb-Ca2+"></LibraryCharge>
+        <LibraryCharge smirks="[#50X0+2:1]" charge1="2 * elementary_charge ** 1" id="q-ionslm-126-tip4p-fb-Sn2+"></LibraryCharge>
+        <LibraryCharge smirks="[#82X0+2:1]" charge1="2 * elementary_charge ** 1" id="q-ionslm-126-tip4p-fb-Pb2+"></LibraryCharge>
+        <LibraryCharge smirks="[#63X0+2:1]" charge1="2 * elementary_charge ** 1" id="q-ionslm-126-tip4p-fb-Eu2+"></LibraryCharge>
+        <LibraryCharge smirks="[#38X0+2:1]" charge1="2 * elementary_charge ** 1" id="q-ionslm-126-tip4p-fb-Sr2+"></LibraryCharge>
+        <LibraryCharge smirks="[#62X0+2:1]" charge1="2 * elementary_charge ** 1" id="q-ionslm-126-tip4p-fb-Sm2+"></LibraryCharge>
+        <LibraryCharge smirks="[#56X0+2:1]" charge1="2 * elementary_charge ** 1" id="q-ionslm-126-tip4p-fb-Ba2+"></LibraryCharge>
+        <LibraryCharge smirks="[#88X0+2:1]" charge1="2 * elementary_charge ** 1" id="q-ionslm-126-tip4p-fb-Ra2+"></LibraryCharge>
+        <LibraryCharge smirks="[#13X0+3:1]" charge1="3 * elementary_charge ** 1" id="q-ionslm-126-tip4p-fb-Al3+"></LibraryCharge>
+        <LibraryCharge smirks="[#26X0+3:1]" charge1="3 * elementary_charge ** 1" id="q-ionslm-126-tip4p-fb-Fe3+"></LibraryCharge>
+        <LibraryCharge smirks="[#24X0+3:1]" charge1="3 * elementary_charge ** 1" id="q-ionslm-126-tip4p-fb-Cr3+"></LibraryCharge>
+        <LibraryCharge smirks="[#49X0+3:1]" charge1="3 * elementary_charge ** 1" id="q-ionslm-126-tip4p-fb-In3+"></LibraryCharge>
+        <LibraryCharge smirks="[#81X0+3:1]" charge1="3 * elementary_charge ** 1" id="q-ionslm-126-tip4p-fb-Tl3+"></LibraryCharge>
+        <LibraryCharge smirks="[#39X0+3:1]" charge1="3 * elementary_charge ** 1" id="q-ionslm-126-tip4p-fb-Y3+"></LibraryCharge>
+        <LibraryCharge smirks="[#57X0+3:1]" charge1="3 * elementary_charge ** 1" id="q-ionslm-126-tip4p-fb-La3+"></LibraryCharge>
+        <LibraryCharge smirks="[#58X0+3:1]" charge1="3 * elementary_charge ** 1" id="q-ionslm-126-tip4p-fb-Ce3+"></LibraryCharge>
+        <LibraryCharge smirks="[#59X0+3:1]" charge1="3 * elementary_charge ** 1" id="q-ionslm-126-tip4p-fb-Pr3+"></LibraryCharge>
+        <LibraryCharge smirks="[#60X0+3:1]" charge1="3 * elementary_charge ** 1" id="q-ionslm-126-tip4p-fb-Nd3+"></LibraryCharge>
+        <LibraryCharge smirks="[#62X0+3:1]" charge1="3 * elementary_charge ** 1" id="q-ionslm-126-tip4p-fb-Sm3+"></LibraryCharge>
+        <LibraryCharge smirks="[#63X0+3:1]" charge1="3 * elementary_charge ** 1" id="q-ionslm-126-tip4p-fb-Eu3+"></LibraryCharge>
+        <LibraryCharge smirks="[#64X0+3:1]" charge1="3 * elementary_charge ** 1" id="q-ionslm-126-tip4p-fb-Gd3+"></LibraryCharge>
+        <LibraryCharge smirks="[#65X0+3:1]" charge1="3 * elementary_charge ** 1" id="q-ionslm-126-tip4p-fb-Tb3+"></LibraryCharge>
+        <LibraryCharge smirks="[#66X0+3:1]" charge1="3 * elementary_charge ** 1" id="q-ionslm-126-tip4p-fb-Dy3+"></LibraryCharge>
+        <LibraryCharge smirks="[#68X0+3:1]" charge1="3 * elementary_charge ** 1" id="q-ionslm-126-tip4p-fb-Er3+"></LibraryCharge>
+        <LibraryCharge smirks="[#69X0+3:1]" charge1="3 * elementary_charge ** 1" id="q-ionslm-126-tip4p-fb-Tm3+"></LibraryCharge>
+        <LibraryCharge smirks="[#71X0+3:1]" charge1="3 * elementary_charge ** 1" id="q-ionslm-126-tip4p-fb-Lu3+"></LibraryCharge>
+        <LibraryCharge smirks="[#72X0+4:1]" charge1="4 * elementary_charge ** 1" id="q-ionslm-126-tip4p-fb-Hf4+"></LibraryCharge>
+        <LibraryCharge smirks="[#40X0+4:1]" charge1="4 * elementary_charge ** 1" id="q-ionslm-126-tip4p-fb-Zr4+"></LibraryCharge>
+        <LibraryCharge smirks="[#58X0+4:1]" charge1="4 * elementary_charge ** 1" id="q-ionslm-126-tip4p-fb-Ce4+"></LibraryCharge>
+        <LibraryCharge smirks="[#92X0+4:1]" charge1="4 * elementary_charge ** 1" id="q-ionslm-126-tip4p-fb-U4+"></LibraryCharge>
+        <LibraryCharge smirks="[#94X0+4:1]" charge1="4 * elementary_charge ** 1" id="q-ionslm-126-tip4p-fb-Pu4+"></LibraryCharge>
+        <LibraryCharge smirks="[#90X0+4:1]" charge1="4 * elementary_charge ** 1" id="q-ionslm-126-tip4p-fb-Th4+"></LibraryCharge>
+    </LibraryCharges>
+    <Electrostatics version="0.4" scale12="0.0" scale13="0.0" scale14="0.8333333333" scale15="1.0" cutoff="9.0 * angstrom ** 1" switch_width="0.0 * angstrom ** 1" periodic_potential="Ewald3D-ConductingBoundary" nonperiodic_potential="Coulomb" exception_potential="Coulomb"></Electrostatics>
+    <Constraints version="0.3">
+        <Constraint smirks="[#1:1]-[#8X2H2+0:2]-[#1]" id="c-tip4p-fb-H-O" distance="0.09572 * nanometer ** 1"></Constraint>
+        <Constraint smirks="[#1:1]-[#8X2H2+0]-[#1:2]" id="c-tip4p-fb-H-O-H" distance="0.15139006545247014 * nanometer ** 1"></Constraint>
+    </Constraints>
+    <VirtualSites version="0.3" exclusion_policy="parents">
+        <VirtualSite smirks="[#1:2]-[#8X2H2+0:1]-[#1:3]" epsilon="0.0 * kilocalorie_per_mole ** 1" type="DivalentLonePair" match="once" distance="-0.010527445756662016 * nanometer ** 1" outOfPlaneAngle="0.0 * degree ** 1" inPlaneAngle="None" charge_increment1="0.0 * elementary_charge ** 1" charge_increment2="0.5258681106763 * elementary_charge ** 1" charge_increment3="0.5258681106763 * elementary_charge ** 1" sigma="1.0 * angstrom ** 1" name="EP"></VirtualSite>
+    </VirtualSites>
+</SMIRNOFF>

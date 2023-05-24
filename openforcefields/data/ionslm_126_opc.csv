@@ -1,4 +1,4 @@
-element,opc_rmin2 (A),opc_eps (kcal/mol)
+element,rmin_half (Angstrom),epsilon (kcal/mol)
 Li+,1.242,0.00216058
 Na+,1.467,0.02960343
 K+,1.702,0.13953816
