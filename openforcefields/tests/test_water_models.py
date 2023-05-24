@@ -211,7 +211,7 @@ def test_tip5p(water_molecule):
 
 @pytest.mark.parametrize(
     "water_model,pattern",
-    [("tip3p", "^tip3p(?!.*fb)"), ("tip3p_fb", "^tip3p_fb"), ("tip4p_fb", "^tip4p_fb"), ("opc3", "^opc"), ("opc", "^opc(?!.*3)")],
+    [("tip3p", "^tip3p(?!.*fb)"), ("tip3p_fb", "^tip3p_fb"), ("tip4p_fb", "^tip4p_fb"), ("opc3", "^opc3"), ("opc", "^opc(?!3)")],
 )
 def test_most_recent_version_match(water_model, pattern):
     import re
