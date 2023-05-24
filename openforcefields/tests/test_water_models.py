@@ -76,7 +76,7 @@ def test_tip3p_fb(water_molecule):
         rigidWater=True,
     )
 
-    system = ForceField("tip3p_fb-1.0.0.offxml").create_openmm_system(
+    system = ForceField("tip3p_fb-1.1.0.offxml").create_openmm_system(
         water_molecule,
     )
 
@@ -89,6 +89,57 @@ def test_tip3p_fb(water_molecule):
             "epsilon": 1e-10 * openmm.unit.kilojoule_per_mole,
         },
     )
+
+def test_tip4p_fb(water_molecule):
+    from openmm.app import Modeller
+    omm_water = water_molecule.to_openmm()
+    omm_ff = OpenMMForceField("tip4pfb.xml")
+    mod = Modeller(omm_water, water_molecule.get_positions().to_openmm())
+    mod.addExtraParticles(omm_ff)
+    reference = omm_ff.createSystem(
+        mod.getTopology(),
+        constraints=HAngles,
+        rigidWater=True,
+    )
+
+    interchange = ForceField("tip4p_fb-1.0.0.offxml").create_interchange(
+        water_molecule,
+    )
+    system = interchange.to_openmm()
+
+    compare_water_systems(
+        reference,
+        system,
+        {
+            "charge": 1e-10 * openmm.unit.elementary_charge,
+            "sigma": 1e-10 * openmm.unit.nanometer,
+            "epsilon": 1e-10 * openmm.unit.kilojoule_per_mole,
+        },
+    )
+
+
+def test_opc3(water_molecule):
+    reference = OpenMMForceField("opc3.xml").createSystem(
+        water_molecule.to_openmm(),
+        constraints=HAngles,
+        rigidWater=True,
+    )
+
+    interchange = ForceField("opc3-1.0.0.offxml").create_interchange(
+        water_molecule,
+    )
+    system = interchange.to_openmm()
+
+    compare_water_systems(
+        reference,
+        system,
+        {
+            "charge": 1e-10 * openmm.unit.elementary_charge,
+            "sigma": 1e-10 * openmm.unit.nanometer,
+            "epsilon": 1e-10 * openmm.unit.kilojoule_per_mole,
+        },
+    )
+
 
 def test_opc(water_molecule):
     from openmm.app import Modeller
@@ -160,7 +211,7 @@ def test_tip5p(water_molecule):
 
 @pytest.mark.parametrize(
     "water_model,pattern",
-    [("tip3p", "^tip3p(?!.*fb)"), ("tip3p_fb", "^tip3p_fb"), ("opc", "^opc")],
+    [("tip3p", "^tip3p(?!.*fb)"), ("tip3p_fb", "^tip3p_fb"), ("tip4p_fb", "^tip4p_fb"), ("opc3", "^opc"), ("opc", "^opc(?!.*3)")],
 )
 def test_most_recent_version_match(water_model, pattern):
     import re
@@ -273,6 +324,8 @@ def test_water_model_is_compatible_with_mainline():
     """Ensure that the latest water model FF is compatible with the latest main-line FF"""
     # Since we don't have a way to get the most recent mainline FF, be sure
     # to occasionally update the first FF listed here
-    ForceField('openff-2.0.0.offxml', 'tip3p.offxml')
-    ForceField('openff-2.0.0.offxml', 'tip3p_fb.offxml')
-    ForceField('openff-2.0.0.offxml', 'opc.offxml')
+    ForceField('openff-2.1.0.offxml', 'tip3p.offxml')
+    ForceField('openff-2.1.0.offxml', 'tip3p_fb.offxml')
+    ForceField('openff-2.1.0.offxml', 'tip4p_fb.offxml')
+    ForceField('openff-2.1.0.offxml', 'opc3.offxml')
+    ForceField('openff-2.1.0.offxml', 'opc.offxml')
