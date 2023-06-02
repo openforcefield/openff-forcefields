@@ -45,18 +45,18 @@ jobs:
 
       - name: Install dependencies
         if: ${{ matrix.toolkit == true }}
-        uses: mamba-org/provision-with-micromamba@main
+        uses: mamba-org/setup-micromamba@v1
         with:
           environment-file: devtools/conda-envs/test_env.yaml
-          extra-specs: |
+          create-args: >-
             python=${{ matrix.python-version }}
 
       - name: Install dependencies
         if: ${{ matrix.toolkit == false }}
-        uses: mamba-org/provision-with-micromamba@main
+        uses: mamba-org/setup-micromamba@v1
         with:
           environment-file: devtools/conda-envs/test_no_toolkit.yaml
-          extra-specs: |
+          create-args: >-
             python=${{ matrix.python-version }}
 
       - name: Install package
