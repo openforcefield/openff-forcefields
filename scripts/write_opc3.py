@@ -1,5 +1,5 @@
 """
-Write OPC parameters into a SMIRNOFF force field.
+Write OPC3 parameters into a SMIRNOFF force field.
 Based on ambertools-22.0-py310h206695f.
 Water Lennard-Jones parameters and geometry from $AMBERHOME/dat/leap/parm/frcmod.opc3
 Water hydrogen charge from $AMBERHOME/dat/leap/lib/solvents.lib
@@ -20,81 +20,64 @@ from openff.units import unit
 from openff.units.elements import SYMBOLS
 from packaging import version
 
-VERSION = version.Version("1.0.1")
+VERSION = version.Version("1.0.0")
 OFFXML_PATH = Path("openforcefields", "offxml")
 
 ion_nb_params_df = pandas.read_csv(
-    Path("openforcefields", "data", "ionslm_126_opc.csv")
+    Path("openforcefields", "data", "ionslm_126_opc3.csv")
 )
 
-opc = ForceField()
+opc3 = ForceField()
 
-opc_electrostatics = ElectrostaticsHandler(version=0.4, scale14=0.8333333333)
-opc_library = LibraryChargeHandler(version=0.3)
-opc_vdw = vdWHandler(version=0.3)
-opc_constraints = ConstraintHandler(version=0.3)
-opc_virtual_sites = VirtualSiteHandler(version=0.3)
+opc3_electrostatics = ElectrostaticsHandler(version=0.4, scale14=0.8333333333)
+opc3_library = LibraryChargeHandler(version=0.3)
+opc3_vdw = vdWHandler(version=0.3)
+opc3_constraints = ConstraintHandler(version=0.3)
 
-opc_vdw.add_parameter(
+opc3_vdw.add_parameter(
     {
         "smirks": "[#1]-[#8X2H2+0:1]-[#1]",
-        "epsilon": unit.Quantity(0.2128008130, unit.kilocalorie_per_mole),
-        "rmin_half": unit.Quantity(1.777167268, unit.angstrom),
-        "id": "n-opc-O",
+        "epsilon": unit.Quantity(0.163406, unit.kilocalorie_per_mole),
+        "rmin_half": unit.Quantity(1.7814990, unit.angstrom),
+        "id": "n-opc3-O",
     }
 )
-opc_vdw.add_parameter(
+opc3_vdw.add_parameter(
     {
         "smirks": "[#1:1]-[#8X2H2+0]-[#1]",
         "epsilon": unit.Quantity(0.0, unit.kilocalorie_per_mole),
         "rmin_half": unit.Quantity(1.0, unit.angstrom),
-        "id": "n-opc-H",
+        "id": "n-opc3-H",
     }
 )
 
-opc_library.add_parameter(
+opc3_library.add_parameter(
     {
         "smirks": "[#1]-[#8X2H2+0:1]-[#1]",
-        "charge1": unit.Quantity(0.0, unit.elementary_charge),
-        "id": "q-opc-O",
+        "charge1": unit.Quantity(-0.895170, unit.elementary_charge),
+        "id": "q-opc3-O",
     }
 )
-opc_library.add_parameter(
+opc3_library.add_parameter(
     {
         "smirks": "[#1:1]-[#8X2H2+0]-[#1]",
-        "charge1": unit.Quantity(0.0, unit.elementary_charge),
-        "id": "q-opc-H",
+        "charge1": unit.Quantity(0.447585, unit.elementary_charge),
+        "id": "q-opc3-H",
     }
 )
 
-opc_virtual_sites.add_parameter(
-    {
-        "type": "DivalentLonePair",
-        "smirks": "[#1:2]-[#8X2H2+0:1]-[#1:3]",
-        "match": "once",
-        "name": "EP",
-        "distance": unit.Quantity(-0.15939833, unit.angstrom),
-        "rmin_half": unit.Quantity(1.0, unit.angstrom),
-        "epsilon": unit.Quantity(0.0, unit.kilocalorie_per_mole),
-        "outOfPlaneAngle": unit.Quantity(0.0, unit.degree),
-        "charge_increment1": unit.Quantity(0.0, unit.elementary_charge),
-        "charge_increment2": unit.Quantity(0.679142, unit.elementary_charge),
-        "charge_increment3": unit.Quantity(0.679142, unit.elementary_charge),
-    }
-)
-
-opc_constraints.add_parameter(
+opc3_constraints.add_parameter(
     {
         "smirks": "[#1:1]-[#8X2H2+0:2]-[#1]",
-        "id": "c-opc-H-O",
-        "distance": unit.Quantity(0.87243313, unit.angstrom),
+        "id": "c-opc3-H-O",
+        "distance": unit.Quantity(0.978882, unit.angstrom),
     }
 )
-opc_constraints.add_parameter(
+opc3_constraints.add_parameter(
     {
         "smirks": "[#1:1]-[#8X2H2+0]-[#1:2]",
-        "id": "c-opc-H-O-H",
-        "distance": unit.Quantity(1.37120510, unit.angstrom),
+        "id": "c-opc3-H-O-H",
+        "distance": unit.Quantity(1.598507, unit.angstrom),
     }
 )
 
@@ -119,7 +102,7 @@ for _, row in ion_nb_params_df.iterrows():
 
     smirks = f"[#{atomic_number}X0{charge_sign}{charge_magnitude}:1]"
 
-    opc_vdw.add_parameter(
+    opc3_vdw.add_parameter(
         {
             "smirks": smirks,
             "rmin_half": unit.Quantity(row["rmin_half (Angstrom)"], unit.angstrom),
@@ -127,28 +110,27 @@ for _, row in ion_nb_params_df.iterrows():
                 row["epsilon (kcal/mol)"],
                 unit.kilocalorie_per_mole,
             ),
-            "id": f"n-ionslm-126-opc-{ion_name}",
+            "id": f"n-ionslm-126-opc3-{ion_name}",
         }
     )
 
-    opc_library.add_parameter(
+    opc3_library.add_parameter(
         {
             "smirks": smirks,
             "charge1": unit.Quantity(
                 int(f"{charge_sign}{charge_magnitude}"), unit.elementary_charge
             ),
-            "id": f"q-ionslm-126-opc-{ion_name}",
+            "id": f"q-ionslm-126-opc3-{ion_name}",
         }
     )
 
 for handler in [
-    opc_vdw,
-    opc_library,
-    opc_electrostatics,
-    opc_constraints,
-    opc_virtual_sites,
+    opc3_vdw,
+    opc3_library,
+    opc3_electrostatics,
+    opc3_constraints,
 ]:
-    opc.register_parameter_handler(handler)
+    opc3.register_parameter_handler(handler)
 
-opc.to_file(Path(OFFXML_PATH, "opc.offxml"))
-opc.to_file(Path(OFFXML_PATH, f"opc-{VERSION}.offxml"))
+opc3.to_file(Path(OFFXML_PATH, "opc3.offxml"))
+opc3.to_file(Path(OFFXML_PATH, f"opc3-{VERSION}.offxml"))
