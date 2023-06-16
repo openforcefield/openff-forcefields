@@ -148,7 +148,7 @@ Force fields moving forward will be called `name-X.Y.Z`
 
 - `2023.05.1`: This release adds `openff-2.1.0.offxml`, Sage 2.1.0, with identical physics parameters to `openff-2.1.0-rc.1.offxml`.
 
-- `2023.06.0`: This release adds `opc-1.0.1.offxml`, standardizing the use of the string "kilocalorie_per_mole". It also adds `tip3p-fb-1.1.0.offxml`, containing additional ion parameters. Finally, it adds `opc3-1.0.0.offxml` and `tip4p_fb-1.0.0.offxml`. 
+- `2023.06.0`: This release adds `opc-1.0.1.offxml`, standardizing the use of the string "kilocalorie_per_mole". It also adds `tip3p-fb-1.1.0.offxml`, which fixes a unit error in the geometric constraints and adds additional ion parameters. Finally, it adds `opc3-1.0.0.offxml` and `tip4p_fb-1.0.0.offxml`. 
 
 #### Acknowledgements
 
