@@ -17,10 +17,6 @@ Instead they are ports of existing force fields into the [SMIRNOFF](https://open
 
 **Note**: Current mainline SMIRNOFF force fields already contain a water model and ion parameters. If you intend to use a mainline OpenFF force field for most molecules in a topology while using an alternate force field specifically for water and ions, ensure that the water-and-ions force field is loaded _last_, so that its parameters take precedence over those from the main-line force field.  
 
-## Change log
-
-- May 24, 2023: `tip3p_fb-1.1.0.offxml`: Fix unit error in angle constraint, add ion parameters.
-
 ## Versioning
 
 Two identical copies of each file are distributed, one with the shorthand name of each file (i.e. `tip3p.offxml`) for ease of use and another with a tagged version using [semantic versioning](https://semver.org/) (i.e. `tip3p_1.0.0.offxml`).
