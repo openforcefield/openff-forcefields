@@ -26,16 +26,17 @@ Details for each force field in this repository can be found in the following ta
 
 | Filename                                    | DOI                                                                                                       | FF line | Release Date  | Major format changes? |
 |---------------------------------------------|-----------------------------------------------------------------------------------------------------------|---------|---------------|-----------------------|
-| `openff-2.1.0.offxml`                       | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.7889050.svg)](https://doi.org/10.5281/zenodo.7889050)                                   | Sage    | May 2, 2023   | No                    |
-| `openff_unconstrained-2.1.0.offxml`         | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.7889050.svg)](https://doi.org/10.5281/zenodo.7889050)                                   | Sage    | May 2, 2023   | No                    |
-| `opc-1.0.0.offxml`                          | see `docs/water-models.md`                                                                                | Ports   | May 1, 2023   | No                    |
+| `opc-1.0.1.offxml`                          | see `docs/water-models.md`                                                                                | Ports   | May 24, 2023  | No                    |
 | `opc3-1.0.0.offxml`                         | see `docs/water-models.md`                                                                                | Ports   | May 24, 2023  | No                    |
+| `tip3p_fb-1.1.0.offxml`                     | see `docs/water-models.md`                                                                                | Ports   | May 24, 2023  | No                    |
+| `tip4p_fb-1.0.0.offxml`                     | see `docs/water-models.md`                                                                                | Ports   | May 24, 2023  | No                    |
+| `openff-2.1.0.offxml`                       | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.7889050.svg)](https://doi.org/10.5281/zenodo.7889050) | Sage    | May 2, 2023   | No                    |
+| `openff_unconstrained-2.1.0.offxml`         | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.7889050.svg)](https://doi.org/10.5281/zenodo.7889050) | Sage    | May 2, 2023   | No                    |
+| `opc-1.0.0.offxml`                          | see `docs/water-models.md`                                                                                | Ports   | May 1, 2023   | No                    |
 | `openff-2.1.0-rc.1.offxml`                  |                                                                                                           | Sage    | Apr 10, 2023  | No                    |
 | `openff_unconstrained-2.1.0-rc.1.offxml`    |                                                                                                           | Sage    | Apr 10, 2023  | No                    |
-| `tip3p_fb-1.1.0.offxml`                     | see `docs/water-models.md`                                                                                | Ports   | May 24, 2023  | No                    |
 | `tip3p_fb-1.0.0.offxml`                     | see `docs/water-models.md`                                                                                | Ports   | Feb 27, 2023  | No                    |
 | `tip3p-1.0.0.offxml`                        | see `docs/water-models.md`                                                                                | Ports   | Feb 27, 2023  | No                    |
-| `tip4p_fb-1.0.0.offxml`                     | see `docs/water-models.md`                                                                                | Ports   | May 24, 2023  | No                    |
 | `openff-2.0.0.offxml`                       | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.5214478.svg)](https://doi.org/10.5281/zenodo.5214478) | Sage    | Aug 16, 2021  | No                    |
 | `openff_unconstrained-2.0.0.offxml`         | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.5214478.svg)](https://doi.org/10.5281/zenodo.5214478) | Sage    | Aug 16, 2021  | No                    |
 | `openff-2.0.0-rc.2.offxml`                  | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.5156698.svg)](https://doi.org/10.5281/zenodo.5156698) | Sage    | Aug 3, 2021   | No                    |
@@ -146,6 +147,8 @@ Force fields moving forward will be called `name-X.Y.Z`
 - `2023.05.0`: This release adds the `opc-1.0.0.offxml`, our initial port of the OPC water model.
 
 - `2023.05.1`: This release adds `openff-2.1.0.offxml`, Sage 2.1.0, with identical physics parameters to `openff-2.1.0-rc.1.offxml`.
+
+- `2023.06.0`: This release adds `opc-1.0.1.offxml`, standardizing the use of the string "kilocalorie_per_mole". It also adds `tip3p-fb-1.1.0.offxml`, containing additional ion parameters. Finally, it adds `opc3-1.0.0.offxml` and `tip4p_fb-1.0.0.offxml`. 
 
 #### Acknowledgements
 
