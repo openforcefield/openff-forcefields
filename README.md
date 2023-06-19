@@ -1,6 +1,6 @@
 # OpenFF Force Fields
 
-[![Build Status](https://github.com/openforcefield/openff-forcefields/workflows/CI/badge.svg)](https://github.com/openforcefield/openff-forcefields/actions?query=branch%3Amaster+workflow%3ACI)  [![Parsley paper DOI](https://img.shields.io/badge/Paper%20DOI-10.1021%2Facs.jctc.1c00571-blue)](https://doi.org/10.1021/acs.jctc.1c00571)
+[![Build Status](https://github.com/openforcefield/openff-forcefields/workflows/CI/badge.svg)](https://github.com/openforcefield/openff-forcefields/actions?query=branch%3Amaster+workflow%3ACI) 
 
 
 This repository contains force fields released by the [Open Force Field Initiative](https://openforcefield.org).
