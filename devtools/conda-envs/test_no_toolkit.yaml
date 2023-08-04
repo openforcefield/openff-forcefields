@@ -6,5 +6,6 @@ dependencies:
   - pip
   - pytest
   - pytest-cov
+  - pytest-xdist
   # Pull in for consistency with main testing env, will be uninstalled
   - openff-forcefields
