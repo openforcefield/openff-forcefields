@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SMIRNOFF version="0.3" aromaticity_model="OEAroModel_MDL">
     <vdW version="0.3" potential="Lennard-Jones-12-6" combining_rules="Lorentz-Berthelot" scale12="0.0" scale13="0.0" scale14="0.5" scale15="1.0" cutoff="9.0 * angstrom ** 1" switch_width="1.0 * angstrom ** 1" method="cutoff">
-        <Atom smirks="[#1]-[#8X2H2+0:1]-[#1]" epsilon="0.1553537 * kilocalorie_per_mole ** 1" id="n-spce-O" sigma="3.166 * angstrom ** 1"></Atom>
+        <Atom smirks="[#1]-[#8X2H2+0:1]-[#1]" epsilon="0.1553942681 * kilocalorie_per_mole ** 1" id="n-spce-O" sigma="3.16555789 * angstrom ** 1"></Atom>
         <Atom smirks="[#1:1]-[#8X2H2+0]-[#1]" epsilon="0.0 * kilocalorie_per_mole ** 1" id="n-spce-H" sigma="1.0 * nanometer ** 1"></Atom>
     </vdW>
     <LibraryCharges version="0.3">

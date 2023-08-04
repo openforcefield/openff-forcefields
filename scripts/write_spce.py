@@ -24,8 +24,8 @@ spce_constraints = ConstraintHandler(version=0.3)
 spce_vdw.add_parameter(
     {
         "smirks": "[#1]-[#8X2H2+0:1]-[#1]",
-        "epsilon": unit.Quantity(0.1553537, unit.kilocalorie_per_mole),
-        "sigma": unit.Quantity(3.166, unit.angstrom),
+        "epsilon": unit.Quantity(0.1553942681, unit.kilocalorie_per_mole),
+        "sigma": unit.Quantity(3.16555789, unit.angstrom),
         "id": "n-spce-O",
     }
 )
