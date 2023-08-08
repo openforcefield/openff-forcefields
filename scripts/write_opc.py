@@ -20,7 +20,7 @@ from openff.units import unit
 from openff.units.elements import SYMBOLS
 from packaging import version
 
-VERSION = version.Version("1.0.1")
+VERSION = version.Version("1.0.2")
 OFFXML_PATH = Path("openforcefields", "offxml")
 
 ion_nb_params_df = pandas.read_csv(

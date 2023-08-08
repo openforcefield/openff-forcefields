@@ -11,7 +11,7 @@ from openff.toolkit.typing.engines.smirnoff.parameters import (
 from openff.units import unit
 from packaging import version
 
-VERSION = version.Version("1.0.0")
+VERSION = version.Version("1.0.1")
 OFFXML_PATH = "openforcefields/offxml/"
 
 dataframe = pandas.read_csv("openforcefields/data/jc.csv")

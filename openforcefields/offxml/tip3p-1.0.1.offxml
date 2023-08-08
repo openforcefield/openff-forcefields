@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SMIRNOFF version="0.3" aromaticity_model="OEAroModel_MDL">
+    <vdW version="0.4" potential="Lennard-Jones-12-6" combining_rules="Lorentz-Berthelot" scale12="0.0" scale13="0.0" scale14="0.5" scale15="1.0" cutoff="9.0 * angstrom ** 1" switch_width="1.0 * angstrom ** 1" periodic_method="cutoff" nonperiodic_method="no-cutoff">
+        <Atom smirks="[#1]-[#8X2H2+0:1]-[#1]" epsilon="0.1521 * kilocalorie_per_mole ** 1" id="n-tip3p-O" sigma="3.1507 * angstrom ** 1"></Atom>
+        <Atom smirks="[#1:1]-[#8X2H2+0]-[#1]" epsilon="0.0 * kilocalorie_per_mole ** 1" id="n-tip3p-H" sigma="1.0 * nanometer ** 1"></Atom>
+        <Atom smirks="[#3X0+1:1]" epsilon="0.0279896 * kilocalorie_per_mole ** 1" rmin_half="1.025 * angstrom ** 1"></Atom>
+        <Atom smirks="[#11X0+1:1]" epsilon="0.0874393 * kilocalorie_per_mole ** 1" rmin_half="1.369 * angstrom ** 1"></Atom>
+        <Atom smirks="[#19X0+1:1]" epsilon="0.1936829 * kilocalorie_per_mole ** 1" rmin_half="1.705 * angstrom ** 1"></Atom>
+        <Atom smirks="[#37X0+1:1]" epsilon="0.3278219 * kilocalorie_per_mole ** 1" rmin_half="1.813 * angstrom ** 1"></Atom>
+        <Atom smirks="[#55X0+1:1]" epsilon="0.4065394 * kilocalorie_per_mole ** 1" rmin_half="1.976 * angstrom ** 1"></Atom>
+        <Atom smirks="[#9X0-1:1]" epsilon="0.003364 * kilocalorie_per_mole ** 1" rmin_half="2.303 * angstrom ** 1"></Atom>
+        <Atom smirks="[#17X0-1:1]" epsilon="0.035591 * kilocalorie_per_mole ** 1" rmin_half="2.513 * angstrom ** 1"></Atom>
+        <Atom smirks="[#35X0-1:1]" epsilon="0.0586554 * kilocalorie_per_mole ** 1" rmin_half="2.608 * angstrom ** 1"></Atom>
+        <Atom smirks="[#53X0-1:1]" epsilon="0.0536816 * kilocalorie_per_mole ** 1" rmin_half="2.86 * angstrom ** 1"></Atom>
+    </vdW>
+    <LibraryCharges version="0.3">
+        <LibraryCharge smirks="[#1]-[#8X2H2+0:1]-[#1]" charge1="-0.834 * elementary_charge ** 1" id="q-tip3p-O"></LibraryCharge>
+        <LibraryCharge smirks="[#1:1]-[#8X2H2+0]-[#1]" charge1="0.417 * elementary_charge ** 1" id="q-tip3p-H"></LibraryCharge>
+        <LibraryCharge smirks="[#3X0+1:1]" charge1="1 * elementary_charge ** 1"></LibraryCharge>
+        <LibraryCharge smirks="[#11X0+1:1]" charge1="1 * elementary_charge ** 1"></LibraryCharge>
+        <LibraryCharge smirks="[#19X0+1:1]" charge1="1 * elementary_charge ** 1"></LibraryCharge>
+        <LibraryCharge smirks="[#37X0+1:1]" charge1="1 * elementary_charge ** 1"></LibraryCharge>
+        <LibraryCharge smirks="[#55X0+1:1]" charge1="1 * elementary_charge ** 1"></LibraryCharge>
+        <LibraryCharge smirks="[#9X0-1:1]" charge1="-1 * elementary_charge ** 1"></LibraryCharge>
+        <LibraryCharge smirks="[#17X0-1:1]" charge1="-1 * elementary_charge ** 1"></LibraryCharge>
+        <LibraryCharge smirks="[#35X0-1:1]" charge1="-1 * elementary_charge ** 1"></LibraryCharge>
+        <LibraryCharge smirks="[#53X0-1:1]" charge1="-1 * elementary_charge ** 1"></LibraryCharge>
+    </LibraryCharges>
+    <Electrostatics version="0.4" scale12="0.0" scale13="0.0" scale14="0.8333333333" scale15="1.0" cutoff="9.0 * angstrom ** 1" switch_width="0.0 * angstrom ** 1" periodic_potential="Ewald3D-ConductingBoundary" nonperiodic_potential="Coulomb" exception_potential="Coulomb"></Electrostatics>
+    <Constraints version="0.3">
+        <Constraint smirks="[#1:1]-[#8X2H2+0:2]-[#1]" id="c-tip3p-H-O" distance="0.9572 * angstrom ** 1"></Constraint>
+        <Constraint smirks="[#1:1]-[#8X2H2+0]-[#1:2]" id="c-tip3p-H-O-H" distance="1.5139006545247014 * angstrom ** 1"></Constraint>
+    </Constraints>
+</SMIRNOFF>
