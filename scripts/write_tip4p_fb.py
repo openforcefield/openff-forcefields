@@ -29,7 +29,7 @@ tip4p_fb = ForceField()
 
 tip4p_fb_electrostatics = ElectrostaticsHandler(version=0.4, scale14=0.8333333333)
 tip4p_fb_library = LibraryChargeHandler(version=0.3)
-tip4p_fb_vdw = vdWHandler(version=0.3)
+tip4p_fb_vdw = vdWHandler(version=0.4)
 tip4p_fb_constraints = ConstraintHandler(version=0.3)
 tip4p_fb_virtual_sites = VirtualSiteHandler(version=0.3)
 

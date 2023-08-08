@@ -28,7 +28,7 @@ tip3p_fb = ForceField()
 
 tip3p_fb_electrostatics = ElectrostaticsHandler(version=0.4, scale14=0.8333333333)
 tip3p_fb_library = LibraryChargeHandler(version=0.3)
-tip3p_fb_vdw = vdWHandler(version=0.3)
+tip3p_fb_vdw = vdWHandler(version=0.4)
 tip3p_fb_constraints = ConstraintHandler(version=0.3)
 
 tip3p_fb_vdw.add_parameter(

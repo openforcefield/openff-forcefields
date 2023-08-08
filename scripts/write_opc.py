@@ -31,7 +31,7 @@ opc = ForceField()
 
 opc_electrostatics = ElectrostaticsHandler(version=0.4, scale14=0.8333333333)
 opc_library = LibraryChargeHandler(version=0.3)
-opc_vdw = vdWHandler(version=0.3)
+opc_vdw = vdWHandler(version=0.4)
 opc_constraints = ConstraintHandler(version=0.3)
 opc_virtual_sites = VirtualSiteHandler(version=0.3)
 

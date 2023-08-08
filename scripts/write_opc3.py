@@ -31,7 +31,7 @@ opc3 = ForceField()
 
 opc3_electrostatics = ElectrostaticsHandler(version=0.4, scale14=0.8333333333)
 opc3_library = LibraryChargeHandler(version=0.3)
-opc3_vdw = vdWHandler(version=0.3)
+opc3_vdw = vdWHandler(version=0.4)
 opc3_constraints = ConstraintHandler(version=0.3)
 
 opc3_vdw.add_parameter(
