@@ -18,7 +18,7 @@ spce = ForceField()
 
 spce_electrostatics = ElectrostaticsHandler(version=0.4, scale14=0.8333333333)
 spce_library = LibraryChargeHandler(version=0.3)
-spce_vdw = vdWHandler(version=0.3)
+spce_vdw = vdWHandler(version=0.4)
 spce_constraints = ConstraintHandler(version=0.3)
 
 spce_vdw.add_parameter(
