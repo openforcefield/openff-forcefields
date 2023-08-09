@@ -11,7 +11,7 @@ from openff.toolkit.typing.engines.smirnoff.parameters import (
 from openff.units import unit
 from packaging import version
 
-VERSION = version.Version("1.0.0")
+VERSION = version.Version("1.0.1")
 OFFXML_PATH = "openforcefields/offxml/"
 
 dataframe = pandas.read_csv("openforcefields/data/jc.csv")
@@ -20,7 +20,7 @@ tip3p = ForceField()
 
 tip3p_electrostatics = ElectrostaticsHandler(version=0.4, scale14=0.8333333333)
 tip3p_library = LibraryChargeHandler(version=0.3)
-tip3p_vdw = vdWHandler(version=0.3)
+tip3p_vdw = vdWHandler(version=0.4)
 tip3p_constraints = ConstraintHandler(version=0.3)
 
 tip3p_vdw.add_parameter(
