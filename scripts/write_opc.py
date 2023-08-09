@@ -20,7 +20,7 @@ from openff.units import unit
 from openff.units.elements import SYMBOLS
 from packaging import version
 
-VERSION = version.Version("1.0.1")
+VERSION = version.Version("1.0.2")
 OFFXML_PATH = Path("openforcefields", "offxml")
 
 ion_nb_params_df = pandas.read_csv(
@@ -31,7 +31,7 @@ opc = ForceField()
 
 opc_electrostatics = ElectrostaticsHandler(version=0.4, scale14=0.8333333333)
 opc_library = LibraryChargeHandler(version=0.3)
-opc_vdw = vdWHandler(version=0.3)
+opc_vdw = vdWHandler(version=0.4)
 opc_constraints = ConstraintHandler(version=0.3)
 opc_virtual_sites = VirtualSiteHandler(version=0.3)
 
