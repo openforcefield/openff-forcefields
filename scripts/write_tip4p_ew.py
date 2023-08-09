@@ -23,7 +23,7 @@ tip4p_ew = ForceField()
 
 tip4p_ew_electrostatics = ElectrostaticsHandler(version=0.4, scale14=0.8333333333)
 tip4p_ew_library = LibraryChargeHandler(version=0.3)
-tip4p_ew_vdw = vdWHandler(version=0.3)
+tip4p_ew_vdw = vdWHandler(version=0.4)
 tip4p_ew_constraints = ConstraintHandler(version=0.3)
 tip4p_ew_virtual_sites = VirtualSiteHandler(version=0.3)
 
