@@ -1,18 +1,15 @@
 """
 openforcefields.py
-A general small molecule forcefield descended from AMBER99 and parm@Frosst in the SMIRNOFF format.
 
 This module only contains the function that will be the entry point that
 will be used by the openforcefield toolkit to find the installed forcefield
 files.
 
 """
-from typing import List
-
-from pkg_resources import resource_filename
+from importlib.resources import files
 
 
-def get_forcefield_dirs_paths() -> List[str]:
+def get_forcefield_dirs_paths() -> list[str]:
     """
     Return the paths to the directories including the forcefield files.
 
@@ -22,10 +19,8 @@ def get_forcefield_dirs_paths() -> List[str]:
 
     Returns
     -------
-    dir_paths : List[str]
+    dir_paths : list[str]
         The list of directory paths containing the SMIRNOFF files.
 
     """
-    return [
-        resource_filename('openforcefields', 'offxml'),
-    ]
+    return [(files("openforcefields") / "offxml").as_posix()]
