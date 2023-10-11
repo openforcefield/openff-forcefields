@@ -22,7 +22,7 @@ class CanaryError(Exception):
     """Base exception for canary"""
 
     def __init__(self, message, runs):
-        super(CanaryError, self).__init__(message)
+        super().__init__(message)
         self.message = message
         self.runs = runs
 
@@ -36,7 +36,8 @@ class HMRCanaryError(CanaryError):
 
 def hmr_driver(mol, ff_name):
     """Given an OpenFF Molecule, run a short 4 fs HMR simulation. This function is adapted from
-    https://github.com/openforcefield/openforcefields/issues/19#issuecomment-689816995"""
+    https://github.com/openforcefield/openforcefields/issues/19#issuecomment-689816995
+    """
     print(
         f"Running HMR with force field {ff_name} and molecule with SMILES {mol.to_smiles()}"
     )
