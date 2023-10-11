@@ -3,7 +3,6 @@ from typing import Dict
 import openmm
 import openmm.unit
 import pytest
-from openff.interchange.interop.openmm import to_openmm_topology
 from openff.toolkit import ForceField, Molecule, Topology
 from openmm.app import ForceField as OpenMMForceField
 from openmm.app import HAngles
@@ -177,8 +176,6 @@ def test_tip4p_ew(water_molecule):
         water_molecule,
     )
 
-    openmm_topology = to_openmm_topology(interchange)
-
     reference = OpenMMForceField("tip4pew.xml").createSystem(
         openmm_topology,
         constraints=HAngles,
@@ -190,22 +187,31 @@ def test_tip4p_ew(water_molecule):
     )
 
 
-@pytest.mark.skip(reason="Skipping in first pass")
 def test_tip5p(water_molecule):
-    interchange = ForceField("tip5p_1.0.0.offxml").create_openmm_system(
-        water_molecule,
-    )
-
-    openmm_topology = to_openmm_topology(interchange)
-
-    reference = OpenMMForceField("tip5p.xml").createSystem(
-        openmm_topology,
+    from openmm.app import Modeller
+    omm_water = water_molecule.to_openmm()
+    omm_ff = OpenMMForceField("tip5p.xml")
+    mod = Modeller(omm_water, water_molecule.get_positions().to_openmm())
+    mod.addExtraParticles(omm_ff)
+    reference = omm_ff.createSystem(
+        mod.getTopology(),
         constraints=HAngles,
         rigidWater=True,
     )
 
+    interchange = ForceField("tip5p-1.0.0.offxml").create_interchange(
+        water_molecule,
+    )
+    system = interchange.to_openmm()
+
     compare_water_systems(
-        reference, interchange.to_openmm(combine_nonbonded_forces=True)
+        reference,
+        system,
+        {
+            "charge": 1e-10 * openmm.unit.elementary_charge,
+            "sigma": 1e-10 * openmm.unit.nanometer,
+            "epsilon": 1e-10 * openmm.unit.kilojoule_per_mole,
+        },
     )
 
 
