@@ -18,6 +18,7 @@ jobs:
         python-version:
           - "3.9"
           - "3.10"
+          - "3.11"
         cfg:
           - os: ubuntu-latest
           - os: macOS-latest
@@ -43,30 +44,7 @@ jobs:
           create-args: >-
             python=${{ matrix.python-version }}
 
-      - name: Environment Information
-        if: ${{ env.new_off_xml == 'true' }}
-        shell: bash -l {0}
-        run: |
-          conda info
-          conda list
-
-      - name: Additional info about the build
-        if: ${{ env.new_off_xml == 'true' }}
-        shell: bash
-        run: |
-          uname -a
-          df -h
-          ulimit -a
-
-      - name: Install package
-        if: ${{ env.new_off_xml == 'true' }}
-        shell: bash -l {0}
-        run: |
-          conda remove --force openforcefields
-          python -m pip install -e .
-
       - name: Run HMR canary tests
         if: ${{ env.new_off_xml == 'true' }}
         shell: bash -l {0}
-        run: |
-          git diff origin/master --name-only | grep "\.offxml" | python canary/scripts/test_hmr.py
+        run: git diff origin/master --name-only | grep "\.offxml" | python canary/scripts/test_hmr.py
