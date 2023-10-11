@@ -10,4 +10,4 @@ dependencies:
   - pandas
   - click
   - pip:
-    - -e ../../openforcefields/
+    - -e ../../
