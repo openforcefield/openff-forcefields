@@ -9,3 +9,5 @@ dependencies:
   - pytest-cov
   - pandas
   - click
+  - pip:
+    - -e .
