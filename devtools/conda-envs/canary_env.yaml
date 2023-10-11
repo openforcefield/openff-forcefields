@@ -8,4 +8,4 @@ dependencies:
   - openff-toolkit >=0.14.3
   - openmmforcefields
   - pip:
-    - -e .
+    - -e ../../openforcefields/
