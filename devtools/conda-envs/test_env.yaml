@@ -9,3 +9,5 @@ dependencies:
   - pytest-cov
   - pandas
   - click
+  - pip:
+    - git+https://github.com/openforcefield/openff-interchange@virtual-sites-example
