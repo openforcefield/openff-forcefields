@@ -46,6 +46,54 @@ def compare_water_systems(
     _compare(reference, system, tolerances)
 
 
+def compare_four_site_virtual_sites(
+    reference: openmm.System,
+    system: openmm.System,
+):
+    virtual_site = system.getVirtualSite(3)
+    reference_virtual_site = reference.getVirtualSite(3)
+
+    assert type(virtual_site) is type(reference_virtual_site)
+
+    for index in range(3):
+        assert virtual_site.getWeight(index) == pytest.approx(
+            reference_virtual_site.getWeight(index)
+        )
+
+def compare_five_site_virtual_sites(
+    reference: openmm.System,
+    system: openmm.System,
+):
+    virtual_sites = [
+        system.getVirtualSite(3),
+        system.getVirtualSite(4),
+    ]
+
+    reference_virtual_sites = [
+        reference.getVirtualSite(3),
+        reference.getVirtualSite(4),
+    ]
+
+    assert virtual_sites[0].getWeightCross() == -1 * virtual_sites[1].getWeightCross()
+    assert reference_virtual_sites[0].getWeightCross() == -1 * reference_virtual_sites[1].getWeightCross()
+
+
+    for virtual_site, reference_virtual_site in zip(
+        virtual_sites,
+        reference_virtual_sites,
+    ):
+        assert virtual_site.getWeight12() == pytest.approx(
+            reference_virtual_site.getWeight12()
+        )
+
+        assert virtual_site.getWeight13() == pytest.approx(
+            reference_virtual_site.getWeight13()
+        )
+
+        assert abs(virtual_site.getWeightCross()) == pytest.approx(
+            abs(reference_virtual_site.getWeightCross())
+        )
+
 def test_tip3p(water_molecule):
     reference = OpenMMForceField("tip3p.xml").createSystem(
         water_molecule.to_openmm(),
@@ -116,6 +164,10 @@ def test_tip4p_fb(water_molecule):
         },
     )
 
+    compare_four_site_virtual_sites(
+        reference,
+        system,
+    )
 
 def test_opc3(water_molecule):
     reference = OpenMMForceField("opc3.xml").createSystem(
@@ -169,6 +221,13 @@ def test_opc(water_molecule):
         },
     )
 
+    virtual_site = system.getVirtualSite(3)
+    reference_virtual_site = reference.getVirtualSite(3)
+
+    for index in range(3):
+        assert virtual_site.getWeight(index) == pytest.approx(
+            reference_virtual_site.getWeight(index)
+        )
 
 @pytest.mark.skip(reason="Skipping in first pass")
 def test_tip4p_ew(water_molecule):
@@ -214,6 +273,10 @@ def test_tip5p(water_molecule):
         },
     )
 
+    compare_five_site_virtual_sites(
+        reference,
+        system,
+    )
 
 @pytest.mark.parametrize(
     "water_model,pattern",
