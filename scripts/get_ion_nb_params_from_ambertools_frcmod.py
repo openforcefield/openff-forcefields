@@ -1,6 +1,7 @@
+from pathlib import Path
+
 import click
 import pandas
-from pathlib import Path
 
 
 @click.command()
@@ -13,7 +14,7 @@ def main(amber_frcmod_path):
 
     nonbonded = False
 
-    with open(Path(amber_frcmod_path), "r") as amber_frcmod_file:
+    with open(Path(amber_frcmod_path)) as amber_frcmod_file:
         for line in amber_frcmod_file:
             if line == "\n":
                 nonbonded = False

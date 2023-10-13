@@ -61,6 +61,7 @@ def compare_four_site_virtual_sites(
             reference_virtual_site.getWeight(index)
         )
 
+
 def compare_five_site_virtual_sites(
     reference: openmm.System,
     system: openmm.System,
@@ -75,9 +76,12 @@ def compare_five_site_virtual_sites(
         reference.getVirtualSite(4),
     ]
 
-    assert virtual_sites[0].getWeightCross() == -1 * virtual_sites[1].getWeightCross()
-    assert reference_virtual_sites[0].getWeightCross() == -1 * reference_virtual_sites[1].getWeightCross()
-
+    assert virtual_sites[0].getWeightCross() / virtual_sites[1].getWeightCross() == -1
+    assert (
+        reference_virtual_sites[0].getWeightCross()
+        / reference_virtual_sites[1].getWeightCross()
+        == -1
+    )
 
     for virtual_site, reference_virtual_site in zip(
         virtual_sites,
@@ -94,6 +98,7 @@ def compare_five_site_virtual_sites(
         assert abs(virtual_site.getWeightCross()) == pytest.approx(
             abs(reference_virtual_site.getWeightCross())
         )
+
 
 def test_tip3p(water_molecule):
     reference = OpenMMForceField("tip3p.xml").createSystem(
@@ -138,8 +143,10 @@ def test_tip3p_fb(water_molecule):
         },
     )
 
+
 def test_tip4p_fb(water_molecule):
     from openmm.app import Modeller
+
     omm_water = water_molecule.to_openmm()
     omm_ff = OpenMMForceField("tip4pfb.xml")
     mod = Modeller(omm_water, water_molecule.get_positions().to_openmm())
@@ -170,6 +177,7 @@ def test_tip4p_fb(water_molecule):
         system,
     )
 
+
 def test_opc3(water_molecule):
     reference = OpenMMForceField("opc3.xml").createSystem(
         water_molecule.to_openmm(),
@@ -195,6 +203,7 @@ def test_opc3(water_molecule):
 
 def test_opc(water_molecule):
     from openmm.app import Modeller
+
     omm_water = water_molecule.to_openmm()
     omm_ff = OpenMMForceField("opc.xml")
     mod = Modeller(omm_water, water_molecule.get_positions().to_openmm())
@@ -230,6 +239,7 @@ def test_opc(water_molecule):
             reference_virtual_site.getWeight(index)
         )
 
+
 @pytest.mark.skip(reason="Skipping in first pass")
 def test_tip4p_ew(water_molecule):
     interchange = ForceField("tip4p-ew_1.0.0.offxml").create_interchange(
@@ -244,10 +254,12 @@ def test_tip4p_ew(water_molecule):
         rigidWater=True,
     )
 
-    compare_water_systems(
-        reference, interchange.to_openmm(combine_nonbonded_forces=True)
-    )
+    system = interchange.to_openmm(combine_nonbonded_forces=True)
 
+    compare_water_systems(
+        reference,
+        system,
+    )
 
     virtual_site = system.getVirtualSite(3)
     reference_virtual_site = reference.getVirtualSite(3)
@@ -256,6 +268,7 @@ def test_tip4p_ew(water_molecule):
         assert virtual_site.getWeight(index) == pytest.approx(
             reference_virtual_site.getWeight(index)
         )
+
 
 @pytest.mark.skip(reason="Skipping in first pass")
 def test_tip5p(water_molecule):
@@ -279,9 +292,16 @@ def test_tip5p(water_molecule):
         reference, interchange.to_openmm(combine_nonbonded_forces=True)
     )
 
+
 @pytest.mark.parametrize(
     "water_model,pattern",
-    [("tip3p", "^tip3p(?!.*fb)"), ("tip3p_fb", "^tip3p_fb"), ("tip4p_fb", "^tip4p_fb"), ("opc3", "^opc3"), ("opc", "^opc(?!3)")],
+    [
+        ("tip3p", "^tip3p(?!.*fb)"),
+        ("tip3p_fb", "^tip3p_fb"),
+        ("tip4p_fb", "^tip4p_fb"),
+        ("opc3", "^opc3"),
+        ("opc", "^opc(?!3)"),
+    ],
 )
 def test_most_recent_version_match(water_model, pattern):
     import re
@@ -360,7 +380,6 @@ def test_ion_parameter_assignment(water_molecule):
         topology_atom_index = off_top.atom_index(atom)
         for vdw_parameter in ff["vdW"].parameters:
             if f"#{atom.atomic_number}X0" in vdw_parameter.smirks:
-
                 (
                     assigned_charge,
                     assigned_sigma,
@@ -390,12 +409,13 @@ def test_ion_parameter_assignment(water_molecule):
             parameter_was_used
         ), f"The ion LibraryCharge parameter with smirks {key} was not assigned"
 
+
 def test_water_model_is_compatible_with_mainline():
     """Ensure that the latest water model FF is compatible with the latest main-line FF"""
     # Since we don't have a way to get the most recent mainline FF, be sure
     # to occasionally update the first FF listed here
-    ForceField('openff-2.1.0.offxml', 'tip3p.offxml')
-    ForceField('openff-2.1.0.offxml', 'tip3p_fb.offxml')
-    ForceField('openff-2.1.0.offxml', 'tip4p_fb.offxml')
-    ForceField('openff-2.1.0.offxml', 'opc3.offxml')
-    ForceField('openff-2.1.0.offxml', 'opc.offxml')
+    ForceField("openff-2.1.0.offxml", "tip3p.offxml")
+    ForceField("openff-2.1.0.offxml", "tip3p_fb.offxml")
+    ForceField("openff-2.1.0.offxml", "tip4p_fb.offxml")
+    ForceField("openff-2.1.0.offxml", "opc3.offxml")
+    ForceField("openff-2.1.0.offxml", "opc.offxml")

@@ -3,7 +3,7 @@
     <!-- This is the version 1.3.0 "Parsley" force field released by the Open Force Field Initiative. -->
     <!-- The Parsley force field is available with and without bond constraints to hydrogen. -->
     <!-- This file does not contain bond constraints to hydrogen, and is suitable for geometry optimization and -->
-    <!-- single-point energy evaluations. "-->    
+    <!-- single-point energy evaluations. "-->
     <Author>The Open Force Field Initiative</Author>
     <Date>2020-10-21</Date>
 	<Bonds version="0.3" potential="harmonic" fractional_bondorder_method="AM1-Wiberg" fractional_bondorder_interpolation="linear">
@@ -191,13 +191,13 @@
         <Proper smirks="[#6X3:1]=[#6X3:2]-[#6X3:3]=[#8X1:4]" periodicity1="2" periodicity2="3" phase1="180.0 * degree" phase2="0.0 * degree" k1="3.980018770084e-01 * mole**-1 * kilocalorie" k2="-3.938620201049e-01 * mole**-1 * kilocalorie" id="t48" idivf1="1.0" idivf2="1.0"/>
         <Proper smirks="[*:1]~[#7a:2]:[#6a:3]~[*:4]" periodicity1="2" phase1="180.0 * degree" k1="4.564735792485e+00 * mole**-1 * kilocalorie" id="t49" idivf1="1.0"/>
         <Proper smirks="[*:1]-[#6X4:2]-[#7X4:3]-[*:4]" periodicity1="3" phase1="0.0 * degree" k1="6.697375586735e-02 * mole**-1 * kilocalorie" id="t50" idivf1="1.0"/>
-        <Proper smirks="[*:1]-[#6X4:2]-[#7X3:3]-[*:4]" periodicity1="3" phase1="0.0 * degree" k1="3.474754522767e-01 * mole**-1 * kilocalorie" id="t51" idivf1="1.0"/>            
+        <Proper smirks="[*:1]-[#6X4:2]-[#7X3:3]-[*:4]" periodicity1="3" phase1="0.0 * degree" k1="3.474754522767e-01 * mole**-1 * kilocalorie" id="t51" idivf1="1.0"/>
         <Proper smirks="[*:1]-[#6X4:2]-[#7X3:3]-[#7X2:4]=[#6]" periodicity1="3" periodicity2="2" phase1="0.0 * degree" phase2="180.0 * degree" k1="4.950454644418e-01 * mole**-1 * kilocalorie" k2="1.367192897347e-02 * mole**-1 * kilocalorie" id="t51a" idivf1="1.0" idivf2="1.0"/>
         <Proper smirks="[#1:1]-[#6X4:2]-[#7X3:3]-[#7X2:4]=[#6]" periodicity1="3" periodicity2="2" phase1="0.0 * degree" phase2="180.0 * degree" k1="5.278465826043e-01 * mole**-1 * kilocalorie" k2="-1.662288208747e-01 * mole**-1 * kilocalorie" id="t51ah" idivf1="1.0" idivf2="1.0"/>
         <Proper smirks="[*:1]-[#6X4:2]-[#7X3:3]-[#7X2:4]=[#7X2,#8X1]" periodicity1="3" periodicity2="2" phase1="0.0 * degree" phase2="180.0 * degree" k1="2.114291477967e-01 * mole**-1 * kilocalorie" k2="-4.308992821391e-02 * mole**-1 * kilocalorie" id="t51b" idivf1="1.0" idivf2="1.0"/>
         <Proper smirks="[#1:1]-[#6X4:2]-[#7X3:3]-[#7X2:4]=[#7X2,#8X1]" periodicity1="3" periodicity2="2" phase1="0.0 * degree" phase2="180.0 * degree" k1="1.306201579009e-01 * mole**-1 * kilocalorie" k2="1.796692446999e-02 * mole**-1 * kilocalorie" id="t51bh" idivf1="1.0" idivf2="1.0"/>
         <Proper smirks="[*:1]-[#6X4:2]-[#7X3$(*@1-[*]=,:[*][*]=,:[*]@1):3]-[*:4]" periodicity1="2" phase1="180.0 * degree" k1="1.625096941834e+00 * mole**-1 * kilocalorie" id="t51c" idivf1="1.0"/>
-        <Proper smirks="[#1:1]-[#6X4:2]-[#7X3$(*@1-[*]=,:[*][*]=,:[*]@1):3]-[*:4]" periodicity1="2" phase1="180.0 * degree" k1="1.936185237591e+00 * mole**-1 * kilocalorie" id="t51ch" idivf1="1.0"/>    
+        <Proper smirks="[#1:1]-[#6X4:2]-[#7X3$(*@1-[*]=,:[*][*]=,:[*]@1):3]-[*:4]" periodicity1="2" phase1="180.0 * degree" k1="1.936185237591e+00 * mole**-1 * kilocalorie" id="t51ch" idivf1="1.0"/>
         <Proper smirks="[#6X4:1]-[#6X4:2]-[#7X4,#7X3:3]-[#6X4:4]" periodicity1="3" periodicity2="2" phase1="0.0 * degree" phase2="180.0 * degree" k1="2.684848134547e-01 * mole**-1 * kilocalorie" k2="6.661990693486e-02 * mole**-1 * kilocalorie" id="t52" idivf1="1.0" idivf2="1.0"/>
         <Proper smirks="[#1:1]-[#7X4,#7X3:2]-[#6X4;r3:3]-[*:4]" periodicity1="1" phase1="0.0 * degree" k1="8.144496802269e-01 * mole**-1 * kilocalorie" id="t54" idivf1="1.0"/>
         <Proper smirks="[#1:1]-[#7X4,#7X3:2]-[#6X4;r3:3]-[#6X4;r3:4]" periodicity1="1" phase1="0.0 * degree" k1="1.274891815604e+00 * mole**-1 * kilocalorie" id="t55" idivf1="1.0"/>

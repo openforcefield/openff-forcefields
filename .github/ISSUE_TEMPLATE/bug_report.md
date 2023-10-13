@@ -32,7 +32,7 @@ The full error message (may be large, that's fine. Better to paste too much than
 
 **Computing environment (please complete the following information):**
  - Operating system
- - Output of running `conda list` 
+ - Output of running `conda list`
 
 **Additional context**
 Add any other context about the problem here.
