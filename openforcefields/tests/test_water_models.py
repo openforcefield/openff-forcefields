@@ -321,6 +321,7 @@ def test_tip5p(water_molecule):
         ("tip4p_ew", "^tip4p_ew"),
         ("opc3", "^opc3"),
         ("opc", "^opc(?!3)"),
+        ("spce", "^spce(?!3)"),
     ],
 )
 def test_most_recent_version_match(water_model, pattern):
@@ -438,6 +439,7 @@ def test_ion_parameter_assignment(water_molecule):
         "tip4p_ew.offxml",
         "opc3.offxml",
         "opc.offxml",
+        "spce.offxml",
     ]
 )
 def test_water_model_is_compatible_with_mainline(water_model):
