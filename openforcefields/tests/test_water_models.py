@@ -261,8 +261,10 @@ def test_opc(water_molecule):
             reference_virtual_site.getWeight(index)
         )
 
+
 def test_tip4p_ew(water_molecule):
     from openmm.app import Modeller
+
     omm_water = water_molecule.to_openmm()
     omm_ff = OpenMMForceField("tip4pew.xml")
     mod = Modeller(omm_water, water_molecule.get_positions().to_openmm())
@@ -443,6 +445,7 @@ def test_ion_parameter_assignment(water_molecule):
             parameter_was_used
         ), f"The ion LibraryCharge parameter with smirks {key} was not assigned"
 
+
 @pytest.mark.parametrize(
     "water_model",
     [
@@ -453,10 +456,10 @@ def test_ion_parameter_assignment(water_molecule):
         "opc3.offxml",
         "opc.offxml",
         "spce.offxml",
-    ]
+    ],
 )
 def test_water_model_is_compatible_with_mainline(water_model):
     """Ensure that the latest water model FF is compatible with the latest main-line FF"""
     # Since we don't have a way to get the most recent mainline FF, be sure
     # to occasionally update the first FF listed here
-    ForceField('openff-2.1.0.offxml', water_model)
+    ForceField("openff-2.1.0.offxml", water_model)
