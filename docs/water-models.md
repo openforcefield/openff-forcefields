@@ -8,6 +8,7 @@ The following water models are distributed with this package:
 * [TIP4P-EW](https://github.com/openmm/openmm/blob/116aed3927066b0a53eba929110d73f3dafb64bd/wrappers/python/openmm/app/data/tip4pew.xml)
 * [OPC](https://doi.org/10.1021/jz501780a)
 * [OPC3](https://doi.org/10.1063/1.4960175)
+* [SPC/E](https://doi.org/10.1021/j100308a038)
 
 The TIP3P file includes monovalent ion parameters from [Juong and Cheatham](https://dx.doi.org/10.1021/jp8001614).
 

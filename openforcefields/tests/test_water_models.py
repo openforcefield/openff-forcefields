@@ -138,8 +138,32 @@ def test_tip3p_fb(water_molecule):
         },
     )
 
+
+def test_spce(water_molecule):
+    reference = OpenMMForceField("spce.xml").createSystem(
+        water_molecule.to_openmm(),
+        constraints=HAngles,
+        rigidWater=True,
+    )
+
+    system = ForceField("spce-1.0.0.offxml").create_openmm_system(
+        water_molecule,
+    )
+
+    compare_water_systems(
+        reference,
+        system,
+        {
+            "charge": 1e-10 * openmm.unit.elementary_charge,
+            "sigma": 2e-5 * openmm.unit.nanometer,
+            "epsilon": 5e-4 * openmm.unit.kilojoule_per_mole,
+        },
+    )
+
+
 def test_tip4p_fb(water_molecule):
     from openmm.app import Modeller
+
     omm_water = water_molecule.to_openmm()
     omm_ff = OpenMMForceField("tip4pfb.xml")
     mod = Modeller(omm_water, water_molecule.get_positions().to_openmm())
@@ -297,6 +321,7 @@ def test_tip5p(water_molecule):
         ("tip4p_ew", "^tip4p_ew"),
         ("opc3", "^opc3"),
         ("opc", "^opc(?!3)"),
+        ("spce", "^spce(?!3)"),
     ],
 )
 def test_most_recent_version_match(water_model, pattern):
@@ -376,7 +401,6 @@ def test_ion_parameter_assignment(water_molecule):
         topology_atom_index = off_top.atom_index(atom)
         for vdw_parameter in ff["vdW"].parameters:
             if f"#{atom.atomic_number}X0" in vdw_parameter.smirks:
-
                 (
                     assigned_charge,
                     assigned_sigma,
@@ -415,6 +439,7 @@ def test_ion_parameter_assignment(water_molecule):
         "tip4p_ew.offxml",
         "opc3.offxml",
         "opc.offxml",
+        "spce.offxml",
     ]
 )
 def test_water_model_is_compatible_with_mainline(water_model):
