@@ -230,22 +230,31 @@ def test_opc(water_molecule):
             reference_virtual_site.getWeight(index)
         )
 
-@pytest.mark.skip(reason="Skipping in first pass")
 def test_tip4p_ew(water_molecule):
-    interchange = ForceField("tip4p-ew_1.0.0.offxml").create_interchange(
-        water_molecule,
-    )
-
-    openmm_topology = to_openmm_topology(interchange)
-
-    reference = OpenMMForceField("tip4pew.xml").createSystem(
-        openmm_topology,
+    from openmm.app import Modeller
+    omm_water = water_molecule.to_openmm()
+    omm_ff = OpenMMForceField("tip4pew.xml")
+    mod = Modeller(omm_water, water_molecule.get_positions().to_openmm())
+    mod.addExtraParticles(omm_ff)
+    reference = omm_ff.createSystem(
+        mod.getTopology(),
         constraints=HAngles,
         rigidWater=True,
     )
 
+    interchange = ForceField("tip4p_ew-1.0.0.offxml").create_interchange(
+        water_molecule,
+    )
+    system = interchange.to_openmm()
+
     compare_water_systems(
-        reference, interchange.to_openmm(combine_nonbonded_forces=True)
+        reference,
+        system,
+        {
+            "charge": 1e-10 * openmm.unit.elementary_charge,
+            "sigma": 1e-10 * openmm.unit.nanometer,
+            "epsilon": 1e-10 * openmm.unit.kilojoule_per_mole,
+        },
     )
 
 
@@ -259,7 +268,7 @@ def test_tip4p_ew(water_molecule):
 
 @pytest.mark.skip(reason="Skipping in first pass")
 def test_tip5p(water_molecule):
-    interchange = ForceField("tip5p_1.0.0.offxml").create_openmm_system(
+    interchange = ForceField("tip5p-1.0.0.offxml").create_openmm_system(
         water_molecule,
     )
 
@@ -281,7 +290,14 @@ def test_tip5p(water_molecule):
 
 @pytest.mark.parametrize(
     "water_model,pattern",
-    [("tip3p", "^tip3p(?!.*fb)"), ("tip3p_fb", "^tip3p_fb"), ("tip4p_fb", "^tip4p_fb"), ("opc3", "^opc3"), ("opc", "^opc(?!3)")],
+    [
+        ("tip3p", "^tip3p(?!.*fb)"),
+        ("tip3p_fb", "^tip3p_fb"),
+        ("tip4p_fb", "^tip4p_fb"),
+        ("tip4p_ew", "^tip4p_ew"),
+        ("opc3", "^opc3"),
+        ("opc", "^opc(?!3)"),
+    ],
 )
 def test_most_recent_version_match(water_model, pattern):
     import re
@@ -390,12 +406,19 @@ def test_ion_parameter_assignment(water_molecule):
             parameter_was_used
         ), f"The ion LibraryCharge parameter with smirks {key} was not assigned"
 
-def test_water_model_is_compatible_with_mainline():
+@pytest.mark.parametrize(
+    "water_model",
+    [
+        "tip3p.offxml",
+        "tip3p_fb.offxml",
+        "tip4p_fb.offxml",
+        "tip4p_ew.offxml",
+        "opc3.offxml",
+        "opc.offxml",
+    ]
+)
+def test_water_model_is_compatible_with_mainline(water_model):
     """Ensure that the latest water model FF is compatible with the latest main-line FF"""
     # Since we don't have a way to get the most recent mainline FF, be sure
     # to occasionally update the first FF listed here
-    ForceField('openff-2.1.0.offxml', 'tip3p.offxml')
-    ForceField('openff-2.1.0.offxml', 'tip3p_fb.offxml')
-    ForceField('openff-2.1.0.offxml', 'tip4p_fb.offxml')
-    ForceField('openff-2.1.0.offxml', 'opc3.offxml')
-    ForceField('openff-2.1.0.offxml', 'opc.offxml')
+    ForceField('openff-2.1.0.offxml', water_model)
