@@ -7,5 +7,6 @@ dependencies:
   - openff-toolkit >=0.14.3
   - pytest
   - pytest-cov
+  - pytest-xdist
   - pandas
   - click
