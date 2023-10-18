@@ -82,6 +82,8 @@ def compare_five_site_virtual_sites(
         virtual_sites,
         reference_virtual_sites,
     ):
+        assert type(virtual_site) is type(reference_virtual_site)
+
         assert virtual_site.getWeight12() == pytest.approx(
             reference_virtual_site.getWeight12()
         )
