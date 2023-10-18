@@ -31,7 +31,7 @@ jobs:
           - true
           - false
     env:
-      PYTEST_ARGS: -v --cov=openforcefields --cov-config=setup.cfg --cov-append --cov-report=xml
+      PYTEST_ARGS: -v -nauto --cov=openforcefields --cov-config=setup.cfg --cov-append --cov-report=xml
 
     steps:
       - uses: actions/checkout@v4

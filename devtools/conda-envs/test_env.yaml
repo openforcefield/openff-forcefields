@@ -5,9 +5,9 @@ dependencies:
   - python
   - pip
   - openff-toolkit >=0.14.3
+  - openff-interchange >=0.3.16
   - pytest
   - pytest-cov
+  - pytest-xdist
   - pandas
   - click
-  - pip:
-    - git+https://github.com/openforcefield/openff-interchange@virtual-sites-example
