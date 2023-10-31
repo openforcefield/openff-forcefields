@@ -294,6 +294,11 @@ def test_tip4p_ew(water_molecule):
     compare_water_systems(
         reference,
         system,
+        {
+            "charge": 1e-10 * openmm.unit.elementary_charge,
+            "sigma": 1e-10 * openmm.unit.nanometer,
+            "epsilon": 1e-10 * openmm.unit.kilojoule_per_mole,
+        },
     )
 
 
