@@ -30,7 +30,7 @@ def _compare(
         assert type(force) in [openmm.NonbondedForce]
 
     for force1, force2 in zip(system1.getForces(), system2.getForces()):
-        assert type(force1) == type(force2)
+        assert type(force1) is type(force2)
 
         if isinstance(force1, openmm.NonbondedForce):
             _compare_nonbonded_forces(force1, force2, tolerances)

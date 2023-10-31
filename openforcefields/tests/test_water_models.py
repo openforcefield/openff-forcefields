@@ -296,21 +296,10 @@ def test_tip4p_ew(water_molecule):
         system,
     )
 
-<<<<<<< HEAD
-    virtual_site = system.getVirtualSite(3)
-    reference_virtual_site = reference.getVirtualSite(3)
 
-    for index in range(3):
-        assert virtual_site.getWeight(index) == pytest.approx(
-            reference_virtual_site.getWeight(index)
-        )
-
-
-@pytest.mark.skip(reason="Skipping in first pass")
-=======
->>>>>>> upstream/main
 def test_tip5p(water_molecule):
     from openmm.app import Modeller
+
     omm_water = water_molecule.to_openmm()
     omm_ff = OpenMMForceField("tip5p.xml")
     mod = Modeller(omm_water, water_molecule.get_positions().to_openmm())
