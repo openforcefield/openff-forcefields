@@ -3,7 +3,6 @@ from typing import Dict
 import openmm
 import openmm.unit
 import pytest
-from openff.interchange.interop.openmm import to_openmm_topology
 from openff.toolkit import ForceField, Molecule, Topology
 from openmm.app import ForceField as OpenMMForceField
 from openmm.app import HAngles
@@ -87,6 +86,8 @@ def compare_five_site_virtual_sites(
         virtual_sites,
         reference_virtual_sites,
     ):
+        assert type(virtual_site) is type(reference_virtual_site)
+
         assert virtual_site.getWeight12() == pytest.approx(
             reference_virtual_site.getWeight12()
         )
@@ -295,6 +296,7 @@ def test_tip4p_ew(water_molecule):
         system,
     )
 
+<<<<<<< HEAD
     virtual_site = system.getVirtualSite(3)
     reference_virtual_site = reference.getVirtualSite(3)
 
@@ -305,25 +307,38 @@ def test_tip4p_ew(water_molecule):
 
 
 @pytest.mark.skip(reason="Skipping in first pass")
+=======
+>>>>>>> upstream/main
 def test_tip5p(water_molecule):
-    interchange = ForceField("tip5p-1.0.0.offxml").create_openmm_system(
-        water_molecule,
-    )
-
-    openmm_topology = to_openmm_topology(interchange)
-
-    reference = OpenMMForceField("tip5p.xml").createSystem(
-        openmm_topology,
+    from openmm.app import Modeller
+    omm_water = water_molecule.to_openmm()
+    omm_ff = OpenMMForceField("tip5p.xml")
+    mod = Modeller(omm_water, water_molecule.get_positions().to_openmm())
+    mod.addExtraParticles(omm_ff)
+    reference = omm_ff.createSystem(
+        mod.getTopology(),
         constraints=HAngles,
         rigidWater=True,
     )
 
+    interchange = ForceField("tip5p-1.0.0.offxml").create_interchange(
+        water_molecule,
+    )
+    system = interchange.to_openmm()
+
     compare_water_systems(
-        reference, interchange.to_openmm(combine_nonbonded_forces=True)
+        reference,
+        system,
+        {
+            "charge": 1e-10 * openmm.unit.elementary_charge,
+            "sigma": 1e-10 * openmm.unit.nanometer,
+            "epsilon": 1e-10 * openmm.unit.kilojoule_per_mole,
+        },
     )
 
     compare_five_site_virtual_sites(
-        reference, interchange.to_openmm(combine_nonbonded_forces=True)
+        reference,
+        system,
     )
 
 

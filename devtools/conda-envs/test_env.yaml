@@ -5,6 +5,7 @@ dependencies:
   - python
   - pip
   - openff-toolkit >=0.14.3
+  - openff-interchange >=0.3.16
   - pytest
   - pytest-cov
   - pytest-xdist
