@@ -86,24 +86,25 @@ conda install -c conda-forge openff-forcefields
 
 ## Use
 
-Installing this package exposes an entry point that makes the `openforcefields/offxml/` directory easily accessible by other packages in the same Python installation. If the [OpenFF Toolkit](https://github.com/openforcefield/openff-toolkit) is installed, it will automatically detect and use this entry point:
+Installing this package exposes an [entry point[(https://packaging.python.org/en/latest/specifications/entry-points/) that makes the `openforcefields/offxml/` directory easily accessible by other packages in the same Python installation. If the [OpenFF Toolkit](https://docs.openforcefield.org/projects/toolkit/en/stable/) is installed, it will automatically detect and use this entry point when loading OFFXML files:
 
-```python3
->>> from openff.toolkit.typing.engines.smirnoff import ForceField
->>> ff = ForceField('openff-2.0.0.offxml')
+```python
+from openff.toolkit.typing.engines.smirnoff import ForceField
+ff = ForceField('openff-2.0.0.offxml')
 ```
 
-Otherwise, the entry point can be accessed by querying the `openforcefield.smirnoff_forcefield_directory` entry point group.
+Otherwise, the entry point can be [accessed by querying](https://docs.python.org/3/library/importlib.metadata.html#entry-points) the `openforcefield.smirnoff_forcefield_directory` entry point group.
 
-```python3
->>> from pkg_resources import iter_entry_points
->>> for entry_point in iter_entry_points(group='openforcefield.smirnoff_forcefield_directory'):
-...     print(entry_point.load()())
+```python
+from importlib.metadata import entry_points
+
+for entry_point in iter_entry_points(group='openforcefield.smirnoff_forcefield_directory'):
+    print(entry_point.load()())
 ```
 
 For convenience, the OpenFF Toolkit also has a standalone function [`get_available_force_fields`](https://docs.openforcefield.org/projects/toolkit/en/stable/api/generated/openff.toolkit.typing.engines.smirnoff.forcefield.get_available_force_fields.html#openff.toolkit.typing.engines.smirnoff.forcefield.get_available_force_fields) that lists the force fields discered by this entry point group:
 
-```python3
+```pycon
 >>> from openff.toolkit.typing.engines.smirnoff.forcefield import get_available_force_fields
 >>> get_available_force_fields()
 ['smirnoff99Frosst-1.0.2.offxml', 'smirnoff99Frosst-1.0.0.offxml', 'smirnoff99Frosst-1.1.0.offxml', 'smirnoff99Frosst-1.0.4.offxml', 'smirnoff99Frosst-1.0.8.offxml', 'smirnoff99Frosst-1.0.6.offxml', 'smirnoff99Frosst-1.0.3.offxml', 'smirnoff99Frosst-1.0.1.offxml', 'smirnoff99Frosst-1.0.5.offxml', 'smirnoff99Frosst-1.0.9.offxml', 'smirnoff99Frosst-1.0.7.offxml', 'ff14sb_off_impropers_0.0.2.offxml', 'ff14sb_0.0.1.offxml', 'ff14sb_0.0.3.offxml', 'ff14sb_off_impropers_0.0.1.offxml', 'ff14sb_off_impropers_0.0.3.offxml', 'ff14sb_0.0.2.offxml', 'openff-1.0.1.offxml', 'openff-1.1.1.offxml', 'openff-1.0.0-RC1.offxml', 'openff-1.2.0.offxml', 'openff-1.3.0.offxml', 'openff_unconstrained-2.0.0-rc.1.offxml', 'openff_unconstrained-1.3.1.offxml', 'openff_unconstrained-1.2.1.offxml', 'openff-2.0.0-rc.2.offxml', 'openff_unconstrained-1.0.0-RC2.offxml', 'openff_unconstrained-1.1.0.offxml', 'openff_unconstrained-1.0.0.offxml', 'openff-2.0.0.offxml', 'openff_unconstrained-2.0.0.offxml', 'openff_unconstrained-2.0.0-rc.2.offxml', 'openff-1.1.0.offxml', 'openff-1.0.0.offxml', 'openff-1.0.0-RC2.offxml', 'openff-1.3.1.offxml', 'openff-1.2.1.offxml', 'openff-1.3.1-alpha.1.offxml', 'openff_unconstrained-1.0.0-RC1.offxml', 'openff_unconstrained-1.2.0.offxml', 'openff_unconstrained-1.3.0.offxml', 'openff-2.0.0-rc.1.offxml', 'openff_unconstrained-1.0.1.offxml', 'openff_unconstrained-1.1.1.offxml', 'openff_unconstrained-1.3.1-alpha.1.offxml']
