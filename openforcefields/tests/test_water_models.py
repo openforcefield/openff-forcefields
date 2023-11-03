@@ -129,6 +129,25 @@ def get_oxygen_virtual_site_distance(
 
     return numpy.linalg.norm((virtual_site_coordinates[index, :] - conformer[0, :]).m_as(unit.nanometer))
 
+def get_out_of_plane_angle(
+    system: openmm.System,
+    conformer: Quantity,
+    index: int,
+) -> float:
+    parent, orientation1, orientation2 = conformer.m_as(unit.nanometer)
+
+    virtual_site_coordinates = get_virtual_site_coordinates(system, conformer)[index].m_as(unit.nanometer)
+
+    normal = numpy.cross(orientation1 - parent, orientation2 - parent)
+
+    angle_with_normal = numpy.arccos(
+        numpy.dot(virtual_site_coordinates, normal)
+        / (numpy.linalg.norm(virtual_site_coordinates) * numpy.linalg.norm(normal))
+    )
+
+    angle_with_plane = numpy.pi / 2 - angle_with_normal
+
+    return numpy.rad2deg(angle_with_plane)
 
 def compare_four_site_virtual_sites(
     reference: openmm.System,
@@ -149,25 +168,34 @@ def compare_four_site_virtual_sites(
 
     assert reference_distance == pytest.approx(found_distance)
 
+    out_of_plane_angle = get_out_of_plane_angle(reference, conformer, 0)
+
+    assert out_of_plane_angle == pytest.approx(0.0)
+
 def compare_five_site_virtual_sites(
     reference: openmm.System,
     system: openmm.System,
     conformer: Quantity,
 ):
-    reference_distances = [get_oxygen_virtual_site_distance(
-        reference,
-        conformer,
-        index,
-    ) for index in range(2)]
+    for index in range(2):
+        reference_distance = get_oxygen_virtual_site_distance(
+            reference,
+            conformer,
+            index,
+        )
 
-    found_distances = [get_oxygen_virtual_site_distance(
-        system,
-        conformer,
-        index,
-    ) for index in range(2)]
+        found_distance = get_oxygen_virtual_site_distance(
+            system,
+            conformer,
+            index,
+        )
 
-    for a, b in zip(reference_distances, found_distances):
-        assert a == pytest.approx(b)
+        assert reference_distance == pytest.approx(found_distance)
+
+        reference_angle = get_out_of_plane_angle(reference, conformer, index)
+        found_angle = get_out_of_plane_angle(system, conformer, index)
+
+        assert reference_angle == pytest.approx(found_angle)
 
 def test_tip3p(water_molecule):
     reference = OpenMMForceField("tip3p.xml").createSystem(
