@@ -1,8 +1,11 @@
+import numpy
 from typing import Dict
 
 import openmm
 import openmm.unit
 import pytest
+from openff.units import Quantity, unit
+from openff.units.openmm import ensure_quantity
 from openff.toolkit import ForceField, Molecule, Topology
 from openmm.app import ForceField as OpenMMForceField
 from openmm.app import HAngles
@@ -16,6 +19,42 @@ def water_molecule() -> Topology:
     molecule.generate_conformers(n_conformers=1)
     return molecule.to_topology()
 
+# OpenMM determines virtual site coordinates based on atomic positions, so in
+# order to produce the force field-specified virtual site geometry without
+# integration, the atomic positions must be initialized at a geometry specified
+# by the force field.
+@pytest.fixture()
+def tip4p_positions() -> Molecule:
+    """Water minimized to TIP4P-FB geometry."""
+    return Quantity(
+            [
+                [0.0, 0.0, 0.0],
+                [-0.7569503, -0.5858823, 0.0],
+                [0.7569503, -0.5858823, 0.0],
+            ],
+            unit.angstrom,
+        )
+
+@pytest.fixture()
+def opc_positions() -> Molecule:
+    """
+    Water minimized to OPC geometry.
+    
+    Value generated from
+    >>> for f in [math.cos, math.sin]:
+    ...     0.087243313 * f(1.8081424254418306 * 0.5)
+
+    Using values from
+    https://github.com/openmm/openmm/blob/8.0.0/wrappers/python/openmm/app/data/opc.xml
+    """
+    return Quantity(
+            [
+                [0.0, 0.0, 0.0],
+                [0.068560255, -0.05395263754026253, 0.0],
+                [-0.068560255, -0.05395263754026253, 0.0],
+            ],
+            unit.nanometer,
+    )
 
 def compare_water_systems(
     reference: openmm.System,
@@ -46,59 +85,119 @@ def compare_water_systems(
     _compare(reference, system, tolerances)
 
 
+def get_virtual_site_coordinates(
+    system: openmm.System,
+    conformer: Quantity,
+) -> Quantity:
+    n_virtual_sites = len(
+        [i for i in range(system.getNumParticles()) if system.getParticleMass(i)._value == 0.0]
+    )
+
+    coordinates = openmm.unit.Quantity(
+        numpy.vstack(
+            [
+                conformer.m_as(unit.nanometer),
+                numpy.zeros((n_virtual_sites, 3)),
+            ]
+        ),
+        openmm.unit.nanometer,
+    )
+
+    context = openmm.Context(
+        system,
+        openmm.VerletIntegrator(0.1),
+        openmm.Platform.getPlatformByName("Reference"),
+    )
+
+    context.setPositions(coordinates)
+    context.computeVirtualSites()
+
+    return ensure_quantity(
+        context.getState(getPositions=True).getPositions(asNumpy=True)[
+            -1 * n_virtual_sites :,
+            :,
+        ],
+        "openff",
+    )
+
+
+def get_oxygen_virtual_site_distance(
+    system: openmm.System,
+    conformer: Quantity,
+    index: int,
+) -> float:
+    virtual_site_coordinates = get_virtual_site_coordinates(system, conformer)
+
+    return numpy.linalg.norm((virtual_site_coordinates[index, :] - conformer[0, :]).m_as(unit.nanometer))
+
+def get_out_of_plane_angle(
+    system: openmm.System,
+    conformer: Quantity,
+    index: int,
+) -> float:
+    parent, orientation1, orientation2 = conformer.m_as(unit.nanometer)
+
+    virtual_site_coordinates = get_virtual_site_coordinates(system, conformer)[index].m_as(unit.nanometer)
+
+    normal = numpy.cross(orientation1 - parent, orientation2 - parent)
+
+    angle_with_normal = numpy.arccos(
+        numpy.dot(virtual_site_coordinates, normal)
+        / (numpy.linalg.norm(virtual_site_coordinates) * numpy.linalg.norm(normal))
+    )
+
+    angle_with_plane = numpy.pi / 2 - angle_with_normal
+
+    return numpy.rad2deg(angle_with_plane)
+
 def compare_four_site_virtual_sites(
     reference: openmm.System,
     system: openmm.System,
+    conformer: Quantity,
 ):
-    virtual_site = system.getVirtualSite(3)
-    reference_virtual_site = reference.getVirtualSite(3)
+    reference_distance = get_oxygen_virtual_site_distance(
+        reference,
+        conformer,
+        0,
+    )
 
-    assert type(virtual_site) is type(reference_virtual_site)
+    found_distance = get_oxygen_virtual_site_distance(
+        system,
+        conformer,
+        0,
+    )
 
-    for index in range(3):
-        assert virtual_site.getWeight(index) == pytest.approx(
-            reference_virtual_site.getWeight(index)
-        )
+    assert reference_distance == pytest.approx(found_distance)
+
+    out_of_plane_angle = get_out_of_plane_angle(reference, conformer, 0)
+
+    assert out_of_plane_angle == pytest.approx(0.0)
 
 
 def compare_five_site_virtual_sites(
     reference: openmm.System,
     system: openmm.System,
+    conformer: Quantity,
 ):
-    virtual_sites = [
-        system.getVirtualSite(3),
-        system.getVirtualSite(4),
-    ]
-
-    reference_virtual_sites = [
-        reference.getVirtualSite(3),
-        reference.getVirtualSite(4),
-    ]
-
-    assert virtual_sites[0].getWeightCross() / virtual_sites[1].getWeightCross() == -1
-    assert (
-        reference_virtual_sites[0].getWeightCross()
-        / reference_virtual_sites[1].getWeightCross()
-        == -1
-    )
-
-    for virtual_site, reference_virtual_site in zip(
-        virtual_sites,
-        reference_virtual_sites,
-    ):
-        assert type(virtual_site) is type(reference_virtual_site)
-
-        assert virtual_site.getWeight12() == pytest.approx(
-            reference_virtual_site.getWeight12()
+    for index in range(2):
+        reference_distance = get_oxygen_virtual_site_distance(
+            reference,
+            conformer,
+            index,
         )
 
-        assert virtual_site.getWeight13() == pytest.approx(
-            reference_virtual_site.getWeight13()
+        found_distance = get_oxygen_virtual_site_distance(
+            system,
+            conformer,
+            index,
         )
 
-        assert abs(virtual_site.getWeightCross()) == pytest.approx(
-            abs(reference_virtual_site.getWeightCross())
-        )
+        assert reference_distance == pytest.approx(found_distance)
+
+        reference_angle = get_out_of_plane_angle(reference, conformer, index)
+        found_angle = get_out_of_plane_angle(system, conformer, index)
+
+        assert reference_angle == pytest.approx(found_angle)
 
 
 def test_tip3p(water_molecule):
@@ -167,7 +266,7 @@ def test_spce(water_molecule):
     )
 
 
-def test_tip4p_fb(water_molecule):
+def test_tip4p_fb(water_molecule, tip4p_positions,):
     from openmm.app import Modeller
 
     omm_water = water_molecule.to_openmm()
@@ -198,6 +297,7 @@ def test_tip4p_fb(water_molecule):
     compare_four_site_virtual_sites(
         reference,
         system,
+        tip4p_positions,
     )
 
 
@@ -224,7 +324,7 @@ def test_opc3(water_molecule):
     )
 
 
-def test_opc(water_molecule):
+def test_opc(water_molecule, opc_positions):
     from openmm.app import Modeller
 
     omm_water = water_molecule.to_openmm()
@@ -254,13 +354,11 @@ def test_opc(water_molecule):
         },
     )
 
-    virtual_site = system.getVirtualSite(3)
-    reference_virtual_site = reference.getVirtualSite(3)
-
-    for index in range(3):
-        assert virtual_site.getWeight(index) == pytest.approx(
-            reference_virtual_site.getWeight(index)
-        )
+    compare_four_site_virtual_sites(
+        reference,
+        system,
+        opc_positions,
+    )
 
 
 def test_tip4p_ew(water_molecule):
@@ -302,7 +400,7 @@ def test_tip4p_ew(water_molecule):
     )
 
 
-def test_tip5p(water_molecule):
+def test_tip5p(water_molecule, tip4p_positions):
     from openmm.app import Modeller
 
     omm_water = water_molecule.to_openmm()
@@ -333,6 +431,7 @@ def test_tip5p(water_molecule):
     compare_five_site_virtual_sites(
         reference,
         system,
+        tip4p_positions,
     )
 
 
