@@ -1,13 +1,11 @@
+import importlib.resources
 import sys
-from pathlib import Path
 
 import numpy as np
 from openff.toolkit.topology import Molecule
 from openmmforcefields.generators import SystemGenerator
 from simtk import openmm, unit
 from simtk.openmm import app
-import importlib.resources
-
 
 DATA_PATH = importlib.resources.files("openforcefields") / "canary" / "data"
 coverage_mols = DATA_PATH / "coverage.smi"
@@ -22,7 +20,7 @@ class CanaryError(Exception):
     """Base exception for canary"""
 
     def __init__(self, message, runs):
-        super(CanaryError, self).__init__(message)
+        super().__init__(message)
         self.message = message
         self.runs = runs
 
@@ -36,7 +34,8 @@ class HMRCanaryError(CanaryError):
 
 def hmr_driver(mol, ff_name):
     """Given an OpenFF Molecule, run a short 4 fs HMR simulation. This function is adapted from
-    https://github.com/openforcefield/openforcefields/issues/19#issuecomment-689816995"""
+    https://github.com/openforcefield/openforcefields/issues/19#issuecomment-689816995
+    """
     print(
         f"Running HMR with force field {ff_name} and molecule with SMILES {mol.to_smiles()}"
     )
@@ -45,8 +44,7 @@ def hmr_driver(mol, ff_name):
         "constraints": app.HBonds,
         "rigidWater": True,
         "removeCMMotion": False,
-        "hydrogenMass": 4
-        * unit.amu,  # Does this also _subtract_ mass from heavy atoms?:w
+        "hydrogenMass": 4 * unit.amu,
     }
 
     system_generator = SystemGenerator(

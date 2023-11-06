@@ -1,6 +1,6 @@
 # OpenFF Force Fields
 
-[![Build Status](https://github.com/openforcefield/openff-forcefields/workflows/CI/badge.svg)](https://github.com/openforcefield/openff-forcefields/actions?query=branch%3Amaster+workflow%3ACI) 
+[![Build Status](https://github.com/openforcefield/openff-forcefields/workflows/CI/badge.svg)](https://github.com/openforcefield/openff-forcefields/actions?query=branch%3Amaster+workflow%3ACI)
 
 
 This repository contains force fields released by the [Open Force Field Initiative](https://openforcefield.org).
@@ -151,7 +151,7 @@ Force fields moving forward will be called `name-X.Y.Z`
 
 - `v2.0.0 Sage`: This major release contains the same physical parameters as `v2.0.0-rc.2 Sage`, but has the parameter ids changed. For more information see the [openff-sage repository](https://github.com/openforcefield/openff-sage).
 
-- `2023.02.1`: This release switches to a calendar-versioning system and adds `tip3p-1.0.0.offxml` and `tip3p-fb-1.0.0.offxml`, as well as `tip3p.offxml` and `tip3p-fb.offxml`, which will always point to the latest files in their respective lines. 
+- `2023.02.1`: This release switches to a calendar-versioning system and adds `tip3p-1.0.0.offxml` and `tip3p-fb-1.0.0.offxml`, as well as `tip3p.offxml` and `tip3p-fb.offxml`, which will always point to the latest files in their respective lines.
 
 - `2023.04.1`: This release adds `openff-2.1.0-rc.1.offxml` Sage 2.1.0 Release Candidate 1, with several small parameter fixes and improvements.
 
@@ -159,7 +159,7 @@ Force fields moving forward will be called `name-X.Y.Z`
 
 - `2023.05.1`: This release adds `openff-2.1.0.offxml`, Sage 2.1.0, with identical physics parameters to `openff-2.1.0-rc.1.offxml`.
 
-- `2023.06.0`: This release adds `opc-1.0.1.offxml`, standardizing the use of the string "kilocalorie_per_mole". It also adds `tip3p-fb-1.1.0.offxml`, which fixes a unit error in the geometric constraints and adds additional ion parameters. Finally, it adds `opc3-1.0.0.offxml` and `tip4p_fb-1.0.0.offxml`. 
+- `2023.06.0`: This release adds `opc-1.0.1.offxml`, standardizing the use of the string "kilocalorie_per_mole". It also adds `tip3p-fb-1.1.0.offxml`, which fixes a unit error in the geometric constraints and adds additional ion parameters. Finally, it adds `opc3-1.0.0.offxml` and `tip4p_fb-1.0.0.offxml`.
 
 #### Acknowledgements
 

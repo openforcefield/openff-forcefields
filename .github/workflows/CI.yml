@@ -89,6 +89,8 @@ jobs:
         run: |
           if test "$( git diff openforcefields/offxml/ | wc | awk '{print $1}' )" -gt 0
           then
+            echo 'The following changes in OFFXML files were detected:'
+            git diff openforcefields/offxml/
             exit 1
           else
             echo 'no files differ'

@@ -13,7 +13,6 @@ from openff.toolkit.typing.engines.smirnoff.parameters import (
     ConstraintHandler,
     ElectrostaticsHandler,
     LibraryChargeHandler,
-    VirtualSiteHandler,
     vdWHandler,
 )
 from openff.units import unit

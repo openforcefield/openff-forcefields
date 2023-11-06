@@ -4,7 +4,6 @@ https://github.com/openmm/openmm/blob/116aed3927066b0a53eba929110d73f3daew64bd/w
 """
 from pathlib import Path
 
-import pandas
 from openff.toolkit.typing.engines.smirnoff.forcefield import ForceField
 from openff.toolkit.typing.engines.smirnoff.parameters import (
     ConstraintHandler,

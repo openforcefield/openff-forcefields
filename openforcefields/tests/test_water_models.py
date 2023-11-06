@@ -1,12 +1,12 @@
-import numpy
 from typing import Dict
 
+import numpy
 import openmm
 import openmm.unit
 import pytest
+from openff.toolkit import ForceField, Molecule, Topology
 from openff.units import Quantity, unit
 from openff.units.openmm import ensure_quantity
-from openff.toolkit import ForceField, Molecule, Topology
 from openmm.app import ForceField as OpenMMForceField
 from openmm.app import HAngles
 
@@ -19,6 +19,7 @@ def water_molecule() -> Topology:
     molecule.generate_conformers(n_conformers=1)
     return molecule.to_topology()
 
+
 # OpenMM determines virtual site coordinates based on atomic positions, so in
 # order to produce the force field-specified virtual site geometry without
 # integration, the atomic positions must be initialized at a geometry specified
@@ -27,19 +28,20 @@ def water_molecule() -> Topology:
 def tip4p_positions() -> Molecule:
     """Water minimized to TIP4P-FB geometry."""
     return Quantity(
-            [
-                [0.0, 0.0, 0.0],
-                [-0.7569503, -0.5858823, 0.0],
-                [0.7569503, -0.5858823, 0.0],
-            ],
-            unit.angstrom,
-        )
+        [
+            [0.0, 0.0, 0.0],
+            [-0.7569503, -0.5858823, 0.0],
+            [0.7569503, -0.5858823, 0.0],
+        ],
+        unit.angstrom,
+    )
+
 
 @pytest.fixture()
 def opc_positions() -> Molecule:
     """
     Water minimized to OPC geometry.
-    
+
     Value generated from
     >>> for f in [math.cos, math.sin]:
     ...     0.087243313 * f(1.8081424254418306 * 0.5)
@@ -48,13 +50,14 @@ def opc_positions() -> Molecule:
     https://github.com/openmm/openmm/blob/8.0.0/wrappers/python/openmm/app/data/opc.xml
     """
     return Quantity(
-            [
-                [0.0, 0.0, 0.0],
-                [0.068560255, -0.05395263754026253, 0.0],
-                [-0.068560255, -0.05395263754026253, 0.0],
-            ],
-            unit.nanometer,
+        [
+            [0.0, 0.0, 0.0],
+            [0.068560255, -0.05395263754026253, 0.0],
+            [-0.068560255, -0.05395263754026253, 0.0],
+        ],
+        unit.nanometer,
     )
+
 
 def compare_water_systems(
     reference: openmm.System,
@@ -90,7 +93,11 @@ def get_virtual_site_coordinates(
     conformer: Quantity,
 ) -> Quantity:
     n_virtual_sites = len(
-        [i for i in range(system.getNumParticles()) if system.getParticleMass(i)._value == 0.0]
+        [
+            i
+            for i in range(system.getNumParticles())
+            if system.getParticleMass(i)._value == 0.0
+        ]
     )
 
     coordinates = openmm.unit.Quantity(
@@ -128,7 +135,10 @@ def get_oxygen_virtual_site_distance(
 ) -> float:
     virtual_site_coordinates = get_virtual_site_coordinates(system, conformer)
 
-    return numpy.linalg.norm((virtual_site_coordinates[index, :] - conformer[0, :]).m_as(unit.nanometer))
+    return numpy.linalg.norm(
+        (virtual_site_coordinates[index, :] - conformer[0, :]).m_as(unit.nanometer)
+    )
+
 
 def get_out_of_plane_angle(
     system: openmm.System,
@@ -137,7 +147,9 @@ def get_out_of_plane_angle(
 ) -> float:
     parent, orientation1, orientation2 = conformer.m_as(unit.nanometer)
 
-    virtual_site_coordinates = get_virtual_site_coordinates(system, conformer)[index].m_as(unit.nanometer)
+    virtual_site_coordinates = get_virtual_site_coordinates(system, conformer)[
+        index
+    ].m_as(unit.nanometer)
 
     normal = numpy.cross(orientation1 - parent, orientation2 - parent)
 
@@ -149,6 +161,7 @@ def get_out_of_plane_angle(
     angle_with_plane = numpy.pi / 2 - angle_with_normal
 
     return numpy.rad2deg(angle_with_plane)
+
 
 def compare_four_site_virtual_sites(
     reference: openmm.System,
@@ -172,6 +185,7 @@ def compare_four_site_virtual_sites(
     out_of_plane_angle = get_out_of_plane_angle(reference, conformer, 0)
 
     assert out_of_plane_angle == pytest.approx(0.0)
+
 
 def compare_five_site_virtual_sites(
     reference: openmm.System,
@@ -197,6 +211,7 @@ def compare_five_site_virtual_sites(
         found_angle = get_out_of_plane_angle(system, conformer, index)
 
         assert reference_angle == pytest.approx(found_angle)
+
 
 def test_tip3p(water_molecule):
     reference = OpenMMForceField("tip3p.xml").createSystem(
@@ -264,7 +279,10 @@ def test_spce(water_molecule):
     )
 
 
-def test_tip4p_fb(water_molecule, tip4p_positions,):
+def test_tip4p_fb(
+    water_molecule,
+    tip4p_positions,
+):
     from openmm.app import Modeller
 
     omm_water = water_molecule.to_openmm()
@@ -298,6 +316,7 @@ def test_tip4p_fb(water_molecule, tip4p_positions,):
         tip4p_positions,
     )
 
+
 def test_opc3(water_molecule):
     reference = OpenMMForceField("opc3.xml").createSystem(
         water_molecule.to_openmm(),
@@ -323,6 +342,7 @@ def test_opc3(water_molecule):
 
 def test_opc(water_molecule, opc_positions):
     from openmm.app import Modeller
+
     omm_water = water_molecule.to_openmm()
     omm_ff = OpenMMForceField("opc.xml")
     mod = Modeller(omm_water, water_molecule.get_positions().to_openmm())
@@ -355,6 +375,7 @@ def test_opc(water_molecule, opc_positions):
         system,
         opc_positions,
     )
+
 
 def test_tip4p_ew(water_molecule):
     from openmm.app import Modeller
@@ -418,6 +439,7 @@ def test_tip5p(water_molecule, tip4p_positions):
         system,
         tip4p_positions,
     )
+
 
 @pytest.mark.parametrize(
     "water_model,pattern",
@@ -537,6 +559,7 @@ def test_ion_parameter_assignment(water_molecule):
             parameter_was_used
         ), f"The ion LibraryCharge parameter with smirks {key} was not assigned"
 
+
 @pytest.mark.parametrize(
     "water_model",
     [
@@ -547,10 +570,10 @@ def test_ion_parameter_assignment(water_molecule):
         "opc3.offxml",
         "opc.offxml",
         "spce.offxml",
-    ]
+    ],
 )
 def test_water_model_is_compatible_with_mainline(water_model):
     """Ensure that the latest water model FF is compatible with the latest main-line FF"""
     # Since we don't have a way to get the most recent mainline FF, be sure
     # to occasionally update the first FF listed here
-    ForceField('openff-2.1.0.offxml', water_model)
+    ForceField("openff-2.1.0.offxml", water_model)
