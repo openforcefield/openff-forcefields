@@ -83,6 +83,7 @@ jobs:
           python scripts/get_ion_nb_params_from_ambertools_frcmod.py $AMBERHOME/dat/leap/parm/frcmod.ionslm_126_fb3
           python scripts/get_ion_nb_params_from_ambertools_frcmod.py $AMBERHOME/dat/leap/parm/frcmod.ionslm_126_fb4
           ls scripts/write_*.py | xargs -n 1 -P 3 python
+          pre-commit run --all-files && git add openforcefields/offxml
 
       - name: Error out if any OFFXML files changed
         if: ${{ matrix.toolkit == true }}
