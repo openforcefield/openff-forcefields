@@ -11,3 +11,5 @@ dependencies:
   - pytest-xdist
   - pandas
   - click
+  # Needed only because water models are re-written in CI
+  - pre-commit
