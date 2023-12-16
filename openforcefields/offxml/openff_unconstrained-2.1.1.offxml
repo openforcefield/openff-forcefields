@@ -2,6 +2,10 @@
 <SMIRNOFF version="0.3" aromaticity_model="OEAroModel_MDL">
     <Author>The Open Force Field Initiative</Author>
     <Date>2023-05-02</Date>
+    <Constraints version="0.3">
+        <Constraint smirks="[#1:1]-[#8X2H2+0:2]-[#1]" id="c-tip3p-H-O" distance="0.9572 * angstrom ** 1"></Constraint>
+        <Constraint smirks="[#1:1]-[#8X2H2+0]-[#1:2]" id="c-tip3p-H-O-H" distance="1.5139006545247014 * angstrom ** 1"></Constraint>
+    </Constraints>
     <Bonds version="0.4" potential="harmonic" fractional_bondorder_method="AM1-Wiberg" fractional_bondorder_interpolation="linear">
         <Bond smirks="[#6X4:1]-[#6X4:2]" id="b1" length="1.527940216866 * angstrom ** 1" k="419.9869268191 * angstrom ** -2 * mole ** -1 * kilocalorie ** 1"></Bond>
         <Bond smirks="[#6X4:1]-[#6X3:2]" id="b2" length="1.503434271105 * angstrom ** 1" k="484.1959214883 * angstrom ** -2 * mole ** -1 * kilocalorie ** 1"></Bond>
