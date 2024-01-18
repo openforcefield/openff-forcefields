@@ -16,8 +16,7 @@ xe_param = vdWHandler.vdWType(
     id="n36",
 )
 
-xe_idx_sage21 = len(sage_21.get_parameter_handler("vdW").parameters) + 1
-sage_21.get_parameter_handler("vdW").parameters.insert(xe_idx_sage21, xe_param)
+sage_21.get_parameter_handler("vdW").parameters.append(xe_param)
 sage_21.to_file("../openforcefields/offxml/openff-2.1.1.offxml")
 sage_21_uc.get_parameter_handler("vdW").parameters.insert(xe_idx_sage21, xe_param)
 sage_21_uc.to_file("../openforcefields/offxml/openff_unconstrained-2.1.1.offxml")
