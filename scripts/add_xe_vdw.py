@@ -1,4 +1,3 @@
-from openff.toolkit import Molecule
 from openff.toolkit import ForceField
 from openff.units import unit
 from openff.toolkit.typing.engines.smirnoff import vdWHandler
