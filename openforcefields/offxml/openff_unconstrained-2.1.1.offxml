@@ -372,7 +372,7 @@
         <Atom smirks="[#53X0-1:1]" epsilon="0.0536816 * mole ** -1 * kilocalorie ** 1" id="n35" rmin_half="2.86 * angstrom ** 1"></Atom>
         <Atom smirks="[#1]-[#8X2H2+0:1]-[#1]" epsilon="0.1521 * mole ** -1 * kilocalorie ** 1" id="n-tip3p-O" sigma="3.1507 * angstrom ** 1"></Atom>
         <Atom smirks="[#1:1]-[#8X2H2+0]-[#1]" epsilon="0.0 * mole ** -1 * kilocalorie ** 1" id="n-tip3p-H" sigma="1 * angstrom ** 1"></Atom>
-        <Atom smirks="[#54:1]" epsilon="0.56108 * kilocalorie ** 1 * mole ** -1" id="n36" sigma="4.363 * angstrom ** 1"></Atom>
+        <Atom smirks="[#54:1]" epsilon="0.561 * kilocalorie ** 1 * mole ** -1" id="n36" sigma="4.363 * angstrom ** 1"></Atom>
     </vdW>
     <Electrostatics version="0.4" scale12="0.0" scale13="0.0" scale14="0.8333333333" scale15="1.0" cutoff="9.0 * angstrom ** 1" switch_width="0.0 * angstrom ** 1" periodic_potential="Ewald3D-ConductingBoundary" nonperiodic_potential="Coulomb" exception_potential="Coulomb"></Electrostatics>
     <LibraryCharges version="0.3">
