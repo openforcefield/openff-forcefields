@@ -1,3 +1,4 @@
+from openff.interchange.drivers.all import get_openmm_energies
 from openff.toolkit import ForceField, Molecule, Topology
 from openff.toolkit.typing.engines.smirnoff import LibraryChargeHandler, vdWHandler
 from openff.units import Quantity, unit
@@ -33,7 +34,6 @@ test_sage_211_uc = ForceField(
     "../openforcefields/offxml/openff_unconstrained-2.1.1.offxml"
 )
 
-from openff.interchange.drivers.all import get_openmm_energies
 
 topology = Topology.from_molecules(
     [
