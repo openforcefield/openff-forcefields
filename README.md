@@ -28,7 +28,7 @@ Details for each force field in this repository can be found in the following ta
 
 | Filename                                    | DOI                                                                                                       | FF line | Release Date  | Major format changes? |
 |---------------------------------------------|-----------------------------------------------------------------------------------------------------------|---------|---------------|-----------------------|
-| `openff-2.1.1.offxml`                       |                                                                                                           | Sage    | Dec 16, 2023   | No
+| `openff-2.1.1.offxml`                       |                                                                                                           | Sage    | Dec 16, 2023  | No
 | `tip5p-1.0.0.offxml`                        | see `docs/water-models.md`                                                                                | Ports   |               | No                    |
 | `spce-1.0.0.offxml`                         | see `docs/water-models.md`                                                                                | Ports   |               | No                    |
 | `tip4p_ew-1.0.0.offxml`                     | see `docs/water-models.md`                                                                                | Ports   |               | No                    |

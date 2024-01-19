@@ -387,6 +387,7 @@
         <LibraryCharge smirks="[#53X0-1:1]" charge1="-1.0 * elementary_charge ** 1" id="I-"></LibraryCharge>
         <LibraryCharge smirks="[#1]-[#8X2H2+0:1]-[#1]" charge1="-0.834 * elementary_charge ** 1" id="q-tip3p-O"></LibraryCharge>
         <LibraryCharge smirks="[#1:1]-[#8X2H2+0]-[#1]" charge1="0.417 * elementary_charge ** 1" id="q-tip3p-H"></LibraryCharge>
+        <LibraryCharge smirks="[#54:1]" charge1="0.0 * elementary_charge ** 1" id="Xe"></LibraryCharge>
     </LibraryCharges>
     <ToolkitAM1BCC version="0.3"></ToolkitAM1BCC>
 </SMIRNOFF>
