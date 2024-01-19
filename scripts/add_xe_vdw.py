@@ -10,7 +10,7 @@ sage_21_uc = ForceField("openff_unconstrained-2.1.0.offxml")
 # Tang, K.T., Toennies, J.P. New combining rules for well parameters and shapes
 # of the van der Waals potential of mixed rare gas systems. Z Phys D - Atoms,
 # Molecules and Clusters 1, 91–101 (1986). https://doi.org/10.1007/BF01384663
-# epsilon is converted from Hartrees using 0.894e-3 Ha * 627.5094740631 kcal/mol / Ha = 0.560993470 kcal/mol 
+# epsilon is converted from Hartrees using 0.894e-3 Ha * 627.5094740631 kcal/mol / Ha = 0.560993470 kcal/mol
 # --> 0.561 kcal/mol preserving the initial number of significant figures
 xe_vdw_param = vdWHandler.vdWType(
     smirks="[#54:1]",
