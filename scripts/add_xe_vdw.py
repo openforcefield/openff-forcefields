@@ -25,9 +25,11 @@ xe_charge_param = LibraryChargeHandler.LibraryChargeType(
 
 sage_21.get_parameter_handler("vdW").parameters.append(xe_vdw_param)
 sage_21.get_parameter_handler("LibraryCharges").parameters.append(xe_charge_param)
+sage_21.date = "2024-01-19"
 sage_21.to_file("../openforcefields/offxml/openff-2.1.1.offxml")
 sage_21_uc.get_parameter_handler("vdW").parameters.append(xe_vdw_param)
 sage_21_uc.get_parameter_handler("LibraryCharges").parameters.append(xe_charge_param)
+sage_21_uc.date = "2024-01-19"
 sage_21_uc.to_file("../openforcefields/offxml/openff_unconstrained-2.1.1.offxml")
 
 # Make sure new FF loads with most recent toolkit version
