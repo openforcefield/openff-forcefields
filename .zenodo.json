@@ -1,6 +1,11 @@
 {
     "creators": [
       {
+        "orcid": "0000-0002-7210-1164",
+        "affiliation": "Open Force Field Consortium, Open Molecular Software Foundation, Davis,  CA, USA",
+        "name": "McIsaac, Alexandra"
+      },
+      {
         "orcid": "0000-0001-6583-2148",
         "affiliation": "Pharmaceutical Sciences, University of California Irvine, Irvine, CA, USA",
         "name": "Behara, Pavan Kumar"
