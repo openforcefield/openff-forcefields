@@ -2,6 +2,7 @@
 Write TIP5P parameters into a SMIRNOFF force field. Based on
 https://docs.lammps.org/Howto_tip5p.html
 """
+
 from pathlib import Path
 
 from openff.toolkit.typing.engines.smirnoff.forcefield import ForceField
