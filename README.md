@@ -88,7 +88,7 @@ conda install -c conda-forge openff-forcefields
 
 ## Use
 
-Installing this package exposes an [entry point[(https://packaging.python.org/en/latest/specifications/entry-points/) that makes the `openforcefields/offxml/` directory easily accessible by other packages in the same Python installation. If the [OpenFF Toolkit](https://docs.openforcefield.org/projects/toolkit/en/stable/) is installed, it will automatically detect and use this entry point when loading OFFXML files:
+Installing this package exposes an [entry point](https://packaging.python.org/en/latest/specifications/entry-points/) that makes the `openforcefields/offxml/` directory easily accessible by other packages in the same Python installation. If the [OpenFF Toolkit](https://docs.openforcefield.org/projects/toolkit/en/stable/) is installed, it will automatically detect and use this entry point when loading OFFXML files:
 
 ```python
 from openff.toolkit.typing.engines.smirnoff import ForceField
