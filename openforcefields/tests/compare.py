@@ -1,5 +1,3 @@
-from typing import Dict
-
 import openmm
 import openmm.unit
 
@@ -7,7 +5,7 @@ import openmm.unit
 def _compare(
     system1: openmm.System,
     system2: openmm.System,
-    tolerances: Dict[str, openmm.unit.Quantity],
+    tolerances: dict[str, openmm.unit.Quantity],
 ):
     """Check that two OpenMM systems have the same parameters.
 
@@ -39,7 +37,7 @@ def _compare(
 def _compare_nonbonded_forces(
     force1: openmm.NonbondedForce,
     force2: openmm.NonbondedForce,
-    tolerances: Dict[str, openmm.unit.Quantity],
+    tolerances: dict[str, openmm.unit.Quantity],
 ):
     assert force1.getNumParticles() == force2.getNumParticles()
 

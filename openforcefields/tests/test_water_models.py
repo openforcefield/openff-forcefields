@@ -1,5 +1,3 @@
-from typing import Dict
-
 import numpy
 import openmm
 import openmm.unit
@@ -62,7 +60,7 @@ def opc_positions() -> Molecule:
 def compare_water_systems(
     reference: openmm.System,
     system: openmm.System,
-    tolerances: Dict[str, openmm.unit.Quantity],
+    tolerances: dict[str, openmm.unit.Quantity],
 ):
     # OpenMM creates bond and angle forces despite each containing 0 parameters
     for index, force in enumerate(reference.getForces()):
