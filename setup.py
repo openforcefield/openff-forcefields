@@ -8,7 +8,7 @@ import versioneer
 
 short_description = __doc__.split("\n")
 
-with open("README.md", "r") as handle:
+with open("README.md") as handle:
     long_description = handle.read()
 
 

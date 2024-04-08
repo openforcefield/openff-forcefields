@@ -1,5 +1,3 @@
-from typing import Dict
-
 import pandas
 from openff.toolkit.typing.engines.smirnoff.forcefield import ForceField
 from openff.toolkit.typing.engines.smirnoff.parameters import (
@@ -55,7 +53,7 @@ tip3p_library.add_parameter(
     }
 )
 
-element_to_atomic_number: Dict[str, int] = {
+element_to_atomic_number: dict[str, int] = {
     "Li": 3,
     "Na": 11,
     "K": 19,
