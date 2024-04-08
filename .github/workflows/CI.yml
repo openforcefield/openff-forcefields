@@ -22,8 +22,8 @@ jobs:
       fail-fast: false
       matrix:
         python-version:
-          - "3.9"
           - "3.10"
+          - "3.11"
         os:
           - ubuntu-latest
           - macos-latest
@@ -35,13 +35,6 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-
-      - name: Additional info about the build
-        shell: bash
-        run: |
-          uname -a
-          df -h
-          ulimit -a
 
       - name: Install dependencies
         if: ${{ matrix.toolkit == true }}
@@ -61,10 +54,7 @@ jobs:
 
       - name: Install package
         run: |
-          micromamba remove --force openff-forcefields
           python -m pip install -e .
-          conda list
-          conda info --all
 
       - name: Run water model tests
         if: ${{ matrix.toolkit == true }}
