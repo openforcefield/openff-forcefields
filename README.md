@@ -171,7 +171,7 @@ Force fields moving forward will be called `name-X.Y.Z`
 
 - `2024.03.0`: This release adds `openff-2.2.0-rc1.offxml` and `openff_unconstrained-2.2.0-rc1.offxml`, Sage 2.2.0 Release Candidate 1, which modifies some small ring internal angles and remedies issues with sulfamide geometries.
 
-- `2024.04.0`: This release adds `openff-2.2.0.offxml` and `openff_unconstrained-2.2.0.offxml`, Sage 2.2.0, with identical parameters to `openff-2.2.0-rc1.offxml`. 
+- `2024.04.0`: This release adds `openff-2.2.0.offxml` and `openff_unconstrained-2.2.0.offxml`, Sage 2.2.0, with identical parameters to `openff-2.2.0-rc1.offxml`.
 
 #### Acknowledgements
 
