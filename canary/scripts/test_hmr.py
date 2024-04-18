@@ -58,10 +58,10 @@ def hmr_driver(mol, ff_name):
     collision_rate = 1.0 / unit.picoseconds
     timestep = 4.0 * unit.femtoseconds
 
-    integrator = openmm.LangevinIntegrator(temperature, collision_rate, timestep)
+    integrator = openmm.LangevinMiddleIntegrator(temperature, collision_rate, timestep)
     context = openmm.Context(system, integrator)
     mol.generate_conformers(n_conformers=1)
-    context.setPositions(mol.conformers[0])
+    context.setPositions(mol.conformers[0].to_openmm())
 
     # Run for 10 ps
     integrator.step(2500)
@@ -99,6 +99,7 @@ if __name__ == "__main__":
                 hmr_driver(mol, ff_name)
             except NANEnergyError:
                 failed_runs.append([mol.to_smiles(), ff_name, "NaN energy"])
+
             except Exception:
                 # OpenMM's OpenMMException cannot be caught as it does not
                 # inherit from BaseException; therefore this clause may
