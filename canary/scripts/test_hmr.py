@@ -7,7 +7,7 @@ from openmmforcefields.generators import SystemGenerator
 from simtk import openmm, unit
 from simtk.openmm import app
 
-DATA_PATH = importlib.resources.files("openforcefields") / "canary" / "data"
+DATA_PATH = importlib.resources.files("canary") / "data"
 coverage_mols = DATA_PATH / "coverage.smi"
 propyne_mols = DATA_PATH / "propynes.smi"
 
