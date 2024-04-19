@@ -28,8 +28,8 @@ Details for each force field in this repository can be found in the following ta
 
 | Filename                                    | DOI                                                                                                       | FF line | Release Date  | Major format changes? |
 |---------------------------------------------|-----------------------------------------------------------------------------------------------------------|---------|---------------|-----------------------|
-| `openff-2.2.0.offxml`                       |                                                                                                           | Sage    | April 18, 2024 | No                    |
-| `openff_unconstrained-2.2.0.offxml`         |                                                                                                           | Sage    | April 18, 2024 | No                    |
+| `openff-2.2.0.offxml`                       | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.10995191.svg)](https://doi.org/10.5281/zenodo.10995191) | Sage    | April 18, 2024 | No                    |
+| `openff_unconstrained-2.2.0.offxml`         | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.10995191.svg)](https://doi.org/10.5281/zenodo.10995191) | Sage    | April 18, 2024 | No                    |
 | `openff-2.2.0-rc1.offxml`                   |                                                                                                           | Sage    | March 6, 2024 | No                    |
 | `openff_unconstrained-2.2.0-rc1.offxml`     |                                                                                                           | Sage    | March 6, 2024 | No                    |
 | `openff-2.1.1.offxml`                       | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.10553473.svg)](https://doi.org/10.5281/zenodo.10553473) | Sage    | Jan 22, 2024  | No                    |
