@@ -30,7 +30,7 @@ jobs:
       - name: Find if any OFFXML files were added
         shell: bash -l {0}
         run: |
-          if [[ $(git diff origin/master HEAD --name-only | grep "\.offxml") ]]; then
+          if [[ $(git diff origin/main HEAD --name-only | grep "\.offxml") ]]; then
             echo "new_off_xml=true" >> $GITHUB_ENV
           fi
           echo $GITHUB_ENV
@@ -69,4 +69,4 @@ jobs:
         if: ${{ env.new_off_xml == 'true' }}
         shell: bash -l {0}
         run: |
-          git diff origin/master --name-only | grep "\.offxml" | python canary/scripts/test_hmr.py
+          git diff origin/main --name-only | grep "\.offxml" | python canary/scripts/test_hmr.py

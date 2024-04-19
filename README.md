@@ -28,6 +28,10 @@ Details for each force field in this repository can be found in the following ta
 
 | Filename                                    | DOI                                                                                                       | FF line | Release Date  | Major format changes? |
 |---------------------------------------------|-----------------------------------------------------------------------------------------------------------|---------|---------------|-----------------------|
+| `openff-2.2.0.offxml`                       |                                                                                                           | Sage    | April 18, 2024 | No                    |
+| `openff_unconstrained-2.2.0.offxml`         |                                                                                                           | Sage    | April 18, 2024 | No                    |
+| `openff-2.2.0-rc1.offxml`                   |                                                                                                           | Sage    | March 6, 2024 | No                    |
+| `openff_unconstrained-2.2.0-rc1.offxml`     |                                                                                                           | Sage    | March 6, 2024 | No                    |
 | `openff-2.1.1.offxml`                       | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.10553473.svg)](https://doi.org/10.5281/zenodo.10553473) | Sage    | Jan 22, 2024  | No                    |
 | `openff_unconstrained-2.1.1.offxml`         | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.10553473.svg)](https://doi.org/10.5281/zenodo.10553473) | Sage    | Jan 22, 2024  | No                    |
 | `tip5p-1.0.0.offxml`                        | see `docs/water-models.md`                                                                                | Ports   | Nov 6, 2023   | No                    |
@@ -166,6 +170,8 @@ Force fields moving forward will be called `name-X.Y.Z`
 - `2024.01.0`: This release adds `openff-2.1.1.offxml` and `openff_unconstrained-2.1.1.offxml`, Sage 2.1.1, which has identical parameters to Sage 2.1.0 (originally released in version `2023.05.1` of the `openff-forcefields` package) but adds Xe van der Waals parameters from [Tang, K.T., Toennies, J.P. New combining rules for well parameters and shapes of the van der Waals potential of mixed rare gas systems. Z Phys D - Atoms, Molecules and Clusters 1, 91–101 (1986).](https://doi.org/10.1007/BF01384663)
 
 - `2024.03.0`: This release adds `openff-2.2.0-rc1.offxml` and `openff_unconstrained-2.2.0-rc1.offxml`, Sage 2.2.0 Release Candidate 1, which modifies some small ring internal angles and remedies issues with sulfamide geometries.
+
+- `2024.04.0`: This release adds `openff-2.2.0.offxml` and `openff_unconstrained-2.2.0.offxml`, Sage 2.2.0, with identical parameters to `openff-2.2.0-rc1.offxml`.
 
 #### Acknowledgements
 
