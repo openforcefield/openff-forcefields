@@ -12,8 +12,8 @@ Release link:
 
 ### Checklist
 
-- [ ] Open a new branch or fork on this repo. 
-- [ ] Add the new force field file to the branch. 
+- [ ] Open a new branch or fork on this repo.
+- [ ] Add the new force field file to the branch.
 - [ ] Update the date in the FF files
 - [ ] Update the authors in the `.zenodo.json` file - Details and validation info can be found [here](https://developers.zenodo.org/#add-metadata-to-your-github-repository-release)
 - [ ] Check that regular and `unconstrained` forcefields have constraints applied and absent, respectively
@@ -22,7 +22,7 @@ Release link:
 - [ ] Ensure that comments and authors are up to date
 - [ ] Ensure that `Bonds` `version="0.4"`, `fractional_bondorder_method="AM1-Wiberg"` and `fractional_bondorder_interpolation="linear"`
 - [ ] Ensure that `ProperTorsions` `version="0.4"`, `fractional_bondorder_method="AM1-Wiberg"` and `fractional_bondorder_interpolation="linear"`
-- [ ] Ensure the Electrostatics `scale14` value is `0.8333333333` (10 sig figs). Change it by hand if more 3's need to be added. 
+- [ ] Ensure the Electrostatics `scale14` value is `0.8333333333` (10 sig figs). Change it by hand if more 3's need to be added.
 - [ ] Add monoatomic ion charges to the FF, just before the `ToolkitAM1BCC` tag
 - [ ] Ensure that new FFs are loadable in newest stable release of OFF toolkit
 - [ ] Draft a "version" description at the bottom of the README file in a branch or fork. _A zenodo DOI link is not necessary at this stage_
