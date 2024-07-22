@@ -1,6 +1,11 @@
 {
     "creators": [
       {
+        "orcid": "0000-0002-6095-6704",
+        "affiliation": "Open Force Field Consortium, Open Molecular Software Foundation, Davis,  CA, USA",
+        "name": "Wang, Lily"
+      },
+      {
         "orcid": "0000-0002-7210-1164",
         "affiliation": "Open Force Field Consortium, Open Molecular Software Foundation, Davis,  CA, USA",
         "name": "McIsaac, Alexandra R."
@@ -24,11 +29,6 @@
         "orcid": "0000-0001-8694-7200",
         "affiliation": "School of Natural and Environmental Sciences,  Newcastle University, Newcastle upon Tyne NE1, 7RU, United Kingdom",
         "name": "Horton, Joshua"
-      },
-      {
-        "orcid": "0000-0002-6095-6704",
-        "affiliation": "Open Force Field Consortium, Open Molecular Software Foundation, Davis,  CA, USA",
-        "name": "Wang, Lily"
       },
       {
         "orcid": "0000-0002-6878-0192",
