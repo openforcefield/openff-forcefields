@@ -20,7 +20,7 @@ jobs:
           - "3.11"
         cfg:
           - os: ubuntu-latest
-          - os: macOS-12
+          - os: macOS-latest
 
     steps:
       - uses: actions/checkout@v4
