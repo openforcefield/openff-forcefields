@@ -36,7 +36,7 @@ jobs:
           echo $GITHUB_ENV
 
       - name: Install conda environment
-        if: ${{ env.new_off_xml == 'true' }}
+        # if: ${{ env.new_off_xml == 'true' }}
         uses: mamba-org/setup-micromamba@v1
         with:
           environment-file: devtools/conda-envs/canary_env.yaml
@@ -44,14 +44,14 @@ jobs:
             python=${{ matrix.python-version }}
 
       - name: Environment Information
-        if: ${{ env.new_off_xml == 'true' }}
+        # if: ${{ env.new_off_xml == 'true' }}
         shell: bash -l {0}
         run: |
           conda info
           conda list
 
       - name: Additional info about the build
-        if: ${{ env.new_off_xml == 'true' }}
+        # if: ${{ env.new_off_xml == 'true' }}
         shell: bash
         run: |
           uname -a
@@ -59,14 +59,14 @@ jobs:
           ulimit -a
 
       - name: Install package
-        if: ${{ env.new_off_xml == 'true' }}
+        # if: ${{ env.new_off_xml == 'true' }}
         shell: bash -l {0}
         run: |
           conda remove --force openforcefields
           python -m pip install -e .
 
       - name: Run HMR canary tests
-        if: ${{ env.new_off_xml == 'true' }}
+        # if: ${{ env.new_off_xml == 'true' }}
         shell: bash -l {0}
         run: |
           git diff origin/main --name-only | grep "\.offxml" | python canary/scripts/test_hmr.py
