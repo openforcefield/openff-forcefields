@@ -43,13 +43,6 @@ jobs:
           create-args: >-
             python=${{ matrix.python-version }}
 
-      - name: Environment Information
-        # if: ${{ env.new_off_xml == 'true' }}
-        shell: bash -l {0}
-        run: |
-          conda info
-          conda list
-
       - name: Additional info about the build
         # if: ${{ env.new_off_xml == 'true' }}
         shell: bash
