@@ -1,6 +1,6 @@
 # OpenFF Force Fields
 
-[![Build Status](https://github.com/openforcefield/openff-forcefields/workflows/CI/badge.svg)](https://github.com/openforcefield/openff-forcefields/actions?query=branch%3Amaster+workflow%3ACI)
+[![Build Status](https://github.com/openforcefield/openff-forcefields/workflows/CI/badge.svg)](https://github.com/openforcefield/openff-forcefields/actions?query=branch%3Amain+workflow%3ACI)
 
 
 This repository contains force fields released by the [Open Force Field Initiative](https://openforcefield.org).
@@ -28,6 +28,8 @@ Details for each force field in this repository can be found in the following ta
 
 | Filename                                    | DOI                                                                                                       | FF line | Release Date  | Major format changes? |
 |---------------------------------------------|-----------------------------------------------------------------------------------------------------------|---------|---------------|-----------------------|
+| `openff-2.2.1.offxml`                   |                                                                                                           | Sage    | September 11, 2024 | No                    |
+| `openff_unconstrained-2.2.1.offxml`     |                                                                                                           | Sage    | September 11, 2024 | No                    |
 | `openff-2.2.1-rc1.offxml`                   |                                                                                                           | Sage    | July 22, 2024 | No                    |
 | `openff_unconstrained-2.2.1-rc1.offxml`     |                                                                                                           | Sage    | July 22, 2024 | No                    |
 | `openff-2.2.0.offxml`                       | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.10995191.svg)](https://doi.org/10.5281/zenodo.10995191) | Sage    | April 18, 2024 | No                    |

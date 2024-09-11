@@ -75,7 +75,7 @@ def hmr_driver(mol, ff_name):
 
 if __name__ == "__main__":
     """This function expects to be called with a list of OFFXML files passed to it,
-    i.e. piped from git diff upstream/master  --name-only"""
+    i.e. piped from git diff upstream/main --name-only"""
     # Read force field filenames from stdin
     failed_runs = []
     for line in sys.stdin:
