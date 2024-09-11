@@ -91,9 +91,7 @@ for _, row in dataframe.iterrows():
     tip3p_library.add_parameter(
         {
             "smirks": smirks,
-            "charge1": unit.Quantity(
-                int(row["element"][-1] + "1"), unit.elementary_charge
-            ),
+            "charge1": unit.Quantity(int(row["element"][-1] + "1"), unit.elementary_charge),
         }
     )
 

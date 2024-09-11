@@ -23,9 +23,7 @@ from packaging import version
 VERSION = version.Version("1.0.1")
 OFFXML_PATH = Path("openforcefields", "offxml")
 
-ion_nb_params_df = pandas.read_csv(
-    Path("openforcefields", "data", "ionslm_126_opc3.csv")
-)
+ion_nb_params_df = pandas.read_csv(Path("openforcefields", "data", "ionslm_126_opc3.csv"))
 
 opc3 = ForceField()
 
@@ -82,9 +80,7 @@ opc3_constraints.add_parameter(
 )
 
 # Construct dict of element symbol to atomic number
-_SYMBOLS_TO_ATOMIC_NUMBER = {
-    symbol: atomic_number for atomic_number, symbol in SYMBOLS.items()
-}
+_SYMBOLS_TO_ATOMIC_NUMBER = {symbol: atomic_number for atomic_number, symbol in SYMBOLS.items()}
 
 for _, row in ion_nb_params_df.iterrows():
     ion_name = row["element"]
@@ -117,9 +113,7 @@ for _, row in ion_nb_params_df.iterrows():
     opc3_library.add_parameter(
         {
             "smirks": smirks,
-            "charge1": unit.Quantity(
-                int(f"{charge_sign}{charge_magnitude}"), unit.elementary_charge
-            ),
+            "charge1": unit.Quantity(int(f"{charge_sign}{charge_magnitude}"), unit.elementary_charge),
             "id": f"q-ionslm-126-opc3-{ion_name}",
         }
     )

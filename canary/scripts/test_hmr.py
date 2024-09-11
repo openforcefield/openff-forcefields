@@ -36,9 +36,7 @@ def hmr_driver(mol, ff_name):
     """Given an OpenFF Molecule, run a short 4 fs HMR simulation. This function is adapted from
     https://github.com/openforcefield/openforcefields/issues/19#issuecomment-689816995
     """
-    print(
-        f"Running HMR with force field {ff_name} and molecule with SMILES {mol.to_smiles()}"
-    )
+    print(f"Running HMR with force field {ff_name} and molecule with SMILES {mol.to_smiles()}")
 
     forcefield_kwargs = {
         "constraints": openmm.app.HBonds,
