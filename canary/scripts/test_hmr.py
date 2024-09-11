@@ -1,4 +1,4 @@
-import importlib.resources
+import pathlib
 import sys
 
 import numpy as np
@@ -7,7 +7,7 @@ import openmm.unit
 from openff.toolkit.topology import Molecule
 from openmmforcefields.generators import SystemGenerator
 
-DATA_PATH = importlib.resources.files("canary") / "data"
+DATA_PATH = pathlib.Path(".") / "canary" / "data"
 coverage_mols = DATA_PATH / "coverage.smi"
 propyne_mols = DATA_PATH / "propynes.smi"
 
