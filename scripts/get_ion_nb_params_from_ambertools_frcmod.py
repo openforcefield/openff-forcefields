@@ -33,9 +33,7 @@ def main(amber_frcmod_path):
             if line.startswith("NONBON"):
                 nonbonded = True
 
-    output_path = Path(
-        "openforcefields", "data", f"{Path(amber_frcmod_path).suffix[1:]}.csv"
-    )
+    output_path = Path("openforcefields", "data", f"{Path(amber_frcmod_path).suffix[1:]}.csv")
     pandas.DataFrame(ion_nb_params).set_index("element").to_csv(output_path)
 
 

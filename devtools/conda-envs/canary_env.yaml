@@ -5,5 +5,5 @@ dependencies:
   - python
   - pip
   - pytest
-  - openff-toolkit >=0.14.3
+  - openff-toolkit >=0.16.4
   - openmmforcefields

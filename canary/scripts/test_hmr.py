@@ -2,10 +2,10 @@ import importlib.resources
 import sys
 
 import numpy as np
+import openmm.app
+import openmm.unit
 from openff.toolkit.topology import Molecule
 from openmmforcefields.generators import SystemGenerator
-from simtk import openmm, unit
-from simtk.openmm import app
 
 DATA_PATH = importlib.resources.files("canary") / "data"
 coverage_mols = DATA_PATH / "coverage.smi"
@@ -36,15 +36,13 @@ def hmr_driver(mol, ff_name):
     """Given an OpenFF Molecule, run a short 4 fs HMR simulation. This function is adapted from
     https://github.com/openforcefield/openforcefields/issues/19#issuecomment-689816995
     """
-    print(
-        f"Running HMR with force field {ff_name} and molecule with SMILES {mol.to_smiles()}"
-    )
+    print(f"Running HMR with force field {ff_name} and molecule with SMILES {mol.to_smiles()}")
 
     forcefield_kwargs = {
-        "constraints": app.HBonds,
+        "constraints": openmm.app.HBonds,
         "rigidWater": True,
         "removeCMMotion": False,
-        "hydrogenMass": 4 * unit.amu,
+        "hydrogenMass": 4 * openmm.unit.amu,
     }
 
     system_generator = SystemGenerator(
@@ -54,9 +52,9 @@ def hmr_driver(mol, ff_name):
     )
     system = system_generator.create_system(mol.to_topology().to_openmm())
 
-    temperature = 300 * unit.kelvin
-    collision_rate = 1.0 / unit.picoseconds
-    timestep = 4.0 * unit.femtoseconds
+    temperature = 300 * openmm.unit.kelvin
+    collision_rate = 1.0 / openmm.unit.picoseconds
+    timestep = 4.0 * openmm.unit.femtoseconds
 
     integrator = openmm.LangevinMiddleIntegrator(temperature, collision_rate, timestep)
     context = openmm.Context(system, integrator)

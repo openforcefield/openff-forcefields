@@ -34,9 +34,7 @@ sage_21_uc.to_file("../openforcefields/offxml/openff_unconstrained-2.1.1.offxml"
 
 # Make sure new FF loads with most recent toolkit version
 test_sage_211 = ForceField("../openforcefields/offxml/openff-2.1.1.offxml")
-test_sage_211_uc = ForceField(
-    "../openforcefields/offxml/openff_unconstrained-2.1.1.offxml"
-)
+test_sage_211_uc = ForceField("../openforcefields/offxml/openff_unconstrained-2.1.1.offxml")
 
 
 topology = Topology.from_molecules(
