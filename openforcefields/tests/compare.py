@@ -20,9 +20,7 @@ def _compare(
         The second system to compare.
 
     """
-    assert (
-        system1.getNumForces() == system2.getNumForces()
-    ), f"{system1.getForces()} != {system2.getForces()}"
+    assert system1.getNumForces() == system2.getNumForces(), f"{system1.getForces()} != {system2.getForces()}"
 
     for force in system1.getForces():
         assert type(force) in [openmm.NonbondedForce]
@@ -45,17 +43,11 @@ def _compare_nonbonded_forces(
         charge1, sigma1, epsilon1 = force1.getParticleParameters(particle_index)
         charge2, sigma2, epsilon2 = force2.getParticleParameters(particle_index)
 
-        assert (
-            abs(charge1 - charge2) < tolerances["charge"]
-        ), f"{charge1} != {charge2}, {charge1 - charge2}"
+        assert abs(charge1 - charge2) < tolerances["charge"], f"{charge1} != {charge2}, {charge1 - charge2}"
 
         # Water models commonly have zero epsilon and meaningless/inconsistent values
         # of sigma. In this case, do not compare sigma values.
         if epsilon1._value * epsilon2._value != 0.0:
-            assert (
-                abs(sigma1 - sigma2) < tolerances["sigma"]
-            ), f"{sigma1} != {sigma2}, {sigma1 - sigma2}"
+            assert abs(sigma1 - sigma2) < tolerances["sigma"], f"{sigma1} != {sigma2}, {sigma1 - sigma2}"
 
-        assert (
-            abs(epsilon1 - epsilon2) < tolerances["epsilon"]
-        ), f"{epsilon1} != {epsilon2}, {epsilon1 - epsilon2}"
+        assert abs(epsilon1 - epsilon2) < tolerances["epsilon"], f"{epsilon1} != {epsilon2}, {epsilon1 - epsilon2}"

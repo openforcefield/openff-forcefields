@@ -90,13 +90,7 @@ def get_virtual_site_coordinates(
     system: openmm.System,
     conformer: Quantity,
 ) -> Quantity:
-    n_virtual_sites = len(
-        [
-            i
-            for i in range(system.getNumParticles())
-            if system.getParticleMass(i)._value == 0.0
-        ]
-    )
+    n_virtual_sites = len([i for i in range(system.getNumParticles()) if system.getParticleMass(i)._value == 0.0])
 
     coordinates = openmm.unit.Quantity(
         numpy.vstack(
@@ -133,9 +127,7 @@ def get_oxygen_virtual_site_distance(
 ) -> float:
     virtual_site_coordinates = get_virtual_site_coordinates(system, conformer)
 
-    return numpy.linalg.norm(
-        (virtual_site_coordinates[index, :] - conformer[0, :]).m_as(unit.nanometer)
-    )
+    return numpy.linalg.norm((virtual_site_coordinates[index, :] - conformer[0, :]).m_as(unit.nanometer))
 
 
 def get_out_of_plane_angle(
@@ -145,9 +137,7 @@ def get_out_of_plane_angle(
 ) -> float:
     parent, orientation1, orientation2 = conformer.m_as(unit.nanometer)
 
-    virtual_site_coordinates = get_virtual_site_coordinates(system, conformer)[
-        index
-    ].m_as(unit.nanometer)
+    virtual_site_coordinates = get_virtual_site_coordinates(system, conformer)[index].m_as(unit.nanometer)
 
     normal = numpy.cross(orientation1 - parent, orientation2 - parent)
 
@@ -461,9 +451,7 @@ def test_most_recent_version_match(water_model, pattern):
 
     maximum_version = version.Version("0.0.0")
 
-    matched_files = list(
-        filter(lambda x: re.match(pattern, x) is not None, get_available_force_fields())
-    )
+    matched_files = list(filter(lambda x: re.match(pattern, x) is not None, get_available_force_fields()))
 
     assert len(matched_files) > 0, f"Failed to match any files for pattern {pattern}!"
 
@@ -474,9 +462,7 @@ def test_most_recent_version_match(water_model, pattern):
             if found_verison > maximum_version:
                 maximum_version = found_verison
 
-    assert maximum_version > version.Version(
-        "0.0.0"
-    ), f"failed to update version of {water_model}"
+    assert maximum_version > version.Version("0.0.0"), f"failed to update version of {water_model}"
 
     maximum_version_file = f"{water_model}-{maximum_version}.offxml"
     shorthand_file = f"{water_model}.offxml"
@@ -514,9 +500,7 @@ def test_ion_parameter_assignment(water_molecule):
     )
     system = ff.create_openmm_system(off_top)
 
-    nbf = [
-        force for force in system.getForces() if type(force) is openmm.NonbondedForce
-    ][0]
+    nbf = next(force for force in system.getForces() if type(force) is openmm.NonbondedForce)
 
     sigma_tol = 1e-10 * openmm.unit.nanometer
     eps_tol = 1e-10 * openmm.unit.kilojoule_per_mole
@@ -548,14 +532,10 @@ def test_ion_parameter_assignment(water_molecule):
 
     # Ensure that this test covered all the ion parameters
     for key, parameter_was_used in ion_vdw_params_used.items():
-        assert (
-            parameter_was_used
-        ), f"The ion vdW parameter with smirks {key} was not assigned"
+        assert parameter_was_used, f"The ion vdW parameter with smirks {key} was not assigned"
 
     for key, parameter_was_used in ion_librarycharge_params_used.items():
-        assert (
-            parameter_was_used
-        ), f"The ion LibraryCharge parameter with smirks {key} was not assigned"
+        assert parameter_was_used, f"The ion LibraryCharge parameter with smirks {key} was not assigned"
 
 
 @pytest.mark.parametrize(

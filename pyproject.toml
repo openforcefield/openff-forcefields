@@ -1,0 +1,14 @@
+[tool.ruff]
+line-length = 119
+exclude = ["versioneer.py", "openforcefields/_version.py"]
+
+[tool.ruff.lint]
+select = ["F", "E", "W", "NPY", "UP", "RUF", "I"]
+
+[tool.ruff.lint.per-file-ignores]
+"openforcefields/**/__init__.py" = ["F401"]
+"scripts/add_xe_vdw.py" = ["RUF003"]
+
+[tool.ruff.lint.isort]
+known-third-party = ["openff.toolkit", "openff.utilities", "openff.units"]
+
