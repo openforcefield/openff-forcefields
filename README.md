@@ -177,6 +177,8 @@ Force fields moving forward will be called `name-X.Y.Z`
 
 - `2024.07.0`: This release adds `openff-2.2.1-rc1.offxml` and `openff_unconstrained-2.2.1-rc1.offxml`, which contains re-fit valence parameters where linear angles have been pinned to linear equilibrium values.
 
+- `2024.09.0` This release adds the Sage 2.2.1 force field with `openff-2.2.1.offxml` and `openff_unconstrained-2.2.1.offxml`, with identifical parameters to 2.2.1-rc1.
+
 #### Acknowledgements
 
 Project based on the
