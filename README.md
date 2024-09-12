@@ -1,6 +1,6 @@
 # OpenFF Force Fields
 
-[![Build Status](https://github.com/openforcefield/openff-forcefields/workflows/CI/badge.svg)](https://github.com/openforcefield/openff-forcefields/actions?query=branch%3Amaster+workflow%3ACI)
+[![Build Status](https://github.com/openforcefield/openff-forcefields/workflows/CI/badge.svg)](https://github.com/openforcefield/openff-forcefields/actions?query=branch%3Amain+workflow%3ACI)
 
 
 This repository contains force fields released by the [Open Force Field Initiative](https://openforcefield.org).
@@ -28,6 +28,8 @@ Details for each force field in this repository can be found in the following ta
 
 | Filename                                    | DOI                                                                                                       | FF line | Release Date  | Major format changes? |
 |---------------------------------------------|-----------------------------------------------------------------------------------------------------------|---------|---------------|-----------------------|
+| `openff-2.2.1.offxml`                   |                                                                                                           | Sage    | September 11, 2024 | No                    |
+| `openff_unconstrained-2.2.1.offxml`     |                                                                                                           | Sage    | September 11, 2024 | No                    |
 | `openff-2.2.1-rc1.offxml`                   |                                                                                                           | Sage    | July 22, 2024 | No                    |
 | `openff_unconstrained-2.2.1-rc1.offxml`     |                                                                                                           | Sage    | July 22, 2024 | No                    |
 | `openff-2.2.0.offxml`                       | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.10995191.svg)](https://doi.org/10.5281/zenodo.10995191) | Sage    | April 18, 2024 | No                    |
@@ -176,6 +178,8 @@ Force fields moving forward will be called `name-X.Y.Z`
 - `2024.04.0`: This release adds `openff-2.2.0.offxml` and `openff_unconstrained-2.2.0.offxml`, Sage 2.2.0, with identical parameters to `openff-2.2.0-rc1.offxml`.
 
 - `2024.07.0`: This release adds `openff-2.2.1-rc1.offxml` and `openff_unconstrained-2.2.1-rc1.offxml`, which contains re-fit valence parameters where linear angles have been pinned to linear equilibrium values.
+
+- `2024.09.0` This release adds the Sage 2.2.1 force field with `openff-2.2.1.offxml` and `openff_unconstrained-2.2.1.offxml`, with identifical parameters to 2.2.1-rc1.
 
 #### Acknowledgements
 

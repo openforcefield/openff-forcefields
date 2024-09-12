@@ -1,13 +1,13 @@
-import importlib.resources
+import pathlib
 import sys
 
 import numpy as np
 import openmm.app
 import openmm.unit
-from openff.toolkit.topology import Molecule
+from openff.toolkit import ForceField, Molecule
 from openmmforcefields.generators import SystemGenerator
 
-DATA_PATH = importlib.resources.files("canary") / "data"
+DATA_PATH = pathlib.Path(".") / "canary" / "data"
 coverage_mols = DATA_PATH / "coverage.smi"
 propyne_mols = DATA_PATH / "propynes.smi"
 
@@ -58,8 +58,13 @@ def hmr_driver(mol, ff_name):
 
     integrator = openmm.LangevinMiddleIntegrator(temperature, collision_rate, timestep)
     context = openmm.Context(system, integrator)
+
+    # generate conformers, minimize, and set positions
     mol.generate_conformers(n_conformers=1)
-    context.setPositions(mol.conformers[0].to_openmm())
+    ff = ForceField(f"{ff_name}.offxml")
+    ic = ff.create_interchange(mol.to_topology())
+    ic.minimize()
+    context.setPositions(ic.positions.to_openmm())
 
     # Run for 10 ps
     integrator.step(2500)
@@ -73,7 +78,7 @@ def hmr_driver(mol, ff_name):
 
 if __name__ == "__main__":
     """This function expects to be called with a list of OFFXML files passed to it,
-    i.e. piped from git diff upstream/master  --name-only"""
+    i.e. piped from git diff upstream/main --name-only"""
     # Read force field filenames from stdin
     failed_runs = []
     for line in sys.stdin:
@@ -98,11 +103,12 @@ if __name__ == "__main__":
             except NANEnergyError:
                 failed_runs.append([mol.to_smiles(), ff_name, "NaN energy"])
 
-            except Exception:
+            except Exception as e:
                 # OpenMM's OpenMMException cannot be caught as it does not
                 # inherit from BaseException; therefore this clause may
                 # hit other errors than NaN positions
-                failed_runs.append([mol.to_smiles(), ff_name, "NaN position(s)"])
+                # failed_runs.append([mol.to_smiles(), ff_name, "NaN position(s)"])
+                failed_runs.append([mol.to_smiles(), ff_name, str(e)])
 
     if len(failed_runs) > 0:
         raise HMRCanaryError("HMR tests failed:", failed_runs)
