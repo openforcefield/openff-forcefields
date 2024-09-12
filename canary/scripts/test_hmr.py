@@ -4,7 +4,7 @@ import sys
 import numpy as np
 import openmm.app
 import openmm.unit
-from openff.toolkit.topology import Molecule
+from openff.toolkit import Molecule, ForceField
 from openmmforcefields.generators import SystemGenerator
 
 DATA_PATH = pathlib.Path(".") / "canary" / "data"
@@ -58,8 +58,13 @@ def hmr_driver(mol, ff_name):
 
     integrator = openmm.LangevinMiddleIntegrator(temperature, collision_rate, timestep)
     context = openmm.Context(system, integrator)
+
+    # generate conformers, minimize, and set positions
     mol.generate_conformers(n_conformers=1)
-    context.setPositions(mol.conformers[0].to_openmm())
+    ff = ForceField(f"{ff_name}.offxml")
+    ic = ff.create_interchange(mol.to_topology())
+    ic.minimize()
+    context.setPositions(ic.positions.to_openmm())
 
     # Run for 10 ps
     integrator.step(2500)
