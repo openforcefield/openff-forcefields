@@ -4,7 +4,7 @@ import sys
 import numpy as np
 import openmm.app
 import openmm.unit
-from openff.toolkit import Molecule, ForceField
+from openff.toolkit import ForceField, Molecule
 from openmmforcefields.generators import SystemGenerator
 
 DATA_PATH = pathlib.Path(".") / "canary" / "data"
