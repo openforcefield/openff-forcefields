@@ -98,11 +98,12 @@ if __name__ == "__main__":
             except NANEnergyError:
                 failed_runs.append([mol.to_smiles(), ff_name, "NaN energy"])
 
-            except Exception:
+            except Exception as e:
                 # OpenMM's OpenMMException cannot be caught as it does not
                 # inherit from BaseException; therefore this clause may
                 # hit other errors than NaN positions
-                failed_runs.append([mol.to_smiles(), ff_name, "NaN position(s)"])
+                # failed_runs.append([mol.to_smiles(), ff_name, "NaN position(s)"])
+                failed_runs.append([mol.to_smiles(), ff_name, str(e)])
 
     if len(failed_runs) > 0:
         raise HMRCanaryError("HMR tests failed:", failed_runs)
