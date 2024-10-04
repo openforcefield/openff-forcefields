@@ -39,7 +39,7 @@ jobs:
 
       - name: Install dependencies
         if: ${{ matrix.toolkit == true }}
-        uses: mamba-org/setup-micromamba@v1
+        uses: mamba-org/setup-micromamba@v2
         with:
           environment-file: devtools/conda-envs/test_env.yaml
           create-args: >-
@@ -47,7 +47,7 @@ jobs:
 
       - name: Install dependencies
         if: ${{ matrix.toolkit == false }}
-        uses: mamba-org/setup-micromamba@v1
+        uses: mamba-org/setup-micromamba@v2
         with:
           environment-file: devtools/conda-envs/test_no_toolkit.yaml
           create-args: >-

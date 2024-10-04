@@ -38,7 +38,7 @@ jobs:
 
       - name: Install conda environment
         if: ${{ env.new_off_xml == 'true' }}
-        uses: mamba-org/setup-micromamba@v1
+        uses: mamba-org/setup-micromamba@v2
         with:
           environment-file: devtools/conda-envs/canary_env.yaml
           create-args: >-
