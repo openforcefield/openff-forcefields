@@ -57,6 +57,21 @@ def opc_positions() -> Molecule:
     )
 
 
+def remove_force_by_type(
+    system: openmm.System,
+    force_type: type,
+) -> openmm.System:
+    """Remove the first instance of a force of a given type."""
+    for index, force in enumerate(system.getForces()):
+        if isinstance(force, force_type):
+            force_index = index
+            break
+
+    system.removeForce(force_index)
+
+    return system
+
+
 def compare_water_systems(
     reference: openmm.System,
     system: openmm.System,
@@ -66,22 +81,21 @@ def compare_water_systems(
     for index, force in enumerate(reference.getForces()):
         if isinstance(force, openmm.HarmonicBondForce):
             assert force.getNumBonds() == 0
-            bond_force: int = index
+            bond_force = index
+            break
 
     reference.removeForce(bond_force)
 
     for index, force in enumerate(reference.getForces()):
         if isinstance(force, openmm.HarmonicAngleForce):
             assert force.getNumAngles() == 0
-            angle_force: int = index
+            angle_force = index
+            break
 
     reference.removeForce(angle_force)
 
-    for index, force in enumerate(reference.getForces()):
-        if isinstance(force, openmm.CMMotionRemover):
-            cmm_force: int = index
-
-    reference.removeForce(cmm_force)
+    reference = remove_force_by_type(reference, openmm.CMMotionRemover)
+    system = remove_force_by_type(system, openmm.CMMotionRemover)
 
     _compare(reference, system, tolerances)
 
