@@ -16,15 +16,15 @@ defaults:
 
 jobs:
   test:
-    name: Test on ${{ matrix.os }}, Python ${{ matrix.python-version }}, Toolkit ${{ matrix.toolkit }}
+    name: Test on ${{ matrix.os }}, Python ${{ matrix.python-version }}, Toolkit ${{ matrix.toolkit }}, NAGL models ${{ matrix.nagl_models }}
     runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: false
       matrix:
         python-version:
-          - "3.10"
           - "3.11"
           - "3.12"
+          - "3.13"
         os:
           - ubuntu-latest
           - macos-latest
