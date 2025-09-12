@@ -187,7 +187,7 @@ Force fields moving forward will be called `name-X.Y.Z`
 
 - `2024.09.0` This release adds the Sage 2.2.1 force field with `openff-2.2.1.offxml` and `openff_unconstrained-2.2.1.offxml`, with identifical parameters to 2.2.1-rc1.
 
-- `2025.09.0` This release adds the Sage 2.3.0-rc1 force fields. See the release notes for more details. 
+- `2025.09.0` This release adds the Sage 2.3.0-rc1 force fields. See the release notes for more details.
 
 
 #### Acknowledgements
