@@ -38,7 +38,7 @@ jobs:
           - toolkit: false
             nagl_models: true
 
-        
+
     env:
       PYTEST_ARGS: -v -nauto --cov=openforcefields --cov-config=setup.cfg --cov-append --cov-report=xml
 
