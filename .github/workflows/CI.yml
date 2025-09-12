@@ -16,7 +16,7 @@ defaults:
 
 jobs:
   test:
-    name: Test on ${{ matrix.os }}, Python ${{ matrix.python-version }}, Toolkit ${{ matrix.toolkit }}, NAGL models ${{ matrix.nagl_models }}
+    name: Test on ${{ matrix.os }}, Python ${{ matrix.python-version }}, Toolkit ${{ matrix.toolkit }}
     runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: false
@@ -31,13 +31,6 @@ jobs:
         toolkit:
           - true
           - false
-        nagl_models:
-          - true
-          - false
-        exclude:
-          - toolkit: false
-            nagl_models: true
-
 
     env:
       PYTEST_ARGS: -v -nauto --cov=openforcefields --cov-config=setup.cfg --cov-append --cov-report=xml
@@ -46,15 +39,7 @@ jobs:
       - uses: actions/checkout@v5
 
       - name: Install dependencies
-        if: ${{ matrix.toolkit == true && matrix.nagl_models == true }}
-        uses: mamba-org/setup-micromamba@v1
-        with:
-          environment-file: devtools/conda-envs/test_env_nagl_models.yaml
-          create-args: >-
-            python=${{ matrix.python-version }}
-
-      - name: Install dependencies
-        if: ${{ matrix.toolkit == true && matrix.nagl_models == false }}
+        if: ${{ matrix.toolkit == true }}
         uses: mamba-org/setup-micromamba@v1
         with:
           environment-file: devtools/conda-envs/test_env.yaml
