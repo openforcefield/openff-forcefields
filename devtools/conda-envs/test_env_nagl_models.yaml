@@ -1,0 +1,16 @@
+name: openff-forcefields-test
+channels:
+  - conda-forge
+dependencies:
+  - python
+  - pip
+  - openff-toolkit >=0.14.3
+  - openff-interchange >=0.3.17
+  - openff-nagl-models >=2025.9.0
+  - pytest
+  - pytest-cov
+  - pytest-xdist
+  - pandas
+  - click
+  # Needed only because water models are re-written in CI
+  - pre-commit
