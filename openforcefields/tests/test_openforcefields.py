@@ -69,7 +69,7 @@ def test_can_charge_nagl_nodownload(offxml_file_name):
     This is a specific test to check hash matching and loading of the model file.
     """
     pytest.importorskip("openff.nagl_models")
-    from openff.toolkit import Molecule, ForceField
+    from openff.toolkit import ForceField, Molecule
 
     ff = ForceField(offxml_file_name)
     mol = Molecule.from_smiles("CCO")
