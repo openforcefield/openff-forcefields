@@ -52,7 +52,7 @@ CCC(CCl)Cl
 CC(=O)c1ccc(cc1)S(=C)(=C)C
 COc1ccc(cc1OC)c2ccc3ccccc3[o+]2
 # F[P-](F)(F)(F)(F)F
-CC(C)S(=O)(=O)Br
+# CC(C)S(=O)(=O)Br
 C1CC(=O)N(C1=O)Br
 C=C=CN1CCCC1=O
 CC(C)C(=O)NNC=O

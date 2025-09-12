@@ -6,44 +6,9 @@
         "name": "Wang, Lily"
       },
       {
-        "orcid": "0000-0002-7210-1164",
-        "affiliation": "Open Force Field Consortium, Open Molecular Software Foundation, Davis,  CA, USA",
-        "name": "McIsaac, Alexandra R."
-      },
-      {
-        "orcid": "0000-0001-6583-2148",
-        "affiliation": "Pharmaceutical Sciences, University of California Irvine, Irvine, CA, USA",
-        "name": "Behara, Pavan Kumar"
-      },
-      {
-        "orcid": "0000-0001-7856-1156",
-        "affiliation": "Department of Chemistry, University of California Irvine, Irvine, CA, USA",
-        "name": "Gokey, Trevor"
-      },
-      {
-        "orcid": "0000-0002-5899-7953",
-        "affiliation": "Skaggs School of Pharmacy and Pharmaceutical Sciences, University of California San Diego, La Jolla, CA, USA",
-        "name": "Cavender, Chapin"
-      },
-      {
-        "orcid": "0000-0001-8694-7200",
-        "affiliation": "School of Natural and Environmental Sciences,  Newcastle University, Newcastle upon Tyne NE1, 7RU, United Kingdom",
-        "name": "Horton, Joshua"
-      },
-      {
-        "orcid": "0000-0002-6878-0192",
-        "affiliation": "Open Force Field Consortium, Open Molecular Software Foundation, Davis,  CA, USA",
-        "name": "Westbrook, Brent R."
-      },
-      {
-        "orcid": "0000-0002-1460-3983",
-        "affiliation": "Open Force Field Consortium, Open Molecular Software Foundation, Davis,  CA, USA",
-        "name": "Thompson, Matthew W."
-      },
-      {
-        "orcid": "0000-0002-2732-457X",
-        "affiliation": "Pharmaceutical Sciences, University of California Irvine, Irvine, CA, USA",
-        "name": "Osato, Meghan"
+        "orcid": "0000-0001-5787-9130",
+        "affiliation": "Open Free Energy, Open Molecular Software Foundation, Davis, CA, USA",
+        "name": "Alibay, Irfan"
       },
       {
         "orcid": "0000-0002-1736-7744",
@@ -51,9 +16,24 @@
         "name": "Baumann, Hannah M."
       },
       {
-        "orcid": "0000-0001-5787-9130",
-        "affiliation": "Open Free Energy, Open Molecular Software Foundation, Davis, CA, USA",
-        "name": "Alibay, Irfan"
+        "orcid": "0000-0001-6583-2148",
+        "affiliation": "Pharmaceutical Sciences, University of California Irvine, Irvine, CA, USA",
+        "name": "Behara, Pavan Kumar"
+      },
+      {
+        "orcid": "0000-0002-5899-7953",
+        "affiliation": "Skaggs School of Pharmacy and Pharmaceutical Sciences, University of California San Diego, La Jolla, CA, USA",
+        "name": "Cavender, Chapin"
+      },
+      {
+        "orcid": "0000-0001-7856-1156",
+        "affiliation": "Department of Chemistry, University of California Irvine, Irvine, CA, USA",
+        "name": "Gokey, Trevor"
+      },
+      {
+        "orcid": "0000-0001-8694-7200",
+        "affiliation": "School of Natural and Environmental Sciences,  Newcastle University, Newcastle upon Tyne NE1, 7RU, United Kingdom",
+        "name": "Horton, Joshua"
       },
       {
         "orcid": "0000-0002-1697-2918",
@@ -61,19 +41,44 @@
         "name": "Jang, Hyesu"
       },
       {
+        "orcid": "0000-0002-7210-1164",
+        "affiliation": "Open Force Field Consortium, Open Molecular Software Foundation, Davis,  CA, USA",
+        "name": "McIsaac, Alexandra R."
+      },
+      {
+        "orcid": "0000-0002-8246-5113",
+        "affiliation": "Open Force Field Consortium, Open Molecular Software Foundation, Davis,  CA, USA",
+        "name": "Mitchell, Joshua A."
+      },
+      {
+        "orcid": "0000-0002-2732-457X",
+        "affiliation": "Pharmaceutical Sciences, University of California Irvine, Irvine, CA, USA",
+        "name": "Osato, Meghan"
+      },
+      {
+        "orcid": "0000-0002-1460-3983",
+        "affiliation": "Open Force Field Consortium, Open Molecular Software Foundation, Davis,  CA, USA",
+        "name": "Thompson, Matthew W."
+      },
+      {
         "orcid": "0000-0001-6448-0873",
         "affiliation": "Open Force Field Consortium, Open Molecular Software Foundation, Davis,  CA, USA",
         "name": "Wagner, Jeffrey"
       },
       {
-        "orcid": "0000-0003-2933-0719",
-        "affiliation": "School of Natural and Environmental Sciences,  Newcastle University, Newcastle upon Tyne NE1, 7RU, United Kingdom",
-        "name": "Cole, Daniel"
+        "orcid": "0000-0002-6878-0192",
+        "affiliation": "Open Force Field Consortium, Open Molecular Software Foundation, Davis,  CA, USA",
+        "name": "Westbrook, Brent R."
       },
       {
         "orcid": "0000-0001-9145-6457",
         "affiliation": "OpenEye Scientific Software, Santa Fe, NM, USA",
         "name": "Bayly, Christopher"
+      },
+      {
+        "orcid": "0000-0003-2933-0719",
+        "affiliation": "School of Natural and Environmental Sciences,  Newcastle University, Newcastle upon Tyne NE1, 7RU, United Kingdom",
+        "name": "Cole, Daniel"
       },
       {
         "orcid": "0000-0002-1083-5533",
