@@ -61,7 +61,7 @@ def test_forcefield_data_is_not_loadable():
 
 
 @pytest.mark.skipif(not (has_off_toolkit), reason="Test requires OFF toolkit")
-@pytest.mark.parametrize("offxml_file_name", ["openff-2.3.0rc1.offxml", "openff_unconstrained-2.3.0rc1.offxml"])
+@pytest.mark.parametrize("offxml_file_name", ["openff-2.3.0-rc1.offxml", "openff_unconstrained-2.3.0-rc1.offxml"])
 def test_can_charge_nagl_nodownload(offxml_file_name):
     """
     Test that the OpenFF Toolkit can load and usethe NAGLCharges section.
