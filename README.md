@@ -16,6 +16,17 @@ Each mainline force field is currently available in two forms -- both with and w
 
 This repository may also contain other useful force fields, data, or utilities, separate from mainline OpenFF force fields. More information on those can be found in the `docs/` directory in this repository.
 
+**Table of contents**
+- [How to cite](#how-to-cite)
+- [Installation](#installation)
+- [Use](#use)
+- [History](#history)
+- [General versioning guidelines](#general-versioning-guidelines)
+- [Versions](#versions)
+- [Authorship](#authorship)
+- [Acknowledgements](#acknowledgements)
+
+
 ## How to cite
 
 To cite the **Parsley** line of force fields (`openff-1.Y.Z`) please use [this citation](https://doi.org/10.1021/acs.jctc.1c00571).
