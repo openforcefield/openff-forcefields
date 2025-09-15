@@ -207,7 +207,7 @@ Authors to the OpenFF ForceFields repository are recognized in the [.zenodo.json
 
 Prior to each full release of a force field, the science lead will post in a public Slack channel calling for additional authors not already recognised in the author list. If the window passes and you realise that an author has been missed, please reach out to any of the OpenFF lead team to be added.
 
-To be considered as an author, you should have made a meaningful contribution to the force field composition, fitting, benchmarking, or software without which the release would not have occurred in its current form. This includes work done to earlier candidates, including work to rule out or benchmark earlier candidates for release. 
+To be considered as an author, you should have made a meaningful contribution to the force field composition, fitting, benchmarking, or software without which the release would not have occurred in its current form. This includes work done to earlier candidates, including work to rule out or benchmark earlier candidates for release.
 
 
 ## Acknowledgements
