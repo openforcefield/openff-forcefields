@@ -203,7 +203,7 @@ Force fields moving forward will be called `name-X.Y.Z`
 
 ## Authorship
 
-Authors to the OpenFF ForceFields repository are recognized in the [.zenodo.json](./.zenodo.json) file. This includes authors both to the repo itself, as well as the force fields contained within.
+Authors to the OpenFF ForceFields repository are recognized in the [.zenodo.json](./.zenodo.json) file. This includes authors both to the repo itself, as well as the force fields contained within. Authors should be listed according the following model: main driver of the force field first, David Mobley last, and everyone else alphabetically in the middle.
 
 Prior to each full release of a force field, the science lead will post in a public Slack channel calling for additional authors not already recognised in the author list. If the window passes and you realise that an author has been missed, please reach out to any of the OpenFF lead team to be added.
 
