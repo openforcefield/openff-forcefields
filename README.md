@@ -16,6 +16,17 @@ Each mainline force field is currently available in two forms -- both with and w
 
 This repository may also contain other useful force fields, data, or utilities, separate from mainline OpenFF force fields. More information on those can be found in the `docs/` directory in this repository.
 
+**Table of contents**
+- [How to cite](#how-to-cite)
+- [Installation](#installation)
+- [Use](#use)
+- [History](#history)
+- [General versioning guidelines](#general-versioning-guidelines)
+- [Versions](#versions)
+- [Authorship](#authorship)
+- [Acknowledgements](#acknowledgements)
+
+
 ## How to cite
 
 To cite the **Parsley** line of force fields (`openff-1.Y.Z`) please use [this citation](https://doi.org/10.1021/acs.jctc.1c00571).
@@ -190,7 +201,16 @@ Force fields moving forward will be called `name-X.Y.Z`
 - `2025.09.0` This release adds the Sage 2.3.0-rc1 force fields. See the release notes for more details.
 
 
-#### Acknowledgements
+## Authorship
+
+Authors to the OpenFF ForceFields repository are recognized in the [.zenodo.json](./.zenodo.json) file. This includes authors both to the repo itself, as well as the force fields contained within. Authors should be listed according the following model: main driver of the force field first, David Mobley last, and everyone else alphabetically in the middle.
+
+Prior to each full release of a force field, the science lead will post in a public Slack channel calling for additional authors not already recognised in the author list. If the window passes and you realise that an author has been missed, please reach out to any of the OpenFF lead team to be added.
+
+To be considered as an author, you should have made a meaningful contribution to the force field composition, fitting, benchmarking, or software without which the release would not have occurred in its current form. This includes work done to earlier candidates, including work to rule out or benchmark earlier candidates for release.
+
+
+## Acknowledgements
 
 Project based on the
 [Computational Molecular Science Python Cookiecutter](https://github.com/molssi/cookiecutter-cms) version 1.0.
