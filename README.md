@@ -202,6 +202,8 @@ Force fields moving forward will be called `name-X.Y.Z`
 
 - `2025.09.0` This release adds the Sage 2.3.0-rc1 force fields. See the release notes for more details.
 
+- `2025.10.0` This release adds the Sage 2.3.0-rc2 force fields. See the release notes for more details.
+
 
 ## Authorship
 
