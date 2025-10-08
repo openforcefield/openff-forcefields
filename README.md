@@ -39,6 +39,8 @@ Details for each OpenFF force field in this repository can be found on our [webs
 
 | Filename                                    | FF line | Release Date  | Major format changes? | Fitting repo                                                                              | DOI                                                                                                         |
 |---------------------------------------------|---------|---------------|-----------------------|-------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------|
+| `openff-2.3.0-rc2.offxml`                    | Sage    | Oct 10, 2025  | NAGLCharges instead of ToolkitAM1BCC                    | [repo](http://github.com/lilyminium/ash-sage-rc2)                   |  |
+| `openff_unconstrained-2.3.0-rc2.offxml`      | Sage    | Oct 10, 2025  | NAGLCharges instead of ToolkitAM1BCC                    | [repo](http://github.com/lilyminium/ash-sage-rc2)                   |  |
 | `openff-2.3.0-rc1.offxml`                    | Sage    | Sep 12, 2025  | NAGLCharges instead of ToolkitAM1BCC                    | [repo](http://github.com/lilyminium/ash-sage-rc1)                   | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.17103546.svg)](https://doi.org/10.5281/zenodo.17103546) |
 | `openff_unconstrained-2.3.0-rc1.offxml`      | Sage    | Sep 12, 2025  | NAGLCharges instead of ToolkitAM1BCC                    | [repo](http://github.com/lilyminium/ash-sage-rc1)                   | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.17103546.svg)](https://doi.org/10.5281/zenodo.17103546) |
 | `openff-2.2.1.offxml`                       | Sage    | Sep 11, 2024  | No                    | [repo](https://github.com/openforcefield/sage-2.2.1/releases/tag/2.2.1)                   | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.13754116.svg)](https://doi.org/10.5281/zenodo.13754116) |
@@ -199,6 +201,8 @@ Force fields moving forward will be called `name-X.Y.Z`
 - `2024.09.0` This release adds the Sage 2.2.1 force field with `openff-2.2.1.offxml` and `openff_unconstrained-2.2.1.offxml`, with identifical parameters to 2.2.1-rc1.
 
 - `2025.09.0` This release adds the Sage 2.3.0-rc1 force fields. See the release notes for more details.
+
+- `2025.10.0` This release adds the Sage 2.3.0-rc2 force fields. See the release notes for more details.
 
 
 ## Authorship
