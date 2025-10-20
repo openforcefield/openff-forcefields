@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SMIRNOFF version="0.3" aromaticity_model="OEAroModel_MDL">
     <Author>The Open Force Field Initiative</Author>
-    <Date>2023-05-02</Date>
+    <Date>2025-10-20</Date>
     <Constraints version="0.3">
         <Constraint smirks="[#1:1]-[*:2]" id="c1"></Constraint>
     </Constraints>
