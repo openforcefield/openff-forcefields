@@ -36,7 +36,7 @@ jobs:
       PYTEST_ARGS: -v -nauto --cov=openforcefields --cov-config=setup.cfg --cov-append --cov-report=xml
 
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
 
       - name: Install dependencies
         if: ${{ matrix.toolkit == true }}
