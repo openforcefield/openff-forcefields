@@ -39,8 +39,10 @@ Details for each OpenFF force field in this repository can be found on our [webs
 
 | Filename                                    | FF line | Release Date  | Major format changes? | Fitting repo                                                                              | DOI                                                                                                         |
 |---------------------------------------------|---------|---------------|-----------------------|-------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------|
-| `openff_no_water-3.0.0-alpha0.offxml`                    | Sage    | Oct 20, 2025  | No                    | [                   | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.17401377.svg)](https://doi.org/10.5281/zenodo.17401377) |
-| `openff_no_water_unconstrained-3.0.0-alpha0.offxml`      | Sage    | Oct 20, 2025  | No                    | [                   | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.17401377.svg)](https://doi.org/10.5281/zenodo.17401377)|
+| `openff-2.3.0.offxml`                    | Sage    | Jan 9, 2025  | No                    | [repo](https://github.com/openforcefield/ash-sage-rc2) | DOI TO COME |
+| `openff_unconstrained-2.3.0.offxml`                    | Sage    | Jan 9, 2025  | No                    | [repo](https://github.com/openforcefield/ash-sage-rc2) | DOI TO COME |
+| `openff_no_water-3.0.0-alpha0.offxml`                    | Sage    | Oct 20, 2025  | No                    |                     | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.17401377.svg)](https://doi.org/10.5281/zenodo.17401377) |
+| `openff_no_water_unconstrained-3.0.0-alpha0.offxml`      | Sage    | Oct 20, 2025  | No                    |                     | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.17401377.svg)](https://doi.org/10.5281/zenodo.17401377)|
 | `openff-2.3.0-rc2.offxml`                    | Sage    | Oct 10, 2025  | NAGLCharges instead of ToolkitAM1BCC                    | [repo](http://github.com/lilyminium/ash-sage-rc2)                   | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.17298486.svg)](https://doi.org/10.5281/zenodo.17298486) |
 | `openff_unconstrained-2.3.0-rc2.offxml`      | Sage    | Oct 10, 2025  | NAGLCharges instead of ToolkitAM1BCC                    | [repo](http://github.com/lilyminium/ash-sage-rc2)                   | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.17298486.svg)](https://doi.org/10.5281/zenodo.17298486) |
 | `openff-2.3.0-rc1.offxml`                    | Sage    | Sep 12, 2025  | NAGLCharges instead of ToolkitAM1BCC                    | [repo](http://github.com/lilyminium/ash-sage-rc1)                   | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.17103546.svg)](https://doi.org/10.5281/zenodo.17103546) |
@@ -207,6 +209,8 @@ Force fields moving forward will be called `name-X.Y.Z`
 - `2025.10.0` This release adds the Sage 2.3.0-rc2 force fields. See the release notes for more details.
 
 - `2025.10.1` This release adds the openff-3.0.0-alpha0 force fields. See the release notes for more details.
+
+- `2026.01.0` This release adds the Sage 2.3.0 force fields. See the release notes for more details.
 
 
 ## Authorship
