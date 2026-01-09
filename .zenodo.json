@@ -2,7 +2,7 @@
     "creators": [
       {
         "orcid": "0000-0002-6095-6704",
-        "affiliation": "Open Force Field Consortium, Open Molecular Software Foundation, Davis,  CA, USA",
+        "affiliation": "Open Force Field Consortium, Open Molecular Software Foundation, Davis, CA, USA",
         "name": "Wang, Lily"
       },
       {
@@ -42,12 +42,12 @@
       },
       {
         "orcid": "0000-0002-7210-1164",
-        "affiliation": "Open Force Field Consortium, Open Molecular Software Foundation, Davis,  CA, USA",
+        "affiliation": "Open Force Field Consortium, Open Molecular Software Foundation, Davis, CA, USA",
         "name": "McIsaac, Alexandra R."
       },
       {
         "orcid": "0000-0002-8246-5113",
-        "affiliation": "Open Force Field Consortium, Open Molecular Software Foundation, Davis,  CA, USA",
+        "affiliation": "Open Force Field Consortium, Open Molecular Software Foundation, Davis, CA, USA",
         "name": "Mitchell, Joshua A."
       },
       {
@@ -57,17 +57,17 @@
       },
       {
         "orcid": "0000-0002-1460-3983",
-        "affiliation": "Open Force Field Consortium, Open Molecular Software Foundation, Davis,  CA, USA",
+        "affiliation": "Open Force Field Consortium, Open Molecular Software Foundation, Davis, CA, USA",
         "name": "Thompson, Matthew W."
       },
       {
         "orcid": "0000-0001-6448-0873",
-        "affiliation": "Open Force Field Consortium, Open Molecular Software Foundation, Davis,  CA, USA",
+        "affiliation": "Open Force Field Consortium, Open Molecular Software Foundation, Davis, CA, USA",
         "name": "Wagner, Jeffrey"
       },
       {
         "orcid": "0000-0002-6878-0192",
-        "affiliation": "Open Force Field Consortium, Open Molecular Software Foundation, Davis,  CA, USA",
+        "affiliation": "Open Force Field Consortium, Open Molecular Software Foundation, Davis, CA, USA",
         "name": "Westbrook, Brent R."
       },
       {
@@ -76,9 +76,19 @@
         "name": "Bayly, Christopher"
       },
       {
+        "orcid": "0000-0003-0542-119X",
+        "affiliation": "Computational and Systems Biology Program, Sloan Kettering Institute, Memorial Sloan Kettering Cancer Center, New York, NY, USA",
+        "name": "Chodera, John"
+      },
+      {
         "orcid": "0000-0003-2933-0719",
         "affiliation": "School of Natural and Environmental Sciences,  Newcastle University, Newcastle upon Tyne NE1, 7RU, United Kingdom",
         "name": "Cole, Daniel"
+      },
+      {
+        "orcid": "0000-0003-3249-1097",
+        "affiliation": "Department of Chemical and Biological Engineering, University of Colorado Boulder, Boulder, CO, USA",
+        "name": "Shirts, Michael"
       },
       {
         "orcid": "0000-0002-1083-5533",
