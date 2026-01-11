@@ -4,8 +4,6 @@ channels:
 dependencies:
   - python
   - pip
-  # Remove when in a release: https://github.com/openforcefield/openff-interchange/issues/1403
-  - numpy <2.4
   - pytest
   - openff-toolkit >=0.17.0
   - openmmforcefields
