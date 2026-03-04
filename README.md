@@ -29,13 +29,9 @@ This repository may also contain other useful force fields, data, or utilities, 
 
 ## How to cite
 
-To cite the **Parsley** line of force fields (`openff-1.Y.Z`) please use [this citation](https://doi.org/10.1021/acs.jctc.1c00571).
+For instructions on how to cite the force fields here, see our [website](https://openforcefield.org/science/how-to-cite/)
 
-To cite the **Sage** line of force fields (`openff-2.Y.Z`) please use [this citation](https://pubs.acs.org/doi/10.1021/acs.jctc.3c00039).
-
-Optionally, consider also citing the version-specific Zenodo DOI for the particular force field from the table below.
-
-Details for each OpenFF force field in this repository can be found on our [website](https://openforcefield.org/force-fields/force-fields/) or in the following table:
+Version-specific Zenodo DOIs for particular force fields can be found in the table below.
 
 | Filename                                    | FF line | Release Date  | Major format changes? | Fitting repo                                                                              | DOI                                                                                                         |
 |---------------------------------------------|---------|---------------|-----------------------|-------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------|
