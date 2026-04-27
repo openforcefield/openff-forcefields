@@ -14,8 +14,8 @@ def get_forcefield_dirs_paths() -> list[str]:
     """
     Return the paths to the directories including the forcefield files.
 
-    This function is set as an entry point in setup.py. It will be called
-    by the openforcefield toolkit when discovering the installed folders
+    This function is set as an entry point in `pyproject.toml`. It will be
+    called by the OpenFF Toolkit when discovering the installed folders
     including offxml files.
 
     Returns

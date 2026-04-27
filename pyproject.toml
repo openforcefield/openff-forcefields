@@ -1,54 +1,45 @@
 [build-system]
-requires = ["setuptools", "versioneer[toml]"]
 build-backend = "setuptools.build_meta"
+requires = [
+  "setuptools",
+  "setuptools-scm>=8",
+]
 
 [project]
 name = "openforcefields"
 description = "Force fields released by the Open Force Field Initiative"
+readme = { file = "README.md", content-type = "text/markdown" }
+license = { text = "CC-BY-4.0" }
 authors = [
-    {name = "The Open Force Field Initiative", email = "info@openforcefield.org"},
+  { name = "The Open Force Field Initiative", email = "info@openforcefield.org" },
 ]
-license = {text = "CC-BY-4.0"}
-readme = {file = "README.md", content-type = "text/markdown"}
-dynamic = ["version"]
-
-[project.urls]
-Homepage = "https://github.com/openforcefield/openforcefields"
-
-[project.entry-points."openforcefield.smirnoff_forcefield_directory"]
-get_forcefield_dirs_paths = "openforcefields.openforcefields:get_forcefield_dirs_paths"
-
-[tool.setuptools.packages.find]
-where = ["."]
-include = ["openforcefields", "openforcefields.*"]
-
-[tool.setuptools.package-data]
-openforcefields = ["offxml/*"]
-
-[tool.versioneer]
-VCS = "git"
-style = "pep440"
-versionfile_source = "openforcefields/_version.py"
-versionfile_build = "openforcefields/_version.py"
-tag_prefix = ""
-
-[tool.coverage.run]
-omit = [
-    "*/tests/*",
-    "openforcefields/_version.py",
+requires-python = ">=3.12"
+classifiers = [
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Programming Language :: Python :: 3.14",
 ]
+dynamic = [ "version" ]
+urls.Homepage = "https://github.com/openforcefield/openforcefields"
+entry-points."openforcefield.smirnoff_forcefield_directory".get_forcefield_dirs_paths = "openforcefields.openforcefields:get_forcefield_dirs_paths"
+
+[tool.setuptools]
+package-data.openforcefields = [ "offxml/*" ]
+packages.find.where = [ "." ]
+packages.find.include = [ "openforcefields", "openforcefields.*" ]
+
+[tool.setuptools_scm]
+fallback_version = "0.0.0"
 
 [tool.ruff]
 line-length = 119
-exclude = ["versioneer.py", "openforcefields/_version.py"]
+lint.select = [ "E", "F", "I", "NPY", "RUF", "UP", "W" ]
+lint.per-file-ignores."openforcefields/**/__init__.py" = [ "F401" ]
+lint.per-file-ignores."scripts/add_xe_vdw.py" = [ "RUF003" ]
+lint.isort.known-third-party = [ "openff.toolkit", "openff.utilities", "openff.units" ]
 
-[tool.ruff.lint]
-select = ["F", "E", "W", "NPY", "UP", "RUF", "I"]
-
-[tool.ruff.lint.per-file-ignores]
-"openforcefields/**/__init__.py" = ["F401"]
-"scripts/add_xe_vdw.py" = ["RUF003"]
-
-[tool.ruff.lint.isort]
-known-third-party = ["openff.toolkit", "openff.utilities", "openff.units"]
-
+[tool.coverage]
+run.omit = [
+  "*/tests/*",
+]
