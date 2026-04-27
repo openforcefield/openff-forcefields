@@ -1,3 +1,43 @@
+[build-system]
+requires = ["setuptools", "versioneer[toml]"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "openforcefields"
+description = "Force fields released by the Open Force Field Initiative"
+authors = [
+    {name = "The Open Force Field Initiative", email = "info@openforcefield.org"},
+]
+license = {text = "CC-BY-4.0"}
+readme = {file = "README.md", content-type = "text/markdown"}
+dynamic = ["version"]
+
+[project.urls]
+Homepage = "https://github.com/openforcefield/openforcefields"
+
+[project.entry-points."openforcefield.smirnoff_forcefield_directory"]
+get_forcefield_dirs_paths = "openforcefields.openforcefields:get_forcefield_dirs_paths"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["openforcefields", "openforcefields.*"]
+
+[tool.setuptools.package-data]
+openforcefields = ["offxml/*"]
+
+[tool.versioneer]
+VCS = "git"
+style = "pep440"
+versionfile_source = "openforcefields/_version.py"
+versionfile_build = "openforcefields/_version.py"
+tag_prefix = ""
+
+[tool.coverage.run]
+omit = [
+    "*/tests/*",
+    "openforcefields/_version.py",
+]
+
 [tool.ruff]
 line-length = 119
 exclude = ["versioneer.py", "openforcefields/_version.py"]
