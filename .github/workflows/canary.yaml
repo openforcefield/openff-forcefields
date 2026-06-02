@@ -8,6 +8,10 @@ on:
     branches:
       - "main"
 
+defaults:
+  run:
+    shell: bash -uleo pipefail {0}
+
 jobs:
   test:
     name: Canary tests on ${{ matrix.cfg.os }}, Python ${{ matrix.python-version }}
