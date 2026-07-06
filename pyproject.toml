@@ -25,9 +25,9 @@ urls.Homepage = "https://github.com/openforcefield/openforcefields"
 entry-points."openforcefield.smirnoff_forcefield_directory".get_forcefield_dirs_paths = "openforcefields.openforcefields:get_forcefield_dirs_paths"
 
 [tool.setuptools]
-package-data.openforcefields = [ "offxml/*" ]
 packages.find.where = [ "." ]
 packages.find.include = [ "openforcefields", "openforcefields.*" ]
+package-data.openforcefields = [ "offxml/*" ]
 
 [tool.setuptools_scm]
 fallback_version = "0.0.0"
