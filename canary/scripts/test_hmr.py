@@ -61,7 +61,7 @@ def hmr_driver(mol, ff_name):
 
     # generate conformers, minimize, and set positions
     mol.generate_conformers(n_conformers=1)
-    ff = ForceField(f"{ff_name}.offxml")
+    ff = ForceField(ff_name)
     ic = ff.create_interchange(mol.to_topology())
     ic.minimize()
     context.setPositions(ic.positions.to_openmm())
@@ -84,7 +84,7 @@ if __name__ == "__main__":
     for line in sys.stdin:
         if "_unconstrained" in line:
             continue
-        ff_name = line.split("/")[-1][:-8]
+        ff_name = line.split("/")[-1].strip()
         # Molecule.from_file fails on pathlib.Path ojects, despite being str-like
         hmr_mols = Molecule.from_file(
             str(propyne_mols),
