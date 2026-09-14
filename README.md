@@ -210,6 +210,8 @@ Force fields moving forward will be called `name-X.Y.Z`
 
 - `2026.01.0` This release adds the Sage 2.3.0 force fields. See the release notes for more details.
 
+- `2026.09.0` This release adds the openff-3.0.0-alpha2b force fields. See the release notes for more details.
+
 
 ## Authorship
 
