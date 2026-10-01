@@ -6,7 +6,7 @@ requires = [
 ]
 
 [project]
-name = "openforcefields"
+name = "openff-forcefields"
 description = "Force fields released by the Open Force Field Initiative"
 readme = { file = "README.md", content-type = "text/markdown" }
 license = { text = "CC-BY-4.0" }
@@ -23,6 +23,12 @@ classifiers = [
 dynamic = [ "version" ]
 urls.Homepage = "https://github.com/openforcefield/openforcefields"
 entry-points."openforcefield.smirnoff_forcefield_directory".get_forcefield_dirs_paths = "openforcefields.openforcefields:get_forcefield_dirs_paths"
+[project.optional-dependencies]
+test = [
+  "pytest",
+  "pytest-cov",
+  "pytest-xdist",
+]
 
 [tool.setuptools]
 package-data.openforcefields = [ "offxml/*" ]
