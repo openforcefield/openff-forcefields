@@ -121,7 +121,8 @@ Installing this package exposes an [entry point](https://packaging.python.org/en
 
 ```python
 from openff.toolkit.typing.engines.smirnoff import ForceField
-ff = ForceField('openff-2.0.0.offxml')
+
+ff = ForceField("openff-2.0.0.offxml")
 ```
 
 Otherwise, the entry point can be [accessed by querying](https://docs.python.org/3/library/importlib.metadata.html#entry-points) the `openforcefield.smirnoff_forcefield_directory` entry point group.
@@ -129,7 +130,7 @@ Otherwise, the entry point can be [accessed by querying](https://docs.python.org
 ```python
 from importlib.metadata import entry_points
 
-for entry_point in iter_entry_points(group='openforcefield.smirnoff_forcefield_directory'):
+for entry_point in iter_entry_points(group="openforcefield.smirnoff_forcefield_directory"):
     print(entry_point.load()())
 ```
 
