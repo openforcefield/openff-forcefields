@@ -363,6 +363,10 @@
         <Atom smirks="[#7:1]" epsilon="0.1676915150424 * kilocalorie ** 1 * mole ** -1" id="n20" rmin_half="1.799798315098 * angstrom ** 1"></Atom>
         <Atom smirks="[#16:1]" epsilon="0.25 * kilocalorie ** 1 * mole ** -1" id="n21" rmin_half="2.0 * angstrom ** 1"></Atom>
         <Atom smirks="[#15:1]" epsilon="0.2 * kilocalorie ** 1 * mole ** -1" id="n22" rmin_half="2.1 * angstrom ** 1"></Atom>
+        <Atom smirks="[#9:1]" epsilon="0.061 * kilocalorie ** 1 * mole ** -1" id="n23" rmin_half="1.75 * angstrom ** 1"></Atom>
+        <Atom smirks="[#17:1]" epsilon="0.2656001046527 * kilocalorie ** 1 * mole ** -1" id="n24" rmin_half="1.85628721824 * angstrom ** 1"></Atom>
+        <Atom smirks="[#35:1]" epsilon="0.3218986365974 * kilocalorie ** 1 * mole ** -1" id="n25" rmin_half="1.969806594135 * angstrom ** 1"></Atom>
+        <Atom smirks="[#53:1]" epsilon="0.4 * kilocalorie ** 1 * mole ** -1" id="n26" rmin_half="2.35 * angstrom ** 1"></Atom>
         <Atom smirks="[#1]-[#8X2H2+0:1]-[#1]" epsilon="0.163406 * kilocalorie_per_mole ** 1" id="n-opc3-O" rmin_half="1.781499 * angstrom ** 1"></Atom>
         <Atom smirks="[#1:1]-[#8X2H2+0]-[#1]" epsilon="0.0 * kilocalorie_per_mole ** 1" id="n-opc3-H" rmin_half="1.0 * angstrom ** 1"></Atom>
         <Atom smirks="[#3X0+1:1]" epsilon="0.0032565 * kilocalorie_per_mole ** 1" id="n-ionslm-126-opc3-Li+" rmin_half="1.27 * angstrom ** 1"></Atom>
