@@ -368,6 +368,7 @@
         <Atom smirks="[#17:1]" epsilon="0.2656001046527 * kilocalorie ** 1 * mole ** -1" id="n24" rmin_half="1.85628721824 * angstrom ** 1"></Atom>
         <Atom smirks="[#35:1]" epsilon="0.3218986365974 * kilocalorie ** 1 * mole ** -1" id="n25" rmin_half="1.969806594135 * angstrom ** 1"></Atom>
         <Atom smirks="[#53:1]" epsilon="0.4 * kilocalorie ** 1 * mole ** -1" id="n26" rmin_half="2.35 * angstrom ** 1"></Atom>
+        <Atom smirks="[#54:1]" epsilon="0.561 * kilocalorie ** 1 * mole ** -1" id="n36" sigma="4.363 * angstrom ** 1"></Atom>
         <Atom smirks="[#1]-[#8X2H2+0:1]-[#1]" epsilon="0.163406 * kilocalorie_per_mole ** 1" id="n-opc3-O" rmin_half="1.781499 * angstrom ** 1"></Atom>
         <Atom smirks="[#1:1]-[#8X2H2+0]-[#1]" epsilon="0.0 * kilocalorie_per_mole ** 1" id="n-opc3-H" rmin_half="1.0 * angstrom ** 1"></Atom>
         <Atom smirks="[#3X0+1:1]" epsilon="0.0032565 * kilocalorie_per_mole ** 1" id="n-ionslm-126-opc3-Li+" rmin_half="1.27 * angstrom ** 1"></Atom>
@@ -434,6 +435,7 @@
     <Electrostatics version="0.4" scale12="0.0" scale13="0.0" scale14="0.8333333333" scale15="1.0" cutoff="9.0 * angstrom ** 1" switch_width="0.0 * angstrom ** 1" periodic_potential="Ewald3D-ConductingBoundary" nonperiodic_potential="Coulomb" exception_potential="Coulomb"></Electrostatics>
     <NAGLCharges version="0.3" model_file="openff-gnn-am1bcc-1.0.0.pt" model_file_hash="7981e7f5b0b1e424c9e10a40d9e7606d96dcd3dd2b095cb4eeff6829f92238ee"></NAGLCharges>
     <LibraryCharges version="0.3">
+        <LibraryCharge smirks="[#54:1]" charge1="0.0 * elementary_charge ** 1" id="Xe"></LibraryCharge>
         <LibraryCharge smirks="[#1]-[#8X2H2+0:1]-[#1]" charge1="-0.89517 * elementary_charge ** 1" id="q-opc3-O"></LibraryCharge>
         <LibraryCharge smirks="[#1:1]-[#8X2H2+0]-[#1]" charge1="0.447585 * elementary_charge ** 1" id="q-opc3-H"></LibraryCharge>
         <LibraryCharge smirks="[#3X0+1:1]" charge1="1 * elementary_charge ** 1" id="q-ionslm-126-opc3-Li+"></LibraryCharge>
