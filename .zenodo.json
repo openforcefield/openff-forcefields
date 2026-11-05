@@ -1,6 +1,11 @@
 {
     "creators": [
       {
+        "orcid": "0000-0002-5899-7953",
+        "affiliation": "Skaggs School of Pharmacy and Pharmaceutical Sciences, University of California San Diego, La Jolla, CA, USA",
+        "name": "Cavender, Chapin"
+      },
+      {
         "orcid": "0000-0002-6095-6704",
         "affiliation": "Open Force Field Consortium, Open Molecular Software Foundation, Davis, CA, USA",
         "name": "Wang, Lily"
@@ -21,9 +26,9 @@
         "name": "Behara, Pavan Kumar"
       },
       {
-        "orcid": "0000-0002-5899-7953",
-        "affiliation": "Skaggs School of Pharmacy and Pharmaceutical Sciences, University of California San Diego, La Jolla, CA, USA",
-        "name": "Cavender, Chapin"
+        "orcid": "0000-0002-5427-2779",
+        "affiliation": "University of Colorado Boulder, Boulder, CO, USA",
+        "name": "Friedman, Anika"
       },
       {
         "orcid": "0000-0001-7856-1156",
@@ -48,7 +53,7 @@
       {
         "orcid": "0000-0002-8246-5113",
         "affiliation": "Open Force Field Consortium, Open Molecular Software Foundation, Davis, CA, USA",
-        "name": "Mitchell, Joshua A."
+        "name": "Mitchell, Ashley S. K."
       },
       {
         "orcid": "0000-0002-2732-457X",
@@ -94,6 +99,11 @@
         "orcid": "0000-0002-1083-5533",
         "affiliation": "Pharmaceutical Sciences, University of California Irvine, Irvine, CA, USA",
         "name": "Mobley, David"
+      },
+      {
+        "orcid": "0000-0002-3375-1738",
+        "affiliation": "Skaggs School of Pharmacy and Pharmaceutical Sciences, University of California San Diego, La Jolla, CA, USA",
+        "name": "Gilson, Michael"
       }
     ],
     "access_right": "open",

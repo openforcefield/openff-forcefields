@@ -35,6 +35,8 @@ Version-specific Zenodo DOIs for particular force fields can be found in the tab
 
 | Filename                                             | FF line  | Release Date  | Major format changes? | Fitting repo                                                                              | DOI                                                                                                         |
 |------------------------------------------------------|----------|---------------|-----------------------|-------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------|
+| `openff-3.0.0-rc1.offxml`                            | Rosemary | Nov 2, 2026   | No                    |                     | |
+| `openff_unconstrained-3.0.0-rc1.offxml`              | Rosemary | Nov 2, 2026   | No                    |                     | |
 | `openff_no_water-3.0.0-alpha2b.offxml`               | Rosemary | Sep 11, 2026  | No                    |                     |[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22759478.svg)](https://doi.org/10.5281/zenodo.22759478) |
 | `openff_no_water_unconstrained-3.0.0-alpha2b.offxml` | Rosemary | Sep 11, 2026  | No                    |                     |[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22759478.svg)](https://doi.org/10.5281/zenodo.22759478)|
 | `openff-2.3.0.offxml`                                | Sage     | Jan 13, 2026  | NAGLCharges instead of ToolkitAM1BCC                    | [repo](https://github.com/openforcefield/ash-sage-rc2) | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18228115.svg)](https://doi.org/10.5281/zenodo.18228115) |
@@ -212,6 +214,8 @@ Force fields moving forward will be called `name-X.Y.Z`
 - `2026.01.0` This release adds the Sage 2.3.0 force fields. See the release notes for more details.
 
 - `2026.09.0` This release adds the openff-3.0.0-alpha2b force fields. See the release notes for more details.
+
+- `2026.11.0` This release adds the openff-3.0.0-rc1 force fields, `openff-3.0.0-rc1.offxml` and `openff_unconstrained-3.0.0-rc1.offxml`. These have the same small-molecule and protein parameters as openff-3.0.0-alpha2b, but include the OPC3 water model and replace the parameters for the same nine monatomic ions (Li+, Na+, K+, Rb+, Cs+, F-, Cl-, Br-, and I-) with the OPC3-compatible 12-6 ion parameters from `opc3-1.0.1.offxml` (see `docs/water-models.md` for their sources). They also restore the atomic Xe van der Waals parameters and library charge from Sage 2.1.1–2.3.0, which come from [Tang, K.T., Toennies, J.P. New combining rules for well parameters and shapes of the van der Waals potential of mixed rare gas systems. Z Phys D - Atoms, Molecules and Clusters 1, 91–101 (1986).](https://doi.org/10.1007/BF01384663) See the release notes for more details.
 
 
 ## Authorship
