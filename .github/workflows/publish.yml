@@ -131,8 +131,8 @@ jobs:
             echo "Expected exactly one wheel, found ${#wheels[@]}"
             exit 1
           fi
-          python -m pip install "${wheels[0]}" pytest-xdist --index-url https://test.pypi.org/simple/ --extra-index-url https://pypi.org/simple
-          python -m pip install -r devtools/test-requirements.txt --index-url https://test.pypi.org/simple/ --extra-index-url https://pypi.org/simple
+          python -m pip install "${wheels[0]}"
+          python -m pip install -r devtools/test-requirements.txt
 
       - name: Verify installed wheel version
         env:
@@ -156,8 +156,8 @@ jobs:
           PY
 
       - name: Run tests
-        # working-directory: /tmp
-        run: python -m pytest -n auto -v --color=yes --durations=10
+        # include discvery of all openforcefields/ when toolkit is added as a test dep
+        run: python -m pytest -n auto -v --color=yes --durations=10 openforcefields/tests/test_openforcefields.py
 
   publish:
     name: Publish to PyPI
