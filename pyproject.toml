@@ -6,7 +6,7 @@ requires = [
 ]
 
 [project]
-name = "openforcefields"
+name = "openff-forcefields"
 description = "Force fields released by the Open Force Field Initiative"
 readme = { file = "README.md", content-type = "text/markdown" }
 license = { text = "CC-BY-4.0" }
