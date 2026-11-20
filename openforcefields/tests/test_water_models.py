@@ -1,7 +1,18 @@
+import pytest
+
+try:
+    from openff.toolkit import ForceField, Molecule, Topology
+
+    has_toolkit = True
+except ImportError:
+    has_toolkit = False
+
+if not has_toolkit:
+    pytest.skip("Skipping module due to not having the toolkit", allow_module_level=True)
+
 import numpy
 import openmm
 import openmm.unit
-import pytest
 from openff.toolkit import ForceField, Molecule, Topology
 from openff.units import Quantity, unit
 from openff.units.openmm import ensure_quantity
